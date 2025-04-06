@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

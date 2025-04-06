@@ -1,0 +1,10 @@
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.exe.config
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.exe
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.pdb
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.AssemblyReference.cache
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Menu.resources
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Properties.Resources.resources
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.GenerateResource.cache
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.CoreCompileInputs.cache
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.exe
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.pdb
