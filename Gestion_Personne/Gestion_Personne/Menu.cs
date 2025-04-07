@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_Personne.Modals;
 
 namespace Gestion_Personne
 {
@@ -71,6 +72,12 @@ namespace Gestion_Personne
         private void btSettings_Click(object sender, EventArgs e)
         {
             panelSetting.Visible = !panelSetting.Visible;
+        }
+
+        private void btCon_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.ShowDialog();
         }
     }
 }

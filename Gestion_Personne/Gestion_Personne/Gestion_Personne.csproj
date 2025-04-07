@@ -138,5 +138,11 @@
     <Folder Include="Classes\" />
     <Folder Include="UserControls\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Close_40px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

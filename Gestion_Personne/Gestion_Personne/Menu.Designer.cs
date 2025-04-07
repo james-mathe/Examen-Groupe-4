@@ -125,6 +125,7 @@ namespace Gestion_Personne
             this.btCon.TabIndex = 7;
             this.btCon.Text = "        Connection";
             this.btCon.UseVisualStyleBackColor = true;
+            this.btCon.Click += new System.EventHandler(this.btCon_Click);
             // 
             // btAdd
             // 
