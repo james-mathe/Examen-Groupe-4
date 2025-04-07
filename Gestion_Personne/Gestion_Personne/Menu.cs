@@ -36,5 +36,41 @@ namespace Gestion_Personne
         {
 
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            panelSetting.Visible = false;
+            DesactiveSideBarButtons();
+            ActiveConnection();
+        }
+
+        public void ActiveSideBarButtons()
+        {
+            btPerson.Enabled = true;
+            btPhone.Enabled = true;
+            btAdd.Enabled = true;
+        }
+        public void DesactiveSideBarButtons()
+        {
+            btPerson.Enabled = false;
+            btPhone.Enabled = false;
+            btAdd.Enabled = false;
+
+        }
+
+        public void ActiveConnection()
+        {
+            btDecon.Enabled = false;
+        }
+        public void DesactiveConnection()
+        {
+            btCon.Enabled = false;
+            btDecon.Enabled = true;
+        }
+
+        private void btSettings_Click(object sender, EventArgs e)
+        {
+            panelSetting.Visible = !panelSetting.Visible;
+        }
     }
 }

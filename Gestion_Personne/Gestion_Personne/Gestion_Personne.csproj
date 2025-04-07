@@ -116,5 +116,14 @@
   <ItemGroup>
     <None Include="Resources\icons8_crowd_200px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_connected_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_database_administrator_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_disconnected_50px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
