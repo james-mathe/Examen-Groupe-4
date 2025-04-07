@@ -9,3 +9,6 @@ C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.exe
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.pdb
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.Connection.resources
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.exe.config
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.exe
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.pdb

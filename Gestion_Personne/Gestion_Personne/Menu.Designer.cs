@@ -32,20 +32,20 @@ namespace Gestion_Personne
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.btDecon = new System.Windows.Forms.Button();
-            this.btCon = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btPhone = new System.Windows.Forms.Button();
             this.btPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.btDecon = new System.Windows.Forms.Button();
+            this.btCon = new System.Windows.Forms.Button();
             this.btMin = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btSettings = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panelSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,67 +71,12 @@ namespace Gestion_Personne
             this.panel2.Size = new System.Drawing.Size(200, 696);
             this.panel2.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestion";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // panelSetting
-            // 
-            this.panelSetting.BackColor = System.Drawing.Color.White;
-            this.panelSetting.Controls.Add(this.btDecon);
-            this.panelSetting.Controls.Add(this.btCon);
-            this.panelSetting.Location = new System.Drawing.Point(276, 16);
-            this.panelSetting.Name = "panelSetting";
-            this.panelSetting.Size = new System.Drawing.Size(309, 117);
-            this.panelSetting.TabIndex = 6;
-            // 
-            // btDecon
-            // 
-            this.btDecon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDecon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btDecon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDecon.ForeColor = System.Drawing.Color.Red;
-            this.btDecon.Image = global::Gestion_Personne.Properties.Resources.icons8_disconnected_50px;
-            this.btDecon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDecon.Location = new System.Drawing.Point(3, 60);
-            this.btDecon.Name = "btDecon";
-            this.btDecon.Size = new System.Drawing.Size(303, 52);
-            this.btDecon.TabIndex = 8;
-            this.btDecon.Text = "        Deconnection";
-            this.btDecon.UseVisualStyleBackColor = true;
-            // 
-            // btCon
-            // 
-            this.btCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btCon.FlatAppearance.BorderSize = 2;
-            this.btCon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCon.ForeColor = System.Drawing.Color.Green;
-            this.btCon.Image = global::Gestion_Personne.Properties.Resources.icons8_connected_50px;
-            this.btCon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCon.Location = new System.Drawing.Point(3, 5);
-            this.btCon.Name = "btCon";
-            this.btCon.Size = new System.Drawing.Size(303, 52);
-            this.btCon.TabIndex = 7;
-            this.btCon.Text = "        Connection";
-            this.btCon.UseVisualStyleBackColor = true;
-            // 
             // btAdd
             // 
             this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.FlatAppearance.BorderSize = 0;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.ForeColor = System.Drawing.Color.White;
             this.btAdd.Image = global::Gestion_Personne.Properties.Resources.icons8_address_50px_1;
             this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,7 +92,7 @@ namespace Gestion_Personne
             this.btPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btPhone.FlatAppearance.BorderSize = 0;
             this.btPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPhone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPhone.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPhone.ForeColor = System.Drawing.Color.White;
             this.btPhone.Image = global::Gestion_Personne.Properties.Resources.icons8_cell_phone_50px;
             this.btPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +108,7 @@ namespace Gestion_Personne
             this.btPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btPerson.FlatAppearance.BorderSize = 0;
             this.btPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPerson.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPerson.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPerson.ForeColor = System.Drawing.Color.White;
             this.btPerson.Image = global::Gestion_Personne.Properties.Resources.icons8_add_user_group_man_man_50px;
             this.btPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,6 +129,62 @@ namespace Gestion_Personne
             this.pictureBox1.Size = new System.Drawing.Size(200, 193);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 44);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestion";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // panelSetting
+            // 
+            this.panelSetting.BackColor = System.Drawing.Color.White;
+            this.panelSetting.Controls.Add(this.btDecon);
+            this.panelSetting.Controls.Add(this.btCon);
+            this.panelSetting.Location = new System.Drawing.Point(276, 16);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(309, 117);
+            this.panelSetting.TabIndex = 6;
+            // 
+            // btDecon
+            // 
+            this.btDecon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDecon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btDecon.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDecon.ForeColor = System.Drawing.Color.Red;
+            this.btDecon.Image = global::Gestion_Personne.Properties.Resources.icons8_disconnected_50px;
+            this.btDecon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDecon.Location = new System.Drawing.Point(3, 60);
+            this.btDecon.Name = "btDecon";
+            this.btDecon.Size = new System.Drawing.Size(303, 52);
+            this.btDecon.TabIndex = 8;
+            this.btDecon.Text = "        Deconnection";
+            this.btDecon.UseVisualStyleBackColor = true;
+            // 
+            // btCon
+            // 
+            this.btCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btCon.FlatAppearance.BorderSize = 2;
+            this.btCon.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCon.ForeColor = System.Drawing.Color.Green;
+            this.btCon.Image = global::Gestion_Personne.Properties.Resources.icons8_connected_50px;
+            this.btCon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCon.Location = new System.Drawing.Point(3, 5);
+            this.btCon.Name = "btCon";
+            this.btCon.Size = new System.Drawing.Size(303, 52);
+            this.btCon.TabIndex = 7;
+            this.btCon.Text = "        Connection";
+            this.btCon.UseVisualStyleBackColor = true;
+            this.btCon.Click += new System.EventHandler(this.btCon_Click);
             // 
             // btMin
             // 
@@ -243,8 +244,8 @@ namespace Gestion_Personne
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panelSetting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelSetting.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

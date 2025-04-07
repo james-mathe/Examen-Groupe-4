@@ -72,5 +72,10 @@ namespace Gestion_Personne
         {
             panelSetting.Visible = !panelSetting.Visible;
         }
+
+        private void btCon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
