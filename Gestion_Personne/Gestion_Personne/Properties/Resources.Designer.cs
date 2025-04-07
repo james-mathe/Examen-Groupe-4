@@ -163,6 +163,16 @@ namespace Gestion_Personne.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_database_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_database_administrator_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_database_administrator_50px", resourceCulture);
@@ -203,6 +213,26 @@ namespace Gestion_Personne.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_password_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_server_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_server_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_settings_50px", resourceCulture);
@@ -226,6 +256,16 @@ namespace Gestion_Personne.Properties {
         internal static System.Drawing.Bitmap icons8_subtract_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_subtract_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

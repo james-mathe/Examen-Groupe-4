@@ -12,14 +12,28 @@ namespace Gestion_Personne.Modals
 {
     public partial class Connection : Form
     {
-        public Connection()
+        private Form menu;
+        public Connection(Form m)
         {
             InitializeComponent();
+            this.menu = m;
         }
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (menu as Menu).DesactiveConnection();
+            (menu as Menu).ActiveSideBarButtons();
+            (menu as Menu).panelSetting.Visible = false;
+        }
+
+        private void Connection_Load(object sender, EventArgs e)
+        {
+            textPass.UseSystemPasswordChar = false;
         }
     }
 }

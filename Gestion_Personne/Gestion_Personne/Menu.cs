@@ -61,6 +61,7 @@ namespace Gestion_Personne
 
         public void ActiveConnection()
         {
+            btCon.Enabled = true;
             btDecon.Enabled = false;
         }
         public void DesactiveConnection()
@@ -76,8 +77,14 @@ namespace Gestion_Personne
 
         private void btCon_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
+            Connection connection = new Connection(this);
             connection.ShowDialog();
+        }
+
+        private void btDecon_Click(object sender, EventArgs e)
+        {
+            ActiveConnection();
+            DesactiveSideBarButtons();
         }
     }
 }

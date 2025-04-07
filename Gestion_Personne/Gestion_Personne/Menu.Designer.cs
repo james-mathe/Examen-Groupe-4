@@ -109,6 +109,7 @@ namespace Gestion_Personne
             this.btDecon.TabIndex = 8;
             this.btDecon.Text = "        Deconnection";
             this.btDecon.UseVisualStyleBackColor = true;
+            this.btDecon.Click += new System.EventHandler(this.btDecon_Click);
             // 
             // btCon
             // 
@@ -262,9 +263,9 @@ namespace Gestion_Personne
         private System.Windows.Forms.Button btPerson;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btPhone;
-        private System.Windows.Forms.Panel panelSetting;
         private System.Windows.Forms.Button btDecon;
         private System.Windows.Forms.Button btCon;
+        public System.Windows.Forms.Panel panelSetting;
     }
 }
 
