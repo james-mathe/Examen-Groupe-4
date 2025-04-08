@@ -35,5 +35,23 @@ namespace Gestion_Personne.Modals
         {
             textPass.UseSystemPasswordChar = false;
         }
+
+        private void textServ_Enter(object sender, EventArgs e)
+        {
+            if(textServ.Text == "server name")
+            {
+                textServ.Text = "";
+                textServ.ForeColor = Color.Black;
+            }
+        }
+
+        private void textServ_Leave(object sender, EventArgs e)
+        {
+            if(textServ.Text == "" || textServ.Text == "server name")
+            {
+                textServ.Text = "server name";
+                textServ.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
     }
 }

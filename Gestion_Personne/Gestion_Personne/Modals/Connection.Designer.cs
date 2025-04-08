@@ -104,6 +104,8 @@ namespace Gestion_Personne.Modals
             this.textServ.Size = new System.Drawing.Size(282, 32);
             this.textServ.TabIndex = 10;
             this.textServ.Text = "server name";
+            this.textServ.Enter += new System.EventHandler(this.textServ_Enter);
+            this.textServ.Leave += new System.EventHandler(this.textServ_Leave);
             // 
             // panel2
             // 
