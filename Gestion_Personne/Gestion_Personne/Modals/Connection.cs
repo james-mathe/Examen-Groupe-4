@@ -94,7 +94,7 @@ namespace Gestion_Personne.Modals
 
         private void comboDatabase_Enter(object sender, EventArgs e)
         {
-            if(comboDatabase.Text == "Select database")
+            if(comboDatabase.Text == "select database")
             {
                 comboDatabase.Text = "";
                 comboDatabase.ForeColor = Color.Black;
