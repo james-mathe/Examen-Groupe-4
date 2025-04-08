@@ -185,6 +185,8 @@ namespace Gestion_Personne.Modals
             this.textUser.Size = new System.Drawing.Size(282, 32);
             this.textUser.TabIndex = 14;
             this.textUser.Text = "username";
+            this.textUser.Enter += new System.EventHandler(this.textUser_Enter);
+            this.textUser.Leave += new System.EventHandler(this.textUser_Leave);
             // 
             // panel5
             // 

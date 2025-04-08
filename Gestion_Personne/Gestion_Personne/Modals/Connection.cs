@@ -53,5 +53,23 @@ namespace Gestion_Personne.Modals
                 textServ.ForeColor = Color.FromArgb(198, 190, 255);
             }
         }
+
+        private void textUser_Enter(object sender, EventArgs e)
+        {
+            if(textUser.Text == "username")
+            {
+                textUser.Text = "";
+                textUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void textUser_Leave(object sender, EventArgs e)
+        {
+            if(textUser.Text == "" || textUser.Text == "username")
+            {
+                textUser.Text = "username";
+                textUser.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
     }
 }
