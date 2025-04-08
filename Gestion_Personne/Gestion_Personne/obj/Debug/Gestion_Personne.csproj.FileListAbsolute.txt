@@ -12,3 +12,14 @@ C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.exe.config
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.exe
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.exe
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\Gestion_Personne.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Menu.resources
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.Connection.resources
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.server_config.resources
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Properties.Resources.resources
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.GenerateResource.Cache
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\ManageSingleConnexion.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\ManageSingleConnexion.pdb

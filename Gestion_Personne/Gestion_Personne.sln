@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.35826.135
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Personne", "Gestion_Personne\Gestion_Personne.csproj", "{865DDCAC-1A43-47F8-8F06-6FA1952633E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageSingleConnexion", "ManageSingleConnexion\ManageSingleConnexion.csproj", "{649D00CB-2777-4569-B0DB-7A8374CC6B7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{865DDCAC-1A43-47F8-8F06-6FA1952633E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{865DDCAC-1A43-47F8-8F06-6FA1952633E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{865DDCAC-1A43-47F8-8F06-6FA1952633E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649D00CB-2777-4569-B0DB-7A8374CC6B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649D00CB-2777-4569-B0DB-7A8374CC6B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649D00CB-2777-4569-B0DB-7A8374CC6B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649D00CB-2777-4569-B0DB-7A8374CC6B7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -50,3 +50,11 @@ go
 
 alter table adresse add constraint pk_A primary key(idA)
 alter table adresse add constraint fk_A_P foreign key(idP) references personne(idP) on delete cascade
+
+create table Utilisateur
+(
+	id bigint identity(1,1) primary key not null,
+	username varchar(50) not null,
+	password varchar(50)
+)
+insert into Utilisateur values ('Admin','Admin')
