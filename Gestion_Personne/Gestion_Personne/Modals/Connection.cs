@@ -71,5 +71,25 @@ namespace Gestion_Personne.Modals
                 textUser.ForeColor = Color.FromArgb(198, 190, 255);
             }
         }
+
+        private void textPass_Enter(object sender, EventArgs e)
+        {
+            if(textPass.Text == "password")
+            {
+                textPass.Text = "";
+                textPass.UseSystemPasswordChar = true;
+                textPass.ForeColor = Color.Black;
+            }
+        }
+
+        private void textPass_Leave(object sender, EventArgs e)
+        {
+            if(textPass.Text == "" || textPass.Text == "password")
+            {
+                textPass.Text = "password";
+                textPass.UseSystemPasswordChar = false;
+                textPass.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
     }
 }

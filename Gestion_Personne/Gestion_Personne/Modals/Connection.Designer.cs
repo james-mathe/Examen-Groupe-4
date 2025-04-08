@@ -219,6 +219,8 @@ namespace Gestion_Personne.Modals
             this.textPass.TabIndex = 17;
             this.textPass.Text = "password";
             this.textPass.UseSystemPasswordChar = true;
+            this.textPass.Enter += new System.EventHandler(this.textPass_Enter);
+            this.textPass.Leave += new System.EventHandler(this.textPass_Leave);
             // 
             // button1
             // 
