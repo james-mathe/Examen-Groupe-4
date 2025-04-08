@@ -91,5 +91,23 @@ namespace Gestion_Personne.Modals
                 textPass.ForeColor = Color.FromArgb(198, 190, 255);
             }
         }
+
+        private void comboDatabase_Enter(object sender, EventArgs e)
+        {
+            if(comboDatabase.Text == "Select database")
+            {
+                comboDatabase.Text = "";
+                comboDatabase.ForeColor = Color.Black;
+            }
+        }
+
+        private void comboDatabase_Leave(object sender, EventArgs e)
+        {
+            if(comboDatabase.Text == "" || comboDatabase.Text == "select database")
+            {
+                comboDatabase.Text = "select database";
+                comboDatabase.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
     }
 }
