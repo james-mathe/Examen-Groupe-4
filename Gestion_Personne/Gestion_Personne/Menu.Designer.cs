@@ -161,7 +161,7 @@ namespace Gestion_Personne
             this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAdd.Location = new System.Drawing.Point(2, 419);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(197, 52);
+            this.btAdd.Size = new System.Drawing.Size(198, 52);
             this.btAdd.TabIndex = 8;
             this.btAdd.Text = "       Adresses";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@ namespace Gestion_Personne
             this.btPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btPhone.Location = new System.Drawing.Point(1, 347);
             this.btPhone.Name = "btPhone";
-            this.btPhone.Size = new System.Drawing.Size(197, 52);
+            this.btPhone.Size = new System.Drawing.Size(199, 52);
             this.btPhone.TabIndex = 7;
             this.btPhone.Text = "        Telephones";
             this.btPhone.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@ namespace Gestion_Personne
             this.btPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btPerson.Location = new System.Drawing.Point(1, 275);
             this.btPerson.Name = "btPerson";
-            this.btPerson.Size = new System.Drawing.Size(197, 52);
+            this.btPerson.Size = new System.Drawing.Size(199, 52);
             this.btPerson.TabIndex = 6;
             this.btPerson.Text = "        Personnes";
             this.btPerson.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@ namespace Gestion_Personne
         private System.Windows.Forms.Button btCon;
         public System.Windows.Forms.Panel panelSetting;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel controlPanel;
+        public System.Windows.Forms.Panel controlPanel;
     }
 }
 

@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne.UserControls
 {
-    public partial class Personne : UserControl
+    public partial class User_Personne : UserControl
     {
-        private static Personne person;
-        public static Personne instance
+        private static User_Personne person;
+        public static User_Personne instance
         {
             get
             {
                 if(person == null)
                 {
-                    person = new Personne();
+                    person = new User_Personne();
                 }
                 return person;
             }
         }
-        public Personne()
+        public User_Personne()
         {
             InitializeComponent();
         }
@@ -45,6 +45,16 @@ namespace Gestion_Personne.UserControls
                 textSearch.Text = "Search";
                 textSearch.ForeColor = Color.FromArgb(198, 190, 255);
             }
+        }
+
+        private void User_personne_Load(object sender, EventArgs e)
+        {
+            tablePerson.Rows.Add(1, "james", "mathe", "Kambale","M");
+            tablePerson.Rows.Add(2, "james", "mathe", "Kambale", "M");
+            tablePerson.Rows.Add(3, "james", "mathe", "Kambale", "M");
+            tablePerson.Rows.Add(4, "james", "mathe", "Kambale", "M");
+            tablePerson.Rows.Add(5, "james", "mathe", "Kambale", "M");
+            tablePerson.Rows.Add(6, "james", "mathe", "Kambale", "M");
         }
     }
 }

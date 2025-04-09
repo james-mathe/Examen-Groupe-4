@@ -14,6 +14,10 @@ namespace Gestion_Personne
 {
     public partial class Menu : Form
     {
+        private Color activeForeColor = Color.FromArgb(94, 69, 255);
+        private Color activeBackColor = Color.White;
+        private Color defaultForeColor = Color.White;
+        private Color defaultBackColor = Color.FromArgb(94, 69, 255);
         public Menu()
         {
             InitializeComponent();
@@ -86,20 +90,34 @@ namespace Gestion_Personne
         {
             ActiveConnection();
             DesactiveSideBarButtons();
+            controlPanel.Visible = false;
+            controlPanel.Controls.Clear();
+            btPerson.BackColor = defaultBackColor;
+            btPerson.ForeColor = defaultForeColor;
+            btPhone.BackColor = defaultBackColor;
+            btPhone.ForeColor = defaultForeColor;
+            btAdd.BackColor = defaultBackColor;
+            btAdd.ForeColor = defaultForeColor;
 
         }
 
         private void btPerson_Click(object sender, EventArgs e)
         {
-            if (!controlPanel.Controls.Contains(Personne.instance))
+            btPerson.BackColor = activeBackColor;
+            btPerson.ForeColor = activeForeColor;
+            btPhone.BackColor = defaultBackColor;
+            btPhone.ForeColor = defaultForeColor;
+            btAdd.BackColor = defaultBackColor;
+            btAdd.ForeColor = defaultForeColor;
+            if (!controlPanel.Controls.Contains(User_Personne.instance))
             {
-                controlPanel.Controls.Add(Personne.instance);
-                Personne.instance.Dock = DockStyle.Fill;
-                Personne.instance.BringToFront();
+                controlPanel.Controls.Add(User_Personne.instance);
+                User_Personne.instance.Dock = DockStyle.Fill;
+                User_Personne.instance.BringToFront();
             }
             else
             {
-                Personne.instance.BringToFront();
+                User_Personne.instance.BringToFront();
             }
         }
     }
