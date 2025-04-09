@@ -61,15 +61,16 @@ namespace Gestion_Personne.Modals
             {
                 if (comboDatabase.Text == "Sql Server")
                 {
-                    sqlcon.Open();
                     try
                     {
+                        sqlcon.Open();
                         if (sqlcon.State == ConnectionState.Open)
                         {
                             MessageBox.Show("Connected Successfully to Sql Server", "Sql Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             (menu as Menu).DesactiveConnection();
                             (menu as Menu).ActiveSideBarButtons();
                             (menu as Menu).panelSetting.Visible = false;
+                            this.Close();
                         }
                     }
                     catch (Exception ex)
@@ -86,18 +87,18 @@ namespace Gestion_Personne.Modals
                     }
 
                 }
-                if (comboDatabase.Text == "MySql")
+                else if (comboDatabase.Text == "MySql")
                 {
-                    mycon.Open();
                     try
                     {
+                        mycon.Open();
                         if (mycon.State == ConnectionState.Open)
                         {
                             MessageBox.Show("Connected Successfully to MySql", "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             (menu as Menu).DesactiveConnection();
                             (menu as Menu).ActiveSideBarButtons();
                             (menu as Menu).panelSetting.Visible = false;
-
+                            this.Close();
                         }
 
                     }
@@ -114,7 +115,10 @@ namespace Gestion_Personne.Modals
                     }
 
                 }
-                MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
             }
         }

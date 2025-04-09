@@ -85,6 +85,7 @@ namespace Gestion_Personne
         {
             ActiveConnection();
             DesactiveSideBarButtons();
+
         }
     }
 }
