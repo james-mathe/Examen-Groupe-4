@@ -91,6 +91,7 @@ namespace Gestion_Personne.Modals
             this.comboDatabase.Size = new System.Drawing.Size(282, 40);
             this.comboDatabase.TabIndex = 6;
             this.comboDatabase.Text = "select database";
+            this.comboDatabase.SelectedValueChanged += new System.EventHandler(this.comboDatabase_SelectedValueChanged);
             this.comboDatabase.Enter += new System.EventHandler(this.comboDatabase_Enter);
             this.comboDatabase.Leave += new System.EventHandler(this.comboDatabase_Leave);
             // 

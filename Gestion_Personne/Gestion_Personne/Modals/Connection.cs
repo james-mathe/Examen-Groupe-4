@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_Personne.Classes;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Gestion_Personne.Modals
 {
     public partial class Connection : Form
     {
         private Form menu;
+        private Config con;
         public Connection(Form m)
         {
             InitializeComponent();
             this.menu = m;
+            this.con = new Config();
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -24,11 +29,94 @@ namespace Gestion_Personne.Modals
             this.Close();
         }
 
+        public String IsEmpty()
+        {
+            if(comboDatabase.Text == "" || comboDatabase.Text == "select database")
+            {
+                return "Fill the database field";
+            }
+            if (textServ.Text == "" || textServ.Text == "server name")
+            {
+                return "Fill the Server name field";
+            }
+            if (textUser.Text == "" || textUser.Text == "username")
+            {
+                return "Fill the username field";
+            }
+            if (textPass.Text == "password")
+            {
+                return "Fill the password field";
+            }
+            return null;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            (menu as Menu).DesactiveConnection();
-            (menu as Menu).ActiveSideBarButtons();
-            (menu as Menu).panelSetting.Visible = false;
+            MySqlConnection mycon = con.getMySqlConnection(textServ.Text, textUser.Text, textPass.Text);
+            SqlConnection sqlcon = con.getSqlConnection(textServ.Text, textUser.Text, textPass.Text);
+            if(IsEmpty() != null)
+            {
+                MessageBox.Show(IsEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (comboDatabase.Text == "Sql Server")
+                {
+                    sqlcon.Open();
+                    try
+                    {
+                        if (sqlcon.State == ConnectionState.Open)
+                        {
+                            MessageBox.Show("Connected Successfully to Sql Server", "Sql Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            (menu as Menu).DesactiveConnection();
+                            (menu as Menu).ActiveSideBarButtons();
+                            (menu as Menu).panelSetting.Visible = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+
+                        if (sqlcon.State == ConnectionState.Open)
+                        {
+                            sqlcon.Close();
+                        }
+                    }
+
+                }
+                if (comboDatabase.Text == "MySql")
+                {
+                    mycon.Open();
+                    try
+                    {
+                        if (mycon.State == ConnectionState.Open)
+                        {
+                            MessageBox.Show("Connected Successfully to MySql", "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            (menu as Menu).DesactiveConnection();
+                            (menu as Menu).ActiveSideBarButtons();
+                            (menu as Menu).panelSetting.Visible = false;
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        if (mycon.State == ConnectionState.Open)
+                        {
+                            mycon.Close();
+                        }
+                    }
+
+                }
+                MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void Connection_Load(object sender, EventArgs e)
@@ -41,7 +129,7 @@ namespace Gestion_Personne.Modals
             if(textServ.Text == "server name")
             {
                 textServ.Text = "";
-                textServ.ForeColor = Color.Black;
+                textServ.ForeColor = Color.DimGray;
             }
         }
 
@@ -59,7 +147,7 @@ namespace Gestion_Personne.Modals
             if(textUser.Text == "username")
             {
                 textUser.Text = "";
-                textUser.ForeColor = Color.Black;
+                textUser.ForeColor = Color.DimGray;
             }
         }
 
@@ -78,7 +166,7 @@ namespace Gestion_Personne.Modals
             {
                 textPass.Text = "";
                 textPass.UseSystemPasswordChar = true;
-                textPass.ForeColor = Color.Black;
+                textPass.ForeColor = Color.DimGray;
             }
         }
 
@@ -97,7 +185,7 @@ namespace Gestion_Personne.Modals
             if(comboDatabase.Text == "select database")
             {
                 comboDatabase.Text = "";
-                comboDatabase.ForeColor = Color.Black;
+                comboDatabase.ForeColor = Color.DimGray;
             }
         }
 
@@ -107,6 +195,29 @@ namespace Gestion_Personne.Modals
             {
                 comboDatabase.Text = "select database";
                 comboDatabase.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void comboDatabase_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboDatabase.Text == "MySql")
+            {
+                textServ.Text = "localhost";
+                textServ.ForeColor = Color.DimGray;
+                textUser.Text = "root";
+                textUser.ForeColor = Color.DimGray;
+                textPass.Text = "";
+                textPass.ForeColor = Color.DimGray;
+            }
+            else if(comboDatabase.Text == "Sql Server")
+            {
+                textServ.Text = "server name";
+                textServ.ForeColor = Color.FromArgb(198, 190, 255);
+                textUser.Text = "sa";
+                textUser.ForeColor = Color.DimGray;
+                textPass.Text = "password";
+                textPass.UseSystemPasswordChar = false;
+                textPass.ForeColor = Color.FromArgb(198, 190, 255);
             }
         }
     }
