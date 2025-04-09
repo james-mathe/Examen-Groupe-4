@@ -12,6 +12,18 @@ namespace Gestion_Personne.UserControls
 {
     public partial class Personne : UserControl
     {
+        private static Personne person;
+        public static Personne instance
+        {
+            get
+            {
+                if(person == null)
+                {
+                    person = new Personne();
+                }
+                return person;
+            }
+        }
         public Personne()
         {
             InitializeComponent();

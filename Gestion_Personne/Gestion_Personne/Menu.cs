@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gestion_Personne.Modals;
+using Gestion_Personne.UserControls;
 
 namespace Gestion_Personne
 {
@@ -86,6 +87,20 @@ namespace Gestion_Personne
             ActiveConnection();
             DesactiveSideBarButtons();
 
+        }
+
+        private void btPerson_Click(object sender, EventArgs e)
+        {
+            if (!controlPanel.Controls.Contains(Personne.instance))
+            {
+                controlPanel.Controls.Add(Personne.instance);
+                Personne.instance.Dock = DockStyle.Fill;
+                Personne.instance.BringToFront();
+            }
+            else
+            {
+                Personne.instance.BringToFront();
+            }
         }
     }
 }
