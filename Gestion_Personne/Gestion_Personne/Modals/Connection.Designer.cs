@@ -35,21 +35,21 @@ namespace Gestion_Personne.Modals
             this.comboDatabase = new System.Windows.Forms.ComboBox();
             this.textServ = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btExit = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textUser = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textPass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,37 +118,6 @@ namespace Gestion_Personne.Modals
             this.panel2.Size = new System.Drawing.Size(282, 3);
             this.panel2.TabIndex = 11;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_database_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btExit
-            // 
-            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btExit.FlatAppearance.BorderSize = 0;
-            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExit.Image = global::Gestion_Personne.Properties.Resources.icons8_Close_40px;
-            this.btExit.Location = new System.Drawing.Point(330, 15);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(36, 29);
-            this.btExit.TabIndex = 4;
-            this.btExit.UseVisualStyleBackColor = true;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gestion_Personne.Properties.Resources.icons8_server_50px;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 156);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -166,15 +135,6 @@ namespace Gestion_Personne.Modals
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(282, 3);
             this.panel4.TabIndex = 15;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
-            this.pictureBox3.Location = new System.Drawing.Point(19, 234);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
             // 
             // textUser
             // 
@@ -199,15 +159,6 @@ namespace Gestion_Personne.Modals
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(282, 3);
             this.panel5.TabIndex = 18;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
-            this.pictureBox4.Location = new System.Drawing.Point(19, 307);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
             // 
             // textPass
             // 
@@ -235,13 +186,62 @@ namespace Gestion_Personne.Modals
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(19, 384);
+            this.button1.Location = new System.Drawing.Point(15, 384);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(338, 43);
+            this.button1.Size = new System.Drawing.Size(338, 48);
             this.button1.TabIndex = 20;
             this.button1.Text = "Connect";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
+            this.pictureBox4.Location = new System.Drawing.Point(19, 307);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
+            this.pictureBox3.Location = new System.Drawing.Point(19, 234);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gestion_Personne.Properties.Resources.icons8_server_50px;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 156);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_database_50px;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.FlatAppearance.BorderSize = 0;
+            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExit.Image = global::Gestion_Personne.Properties.Resources.icons8_Close_40px;
+            this.btExit.Location = new System.Drawing.Point(330, 15);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(36, 29);
+            this.btExit.TabIndex = 4;
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // Connection
             // 
@@ -271,10 +271,10 @@ namespace Gestion_Personne.Modals
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection";
             this.Load += new System.EventHandler(this.Connection_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

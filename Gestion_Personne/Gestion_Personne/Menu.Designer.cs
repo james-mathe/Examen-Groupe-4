@@ -43,9 +43,12 @@ namespace Gestion_Personne
             this.btMin = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btSettings = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.controlPanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSetting.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -225,6 +228,25 @@ namespace Gestion_Personne
             this.btSettings.UseVisualStyleBackColor = true;
             this.btSettings.Click += new System.EventHandler(this.btSettings_Click);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.controlPanel);
+            this.mainPanel.Location = new System.Drawing.Point(201, 84);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(975, 622);
+            this.mainPanel.TabIndex = 7;
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlPanel.Location = new System.Drawing.Point(0, 0);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(975, 622);
+            this.controlPanel.TabIndex = 8;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +254,7 @@ namespace Gestion_Personne
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1176, 706);
             this.Controls.Add(this.panelSetting);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btMin);
             this.Controls.Add(this.btExit);
@@ -247,6 +270,7 @@ namespace Gestion_Personne
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSetting.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -266,6 +290,8 @@ namespace Gestion_Personne
         private System.Windows.Forms.Button btDecon;
         private System.Windows.Forms.Button btCon;
         public System.Windows.Forms.Panel panelSetting;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Panel controlPanel;
     }
 }
 
