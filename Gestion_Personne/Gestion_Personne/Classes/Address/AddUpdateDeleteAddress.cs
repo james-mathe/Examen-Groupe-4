@@ -15,6 +15,7 @@ namespace Gestion_Personne.Classes.Address
         private MySqlConnection mycon;
         private SqlCommand sqlcmd;
         private MySqlCommand mycmd;
+        
 
         public bool addAddress(int idP,String quarter,String avenue,String com,String city,String Contry)
         {
