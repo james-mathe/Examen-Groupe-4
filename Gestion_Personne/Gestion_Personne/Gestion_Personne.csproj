@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Address\AddUpdateDeleteAddress.cs" />
     <Compile Include="Classes\Config.cs" />
     <Compile Include="Classes\IConnection.cs" />
     <Compile Include="Menu.cs">
@@ -237,5 +238,6 @@
   <ItemGroup>
     <None Include="Resources\icons8_print_50px.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
