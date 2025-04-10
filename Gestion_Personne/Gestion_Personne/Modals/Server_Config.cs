@@ -10,13 +10,19 @@ using System.Windows.Forms;
 using Gestion_Personne.Classes;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Gestion_Personne.Modals
 {
     public partial class Server_Config : Form
     {
+        private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
         private Form menu;
         private Config con;
+        private String ServerType;
+        private String ServerName;
+        private String Username;
+        private String Password;
         public Server_Config(Form m)
         {
             InitializeComponent();
@@ -24,6 +30,39 @@ namespace Gestion_Personne.Modals
             this.con = new Config();
         }
 
+        private void SaveConnectionInfo()
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(configFilePath))
+                {
+                    writer.WriteLine(comboDatabase.Text);
+                    writer.WriteLine(textServ.Text);
+                    //writer.WriteLine(txtbd.Text);
+                    writer.WriteLine(textUser.Text);
+                    writer.WriteLine(textPass.Text); // Crypter le mot de passe
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'enregistrement de la configuration : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void openSql()
+        {
+            try
+            {
+                
+                SaveConnectionInfo();
+
+                MessageBox.Show("Connexion réussie et configuration enregistrée.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de connexion : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,10 +88,43 @@ namespace Gestion_Personne.Modals
             }
             return null;
         }
+        private void LoadConfiguration()
+        {
+            try
+            {
+                if (!File.Exists(configFilePath))
+                {
+                    MessageBox.Show("Le fichier Sqlconfig.ini est introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string[] lines = File.ReadAllLines(configFilePath);
+                if (lines.Length >= 5)
+                {
+                    ServerType = lines[0].Trim();
+                    ServerName = lines[1].Trim();
+                    //String DatabaseName = lines[2].Trim();
+                    Username = lines[2].Trim();
+                    Password = lines[3].Trim();
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Le fichier Sqlconfig.ini est incomplet.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du chargement de la configuration : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection mycon = con.getMySqlConnection(textServ.Text, textUser.Text, textPass.Text);
-            SqlConnection sqlcon = con.getSqlConnection(textServ.Text, textUser.Text, textPass.Text);
+
+            MySqlConnection mycon = con.getMySqlConnection(ServerName, Username, Password);
+            SqlConnection sqlcon = con.getSqlConnection(ServerName, Username, Password);
             if(IsEmpty() != null)
             {
                 MessageBox.Show(IsEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);

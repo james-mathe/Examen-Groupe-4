@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Gestion_Personne
 {
     public partial class Menu : Form
     {
+        private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
         private Color activeForeColor = Color.FromArgb(94, 69, 255);
         private Color activeBackColor = Color.White;
         private Color defaultForeColor = Color.White;
@@ -82,8 +84,8 @@ namespace Gestion_Personne
 
         private void btCon_Click(object sender, EventArgs e)
         {
-            Server_Config connection = new Server_Config(this);
-            connection.ShowDialog();
+            Server_Config server_Config = new Server_Config(this);
+            server_Config.ShowDialog();
         }
 
         private void btDecon_Click(object sender, EventArgs e)
