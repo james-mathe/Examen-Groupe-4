@@ -82,7 +82,7 @@ namespace Gestion_Personne
 
         private void btCon_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection(this);
+            Server_Config connection = new Server_Config(this);
             connection.ShowDialog();
         }
 

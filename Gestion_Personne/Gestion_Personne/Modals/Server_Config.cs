@@ -13,11 +13,11 @@ using System.Data.SqlClient;
 
 namespace Gestion_Personne.Modals
 {
-    public partial class Connection : Form
+    public partial class Server_Config : Form
     {
         private Form menu;
         private Config con;
-        public Connection(Form m)
+        public Server_Config(Form m)
         {
             InitializeComponent();
             this.menu = m;

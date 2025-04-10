@@ -106,11 +106,11 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Connection.cs">
+    <Compile Include="Modals\Server_Config.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modals\Connection.Designer.cs">
-      <DependentUpon>Connection.cs</DependentUpon>
+    <Compile Include="Modals\Server_Config.Designer.cs">
+      <DependentUpon>Server_Config.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,8 +129,8 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modals\Connection.resx">
-      <DependentUpon>Connection.cs</DependentUpon>
+    <EmbeddedResource Include="Modals\Server_Config.resx">
+      <DependentUpon>Server_Config.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

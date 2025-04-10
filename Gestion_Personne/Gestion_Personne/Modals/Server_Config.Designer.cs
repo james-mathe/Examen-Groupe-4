@@ -1,7 +1,7 @@
 ﻿
 namespace Gestion_Personne.Modals
 {
-    partial class Connection
+    partial class Server_Config
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Gestion_Personne.Modals
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Server_Config));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboDatabase = new System.Windows.Forms.ComboBox();
@@ -59,11 +59,11 @@ namespace Gestion_Personne.Modals
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(72, 13);
+            this.label1.Location = new System.Drawing.Point(61, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 40);
+            this.label1.Size = new System.Drawing.Size(251, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Connection";
+            this.label1.Text = "Server Config";
             // 
             // panel1
             // 
@@ -243,7 +243,7 @@ namespace Gestion_Personne.Modals
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // Connection
+            // Server_Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +267,7 @@ namespace Gestion_Personne.Modals
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Connection";
+            this.Name = "Server_Config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection";
             this.Load += new System.EventHandler(this.Connection_Load);
