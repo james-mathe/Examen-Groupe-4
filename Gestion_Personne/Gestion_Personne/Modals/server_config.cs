@@ -100,6 +100,7 @@ namespace Gestion_Personne.Modals
         private void server_config_Load(object sender, EventArgs e)
         {
             cboDBType.DataSource = Enum.GetNames(typeof(Connexiontype));
+            cboDBType.SelectedIndex = 0;
         }
 
         private void cmdConnect_Click(object sender, EventArgs e)
