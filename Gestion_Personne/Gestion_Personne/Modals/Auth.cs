@@ -7,17 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_Personne.Classes;
+using System.Data.SqlClient;
 
 namespace Gestion_Personne.Modals
 {
     public partial class Auth : Form
     {
         private Form menu;
+        private Config config;
+        private SqlConnection sqlcon;
+        private SqlCommand sqlcmd;
 
         public Auth(Form m)
         {
             InitializeComponent();
             this.menu = m;
+            this.config = new Config();
         }
         public String IsEmpty()
         {
@@ -36,12 +42,39 @@ namespace Gestion_Personne.Modals
         {
             if(IsEmpty() == null)
             {
+                sqlcon = config.getSqlConnection();
+                
+                try
+                {
+                    sqlcon.Open();
+                    if(sqlcon.State == ConnectionState.Open)
+                    {
+                        String sql = "select * from users where username=@user and pwd=@pwd";
+                        SqlDataReader reader;
+                        sqlcmd = new SqlCommand(sql, sqlcon);
+                        sqlcmd.Parameters.AddWithValue("@user", textUser.Text);
+                        sqlcmd.Parameters.AddWithValue("@pwd", textPass.Text);
 
-                (menu as Menu).DesactiveConnection();
-                (menu as Menu).ActiveSideBarButtons();
-                (menu as Menu).panelSetting.Visible = false;
-                (menu as Menu).controlPanel.Visible = true;
-
+                        reader = sqlcmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            MessageBox.Show("Welcom "+textUser.Text+"!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            (menu as Menu).DesactiveConnection();
+                            (menu as Menu).ActiveSideBarButtons();
+                            (menu as Menu).panelSetting.Visible = false;
+                            (menu as Menu).controlPanel.Visible = true;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username or Password is not correct", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
