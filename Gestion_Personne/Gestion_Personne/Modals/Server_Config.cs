@@ -92,6 +92,7 @@ namespace Gestion_Personne.Modals
         {
             try
             {
+                openSql();
                 if (!File.Exists(configFilePath))
                 {
                     MessageBox.Show("Le fichier Sqlconfig.ini est introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,15 +100,13 @@ namespace Gestion_Personne.Modals
                 }
 
                 string[] lines = File.ReadAllLines(configFilePath);
-                if (lines.Length >= 5)
+                if (lines.Length == 4)
                 {
                     ServerType = lines[0].Trim();
                     ServerName = lines[1].Trim();
                     //String DatabaseName = lines[2].Trim();
                     Username = lines[2].Trim();
                     Password = lines[3].Trim();
-
-
 
                 }
                 else
@@ -122,8 +121,7 @@ namespace Gestion_Personne.Modals
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
-            MySqlConnection mycon = con.getMySqlConnection(ServerName, Username, Password);
+            LoadConfiguration();
             SqlConnection sqlcon = con.getSqlConnection(ServerName, Username, Password);
             if(IsEmpty() != null)
             {
@@ -148,7 +146,7 @@ namespace Gestion_Personne.Modals
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Error Sql server Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -156,35 +154,6 @@ namespace Gestion_Personne.Modals
                         if (sqlcon.State == ConnectionState.Open)
                         {
                             sqlcon.Close();
-                        }
-                    }
-
-                }
-                else if (comboDatabase.Text == "MySql")
-                {
-                    try
-                    {
-                        mycon.Open();
-                        if (mycon.State == ConnectionState.Open)
-                        {
-                            MessageBox.Show("Connected Successfully to MySql", "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            (menu as Menu).DesactiveConnection();
-                            (menu as Menu).ActiveSideBarButtons();
-                            (menu as Menu).panelSetting.Visible = false;
-                            (menu as Menu).controlPanel.Visible = true;
-                            this.Close();
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        if (mycon.State == ConnectionState.Open)
-                        {
-                            mycon.Close();
                         }
                     }
 

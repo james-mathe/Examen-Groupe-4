@@ -116,11 +116,19 @@
     <Compile Include="Classes\Address\AddUpdateDeleteAddress.cs" />
     <Compile Include="Classes\Config.cs" />
     <Compile Include="Classes\IConnection.cs" />
+    <Compile Include="Classes\People\AddUpdateDeletePerson.cs" />
+    <Compile Include="Classes\Phones\AddUpdateDeletePhones.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
     <Compile Include="Modals\Server_Config.cs">
       <SubType>Form</SubType>
@@ -144,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\Server_Config.resx">
       <DependentUpon>Server_Config.cs</DependentUpon>

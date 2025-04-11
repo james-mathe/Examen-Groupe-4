@@ -79,6 +79,7 @@ namespace Gestion_Personne.Modals
             this.comboDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboDatabase.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboDatabase.Enabled = false;
             this.comboDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboDatabase.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
@@ -90,7 +91,7 @@ namespace Gestion_Personne.Modals
             this.comboDatabase.Name = "comboDatabase";
             this.comboDatabase.Size = new System.Drawing.Size(282, 40);
             this.comboDatabase.TabIndex = 6;
-            this.comboDatabase.Text = "select database";
+            this.comboDatabase.Text = "Sql Server";
             this.comboDatabase.SelectedValueChanged += new System.EventHandler(this.comboDatabase_SelectedValueChanged);
             this.comboDatabase.Enter += new System.EventHandler(this.comboDatabase_Enter);
             this.comboDatabase.Leave += new System.EventHandler(this.comboDatabase_Leave);
@@ -147,7 +148,7 @@ namespace Gestion_Personne.Modals
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(282, 32);
             this.textUser.TabIndex = 14;
-            this.textUser.Text = "username";
+            this.textUser.Text = "sa";
             this.textUser.Enter += new System.EventHandler(this.textUser_Enter);
             this.textUser.Leave += new System.EventHandler(this.textUser_Leave);
             // 
@@ -190,7 +191,7 @@ namespace Gestion_Personne.Modals
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(338, 48);
             this.button1.TabIndex = 20;
-            this.button1.Text = "Connect";
+            this.button1.Text = "Configure";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
