@@ -19,18 +19,17 @@ namespace Gestion_Personne.Classes
         public String Password;
         public Config()
         {
-            LoadConfiguration();
+            
+            if (File.Exists(configFilePath))
+            {
+                LoadConfiguration();
+            }
         }
         private void LoadConfiguration()
         {
             try
             {
-                if (!File.Exists(configFilePath))
-                {
-                    MessageBox.Show("Le fichier Sqlconfig.ini est introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                    
-                }
+                
 
                 string[] lines = File.ReadAllLines(configFilePath);
                 if (lines.Length == 4)
