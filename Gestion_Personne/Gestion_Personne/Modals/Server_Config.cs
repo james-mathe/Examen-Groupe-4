@@ -19,10 +19,10 @@ namespace Gestion_Personne.Modals
         private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
         private Form menu;
         private Config con;
-        private String ServerType;
-        private String ServerName;
-        private String Username;
-        private String Password;
+        public String ServerType;
+        public String ServerName;
+        public String Username;
+        public String Password;
         public Server_Config(Form m)
         {
             InitializeComponent();
@@ -137,11 +137,9 @@ namespace Gestion_Personne.Modals
                         if (sqlcon.State == ConnectionState.Open)
                         {
                             MessageBox.Show("Connected Successfully to Sql Server", "Sql Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            (menu as Menu).DesactiveConnection();
-                            (menu as Menu).ActiveSideBarButtons();
-                            (menu as Menu).panelSetting.Visible = false;
-                            (menu as Menu).controlPanel.Visible = true;
+                            Auth auth = new Auth(menu);
                             this.Close();
+                            auth.ShowDialog();
                         }
                     }
                     catch (Exception ex)

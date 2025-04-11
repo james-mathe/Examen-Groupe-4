@@ -82,15 +82,20 @@ namespace Gestion_Personne
             panelSetting.Visible = !panelSetting.Visible;
         }
 
-        private void LoadConfiguration()
+        private void btCon_Click(object sender, EventArgs e)
         {
             try
             {
-                
+
                 if (!File.Exists(configFilePath))
                 {
-                    MessageBox.Show("Le fichier Sqlconfig.ini est introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    Server_Config server_Config = new Server_Config(this);
+                    server_Config.ShowDialog();
+                }
+                else
+                {
+                    Auth auth = new Auth(this);
+                    auth.ShowDialog();
                 }
 
             }
@@ -98,12 +103,6 @@ namespace Gestion_Personne
             {
                 MessageBox.Show("Erreur lors du chargement de la configuration : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void btCon_Click(object sender, EventArgs e)
-        {
-
-            Server_Config server_Config = new Server_Config(this);
-            server_Config.ShowDialog();
         }
 
         private void btDecon_Click(object sender, EventArgs e)
