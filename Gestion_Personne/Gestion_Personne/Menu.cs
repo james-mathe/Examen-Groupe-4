@@ -57,13 +57,14 @@ namespace Gestion_Personne
             btPerson.Enabled = true;
             btPhone.Enabled = true;
             btAdd.Enabled = true;
+            btUsers.Enabled = true;
         }
         public void DesactiveSideBarButtons()
         {
             btPerson.Enabled = false;
             btPhone.Enabled = false;
             btAdd.Enabled = false;
-
+            btUsers.Enabled = false;
         }
 
         public void ActiveConnection()
@@ -117,6 +118,8 @@ namespace Gestion_Personne
             btPhone.ForeColor = defaultForeColor;
             btAdd.BackColor = defaultBackColor;
             btAdd.ForeColor = defaultForeColor;
+            btUsers.BackColor = defaultBackColor;
+            btUsers.ForeColor = defaultForeColor;
 
         }
 
@@ -128,6 +131,8 @@ namespace Gestion_Personne
             btPhone.ForeColor = defaultForeColor;
             btAdd.BackColor = defaultBackColor;
             btAdd.ForeColor = defaultForeColor;
+            btUsers.BackColor = defaultBackColor;
+            btUsers.ForeColor = defaultForeColor;
             if (!controlPanel.Controls.Contains(User_Personne.instance))
             {
                 controlPanel.Controls.Add(User_Personne.instance);
@@ -138,6 +143,43 @@ namespace Gestion_Personne
             {
                 User_Personne.instance.BringToFront();
             }
+        }
+
+        private void btPhone_Click(object sender, EventArgs e)
+        {
+            btPerson.BackColor = defaultBackColor;
+            btPerson.ForeColor = defaultForeColor;
+            btPhone.BackColor = activeBackColor;
+            btPhone.ForeColor = activeForeColor;
+            btAdd.BackColor = defaultBackColor;
+            btAdd.ForeColor = defaultForeColor;
+            btUsers.BackColor = defaultBackColor;
+            btUsers.ForeColor = defaultForeColor;
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            btPerson.BackColor = defaultBackColor;
+            btPerson.ForeColor = defaultForeColor;
+            btPhone.BackColor = defaultBackColor;
+            btPhone.ForeColor = defaultForeColor;
+            btAdd.BackColor = activeBackColor;
+            btAdd.ForeColor = activeForeColor;
+            btUsers.BackColor = defaultBackColor;
+            btUsers.ForeColor = defaultForeColor;
+        }
+
+        private void btUsers_Click(object sender, EventArgs e)
+        {
+            btPerson.BackColor = defaultBackColor;
+            btPerson.ForeColor = defaultForeColor;
+            btPhone.BackColor = defaultBackColor;
+            btPhone.ForeColor = defaultForeColor;
+            btAdd.BackColor = defaultBackColor;
+            btAdd.ForeColor = defaultForeColor;
+            btUsers.BackColor = activeBackColor;
+            btUsers.ForeColor = activeForeColor;
+
         }
     }
 }

@@ -48,5 +48,67 @@ namespace Gestion_Personne.Modals
                 MessageBox.Show(IsEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void textUser_Enter(object sender, EventArgs e)
+        {
+            if(textUser.Text == "username")
+            {
+                textUser.Text = "";
+                textUser.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void textUser_Leave(object sender, EventArgs e)
+        {
+            if(textUser.Text == "" || textUser.Text == "username")
+            {
+                textUser.Text = "username";
+                textUser.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+            textPass.UseSystemPasswordChar = false;
+        }
+
+        private void textPass_Enter(object sender, EventArgs e)
+        {
+            if (textPass.Text == "password")
+            {
+                textPass.Text = "";
+                textPass.UseSystemPasswordChar = true;
+                textPass.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void textPass_Leave(object sender, EventArgs e)
+        {
+            if (textPass.Text == "" || textPass.Text == "password")
+            {
+                textPass.Text = "password";
+                textPass.UseSystemPasswordChar = false;
+                textPass.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void eyes_Click(object sender, EventArgs e)
+        {
+            if(textPass.UseSystemPasswordChar == true)
+            {
+                textPass.UseSystemPasswordChar = false;
+                eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_hide_24px;
+            }
+            else
+            {
+                textPass.UseSystemPasswordChar = true;
+                eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
+            }
+        }
     }
 }

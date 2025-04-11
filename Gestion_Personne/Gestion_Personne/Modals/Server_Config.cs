@@ -19,10 +19,6 @@ namespace Gestion_Personne.Modals
         private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
         private Form menu;
         private Config con;
-        public String ServerType;
-        public String ServerName;
-        public String Username;
-        public String Password;
         public Server_Config(Form m)
         {
             InitializeComponent();

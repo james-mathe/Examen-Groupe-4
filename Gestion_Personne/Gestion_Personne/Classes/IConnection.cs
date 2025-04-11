@@ -10,8 +10,8 @@ namespace Gestion_Personne.Classes
 {
     interface IConnection
     {
-        SqlConnection getSqlConnection(String serverName, String username, String password);
+        SqlConnection getSqlConnection();
         //MySqlConnection getMySqlConnection(String host, int portMysql, int portServ, String username, String password);
-        MySqlConnection getMySqlConnection(String host, String username, String password);
+        MySqlConnection getMySqlConnection();
     }
 }

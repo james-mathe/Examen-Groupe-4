@@ -32,24 +32,24 @@ namespace Gestion_Personne
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.controlPanel = new System.Windows.Forms.Panel();
+            this.btDecon = new System.Windows.Forms.Button();
+            this.btCon = new System.Windows.Forms.Button();
+            this.btUsers = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btPhone = new System.Windows.Forms.Button();
             this.btPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.btDecon = new System.Windows.Forms.Button();
-            this.btCon = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.controlPanel = new System.Windows.Forms.Panel();
             this.btMin = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btSettings = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSetting.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,7 +64,7 @@ namespace Gestion_Personne
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btUsers);
             this.panel2.Controls.Add(this.btAdd);
             this.panel2.Controls.Add(this.btPhone);
             this.panel2.Controls.Add(this.btPerson);
@@ -75,66 +75,6 @@ namespace Gestion_Personne
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 696);
             this.panel2.TabIndex = 5;
-            // 
-            // btAdd
-            // 
-            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.ForeColor = System.Drawing.Color.White;
-            this.btAdd.Image = global::Gestion_Personne.Properties.Resources.icons8_address_50px_1;
-            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAdd.Location = new System.Drawing.Point(2, 419);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(198, 52);
-            this.btAdd.TabIndex = 8;
-            this.btAdd.Text = "       Adresses";
-            this.btAdd.UseVisualStyleBackColor = true;
-            // 
-            // btPhone
-            // 
-            this.btPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btPhone.FlatAppearance.BorderSize = 0;
-            this.btPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPhone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPhone.ForeColor = System.Drawing.Color.White;
-            this.btPhone.Image = global::Gestion_Personne.Properties.Resources.icons8_cell_phone_50px;
-            this.btPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btPhone.Location = new System.Drawing.Point(1, 347);
-            this.btPhone.Name = "btPhone";
-            this.btPhone.Size = new System.Drawing.Size(199, 52);
-            this.btPhone.TabIndex = 7;
-            this.btPhone.Text = "        Telephones";
-            this.btPhone.UseVisualStyleBackColor = true;
-            // 
-            // btPerson
-            // 
-            this.btPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btPerson.FlatAppearance.BorderSize = 0;
-            this.btPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPerson.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPerson.ForeColor = System.Drawing.Color.White;
-            this.btPerson.Image = global::Gestion_Personne.Properties.Resources.icons8_add_user_group_man_man_50px;
-            this.btPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btPerson.Location = new System.Drawing.Point(1, 275);
-            this.btPerson.Name = "btPerson";
-            this.btPerson.Size = new System.Drawing.Size(199, 52);
-            this.btPerson.TabIndex = 6;
-            this.btPerson.Text = "        Personnes";
-            this.btPerson.UseVisualStyleBackColor = true;
-            this.btPerson.Click += new System.EventHandler(this.btPerson_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_crowd_200px;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 193);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -159,6 +99,25 @@ namespace Gestion_Personne
             this.panelSetting.Name = "panelSetting";
             this.panelSetting.Size = new System.Drawing.Size(309, 117);
             this.panelSetting.TabIndex = 6;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.controlPanel);
+            this.mainPanel.Location = new System.Drawing.Point(201, 84);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(975, 622);
+            this.mainPanel.TabIndex = 7;
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlPanel.Location = new System.Drawing.Point(0, 0);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(975, 622);
+            this.controlPanel.TabIndex = 8;
             // 
             // btDecon
             // 
@@ -193,24 +152,84 @@ namespace Gestion_Personne
             this.btCon.UseVisualStyleBackColor = true;
             this.btCon.Click += new System.EventHandler(this.btCon_Click);
             // 
-            // mainPanel
+            // btUsers
             // 
-            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btUsers.FlatAppearance.BorderSize = 0;
+            this.btUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUsers.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUsers.ForeColor = System.Drawing.Color.White;
+            this.btUsers.Image = global::Gestion_Personne.Properties.Resources.icons8_Users_50px;
+            this.btUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btUsers.Location = new System.Drawing.Point(1, 487);
+            this.btUsers.Name = "btUsers";
+            this.btUsers.Size = new System.Drawing.Size(198, 52);
+            this.btUsers.TabIndex = 9;
+            this.btUsers.Text = "         Utilisateurs";
+            this.btUsers.UseVisualStyleBackColor = true;
+            this.btUsers.Click += new System.EventHandler(this.btUsers_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Image = global::Gestion_Personne.Properties.Resources.icons8_address_50px_1;
+            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAdd.Location = new System.Drawing.Point(2, 419);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(198, 52);
+            this.btAdd.TabIndex = 8;
+            this.btAdd.Text = "       Adresses";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btPhone
+            // 
+            this.btPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPhone.FlatAppearance.BorderSize = 0;
+            this.btPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPhone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPhone.ForeColor = System.Drawing.Color.White;
+            this.btPhone.Image = global::Gestion_Personne.Properties.Resources.icons8_cell_phone_50px;
+            this.btPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btPhone.Location = new System.Drawing.Point(1, 347);
+            this.btPhone.Name = "btPhone";
+            this.btPhone.Size = new System.Drawing.Size(199, 52);
+            this.btPhone.TabIndex = 7;
+            this.btPhone.Text = "        Telephones";
+            this.btPhone.UseVisualStyleBackColor = true;
+            this.btPhone.Click += new System.EventHandler(this.btPhone_Click);
+            // 
+            // btPerson
+            // 
+            this.btPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPerson.FlatAppearance.BorderSize = 0;
+            this.btPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPerson.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPerson.ForeColor = System.Drawing.Color.White;
+            this.btPerson.Image = global::Gestion_Personne.Properties.Resources.icons8_add_user_group_man_man_50px;
+            this.btPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btPerson.Location = new System.Drawing.Point(1, 275);
+            this.btPerson.Name = "btPerson";
+            this.btPerson.Size = new System.Drawing.Size(199, 52);
+            this.btPerson.TabIndex = 6;
+            this.btPerson.Text = "        Personnes";
+            this.btPerson.UseVisualStyleBackColor = true;
+            this.btPerson.Click += new System.EventHandler(this.btPerson_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.controlPanel);
-            this.mainPanel.Location = new System.Drawing.Point(201, 84);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(975, 622);
-            this.mainPanel.TabIndex = 7;
-            // 
-            // controlPanel
-            // 
-            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlPanel.Location = new System.Drawing.Point(0, 0);
-            this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(975, 622);
-            this.controlPanel.TabIndex = 8;
+            this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_crowd_200px;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 193);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // btMin
             // 
@@ -250,22 +269,6 @@ namespace Gestion_Personne
             this.btSettings.UseVisualStyleBackColor = true;
             this.btSettings.Click += new System.EventHandler(this.btSettings_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Gestion_Personne.Properties.Resources.icons8_address_50px_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 52);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "       Adresses";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,9 +290,9 @@ namespace Gestion_Personne
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSetting.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,7 +314,7 @@ namespace Gestion_Personne
         public System.Windows.Forms.Panel panelSetting;
         private System.Windows.Forms.Panel mainPanel;
         public System.Windows.Forms.Panel controlPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btUsers;
     }
 }
 

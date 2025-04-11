@@ -31,14 +31,15 @@ namespace Gestion_Personne.Modals
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btExit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textPass = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textUser = new System.Windows.Forms.TextBox();
+            this.eyes = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -64,18 +65,6 @@ namespace Gestion_Personne.Modals
             this.label1.Size = new System.Drawing.Size(211, 40);
             this.label1.TabIndex = 21;
             this.label1.Text = "Connection";
-            // 
-            // btExit
-            // 
-            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btExit.FlatAppearance.BorderSize = 0;
-            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExit.Image = global::Gestion_Personne.Properties.Resources.icons8_Close_40px;
-            this.btExit.Location = new System.Drawing.Point(328, 12);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(36, 29);
-            this.btExit.TabIndex = 23;
-            this.btExit.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -106,17 +95,6 @@ namespace Gestion_Personne.Modals
             this.panel5.Size = new System.Drawing.Size(283, 3);
             this.panel5.TabIndex = 41;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 181);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox4.TabIndex = 42;
-            this.pictureBox4.TabStop = false;
-            // 
             // textPass
             // 
             this.textPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -131,6 +109,8 @@ namespace Gestion_Personne.Modals
             this.textPass.TabIndex = 40;
             this.textPass.Text = "password";
             this.textPass.UseSystemPasswordChar = true;
+            this.textPass.Enter += new System.EventHandler(this.textPass_Enter);
+            this.textPass.Leave += new System.EventHandler(this.textPass_Leave);
             // 
             // panel4
             // 
@@ -141,17 +121,6 @@ namespace Gestion_Personne.Modals
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(283, 3);
             this.panel4.TabIndex = 38;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 89);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
             // 
             // textUser
             // 
@@ -166,12 +135,63 @@ namespace Gestion_Personne.Modals
             this.textUser.Size = new System.Drawing.Size(283, 32);
             this.textUser.TabIndex = 37;
             this.textUser.Text = "username";
+            this.textUser.Enter += new System.EventHandler(this.textUser_Enter);
+            this.textUser.Leave += new System.EventHandler(this.textUser_Leave);
+            // 
+            // eyes
+            // 
+            this.eyes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eyes.FlatAppearance.BorderSize = 0;
+            this.eyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
+            this.eyes.Location = new System.Drawing.Point(314, 198);
+            this.eyes.Name = "eyes";
+            this.eyes.Size = new System.Drawing.Size(36, 20);
+            this.eyes.TabIndex = 44;
+            this.eyes.UseVisualStyleBackColor = true;
+            this.eyes.Click += new System.EventHandler(this.eyes_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
+            this.pictureBox4.Location = new System.Drawing.Point(18, 181);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
+            this.pictureBox3.Location = new System.Drawing.Point(18, 89);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.FlatAppearance.BorderSize = 0;
+            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExit.Image = global::Gestion_Personne.Properties.Resources.icons8_Close_40px;
+            this.btExit.Location = new System.Drawing.Point(328, 12);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(36, 29);
+            this.btExit.TabIndex = 23;
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 341);
+            this.Controls.Add(this.eyes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.pictureBox4);
@@ -184,7 +204,9 @@ namespace Gestion_Personne.Modals
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Auth";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auth";
+            this.Load += new System.EventHandler(this.Auth_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -203,5 +225,6 @@ namespace Gestion_Personne.Modals
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textUser;
+        private System.Windows.Forms.Button eyes;
     }
 }

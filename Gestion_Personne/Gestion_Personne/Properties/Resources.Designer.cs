@@ -193,6 +193,26 @@ namespace Gestion_Personne.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_eye_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hide_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_hide_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_management_150px {
             get {
                 object obj = ResourceManager.GetObject("icons8_management_150px", resourceCulture);
@@ -306,6 +326,16 @@ namespace Gestion_Personne.Properties {
         internal static System.Drawing.Bitmap icons8_user_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_user_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Users_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Users_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
