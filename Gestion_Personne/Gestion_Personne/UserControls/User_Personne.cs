@@ -83,6 +83,22 @@ namespace Gestion_Personne.UserControls
                     mycon.Open();
                     if (mycon.State == ConnectionState.Open)
                     {
+                        tablePerson.Rows.Clear();
+                        mycmd = new MySqlCommand(sql, mycon);
+                        MySqlDataReader dataReader = mycmd.ExecuteReader();
+                        int num = 1;
+                        while (dataReader.Read())
+                        {
+                            try
+                            {
+                                tablePerson.Rows.Add(num, dataReader.GetValue(0), dataReader.GetString(3), dataReader.GetString(2), dataReader.GetString(1), dataReader.GetString(4));
+                                num++;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
 
                     }
                 }

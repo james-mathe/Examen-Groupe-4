@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Gestion_Personne.Modals.people
 {
@@ -14,6 +16,7 @@ namespace Gestion_Personne.Modals.people
     {
         private UserControl person;
         public int idP;
+        private Classes.Config config;
         public AddUpdatePerson(UserControl p)
         {
             InitializeComponent();
@@ -120,30 +123,56 @@ namespace Gestion_Personne.Modals.people
 
         private void btsavePerson_Click(object sender, EventArgs e)
         {
-            if(isEmpty() != null)
+            config = new Classes.Config();
+            SqlConnection sqlcon = config.getSqlConnection();
+            MySqlConnection mycon = config.getMySqlConnection();
+            SqlCommand sqlcmd;
+            MySqlCommand mycmd;
+            if (isEmpty() != null)
             {
                 MessageBox.Show(isEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if(titlePerson.Text == "Add Person")
+                if(config.ServerType == "Sql Server")
                 {
-                    (person as UserControls.User_Personne).tablePerson.Rows.Add(5, 8,textFirstname.Text, textLastname.Text, textname.Text, comboGender.Text);
-                    MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    try
+                    {
+                        sqlcon.Open();
+                        if(sqlcon.State == ConnectionState.Open)
+                        {
+                            if (titlePerson.Text == "Add Person")
+                            {
+
+                                (person as UserControls.User_Personne).DisplayPerson();
+                                MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (DR == DialogResult.Yes)
+                                {
+                                    MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 else
                 {
-                    DialogResult DR = MessageBox.Show("Do you Want to Update this Person??","Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                    if(DR == DialogResult.Yes)
-                    {
-                        MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
                 }
                 
             }

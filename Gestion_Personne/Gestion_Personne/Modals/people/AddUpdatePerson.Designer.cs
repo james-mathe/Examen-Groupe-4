@@ -170,8 +170,8 @@ namespace Gestion_Personne.Modals.people
             this.comboGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.comboGender.FormattingEnabled = true;
             this.comboGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
+            "M",
+            "F"});
             this.comboGender.Location = new System.Drawing.Point(67, 347);
             this.comboGender.Name = "comboGender";
             this.comboGender.Size = new System.Drawing.Size(304, 40);
