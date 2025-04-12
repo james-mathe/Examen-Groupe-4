@@ -29,8 +29,6 @@ namespace Gestion_Personne.Classes
         {
             try
             {
-                
-
                 string[] lines = File.ReadAllLines(configFilePath);
                 if (lines.Length == 4)
                 {

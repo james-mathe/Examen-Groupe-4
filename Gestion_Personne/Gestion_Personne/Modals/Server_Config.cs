@@ -144,7 +144,7 @@ namespace Gestion_Personne.Modals
                 }
                 else
                 {
-                    MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Select the valide Server", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -253,7 +253,7 @@ namespace Gestion_Personne.Modals
             }
             else
             {
-                MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Select the valide Server", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
