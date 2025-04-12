@@ -144,7 +144,7 @@ namespace Gestion_Personne.Modals
             this.eyes.FlatAppearance.BorderSize = 0;
             this.eyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
-            this.eyes.Location = new System.Drawing.Point(314, 198);
+            this.eyes.Location = new System.Drawing.Point(314, 200);
             this.eyes.Name = "eyes";
             this.eyes.Size = new System.Drawing.Size(36, 20);
             this.eyes.TabIndex = 44;

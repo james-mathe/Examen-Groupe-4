@@ -16,7 +16,7 @@ namespace Gestion_Personne.Modals
 {
     public partial class Server_Config : Form
     {
-        private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
+        private readonly string configFilePath = Application.StartupPath + @"\config.ini";
         private Form menu;
         private Config config;
         public Server_Config(Form m)
@@ -37,7 +37,7 @@ namespace Gestion_Personne.Modals
                     writer.WriteLine(textUser.Text);
                     writer.WriteLine(textPass.Text); // Crypter le mot de passe
                 }
-                MessageBox.Show("Sql Server Config saved Successfully", "Sql Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Server Config saved Successfully", "Save Config", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace Gestion_Personne.Modals
             {
                 SaveConnectionInfo();
                 this.config = new Config();
-                if (comboDatabase.Text == "Sql Server")
+                if (config.ServerType == "Sql Server")
                 {
                     this.Dispose();
                     SqlConnection sqlcon = config.getSqlConnection();
@@ -108,6 +108,36 @@ namespace Gestion_Personne.Modals
                         if (sqlcon.State == ConnectionState.Open)
                         {
                             sqlcon.Close();
+                        }
+                    }
+
+                }
+                else if (config.ServerType == "Mysql")
+                {
+                    this.Dispose();
+                    MySqlConnection mycon = config.getMySqlConnection();
+                    try
+                    {
+                        mycon.Open();
+                        if (mycon.State == ConnectionState.Open)
+                        {
+
+                            MessageBox.Show("Connected Successfully to Mysql", "Mysql Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            Auth auth = new Auth(menu);
+                            auth.ShowDialog();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error Mysql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+
+                        if (mycon.State == ConnectionState.Open)
+                        {
+                            mycon.Close();
                         }
                     }
 
@@ -220,6 +250,10 @@ namespace Gestion_Personne.Modals
                 textPass.Text = "password";
                 textPass.UseSystemPasswordChar = false;
                 textPass.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+            else
+            {
+                MessageBox.Show("Select the valide SGBD", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

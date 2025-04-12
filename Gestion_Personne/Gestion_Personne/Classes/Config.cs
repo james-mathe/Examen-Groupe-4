@@ -12,7 +12,7 @@ namespace Gestion_Personne.Classes
 {
     class Config : IConnection
     {
-        private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
+        private readonly string configFilePath = Application.StartupPath + @"\config.ini";
         public String ServerType;
         public String ServerName;
         public String Username;
@@ -42,7 +42,7 @@ namespace Gestion_Personne.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Le fichier Sqlconfig.ini est incomplet.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Le fichier config.ini est incomplet.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

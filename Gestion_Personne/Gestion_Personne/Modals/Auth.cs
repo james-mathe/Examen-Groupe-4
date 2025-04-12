@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gestion_Personne.Classes;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Gestion_Personne.Modals
 {
@@ -18,6 +19,9 @@ namespace Gestion_Personne.Modals
         private Config config;
         private SqlConnection sqlcon;
         private SqlCommand sqlcmd;
+
+        private MySqlConnection mycon;
+        private MySqlCommand mycmd;
 
         public Auth(Form m)
         {
@@ -43,37 +47,80 @@ namespace Gestion_Personne.Modals
             if(IsEmpty() == null)
             {
                 sqlcon = config.getSqlConnection();
-                
+                mycon = config.getMySqlConnection();
                 try
                 {
-                    sqlcon.Open();
-                    if(sqlcon.State == ConnectionState.Open)
+                    if(config.ServerType == "Sql Server")
                     {
-                        String sql = "select * from users where username=@user and pwd=@pwd";
-                        SqlDataReader reader;
-                        sqlcmd = new SqlCommand(sql, sqlcon);
-                        sqlcmd.Parameters.AddWithValue("@user", textUser.Text);
-                        sqlcmd.Parameters.AddWithValue("@pwd", textPass.Text);
+                        sqlcon.Open();
+                        if (sqlcon.State == ConnectionState.Open)
+                        {
+                            String sql = "select * from users where username=@user and pwd=@pwd";
+                            SqlDataReader reader;
+                            sqlcmd = new SqlCommand(sql, sqlcon);
+                            sqlcmd.Parameters.AddWithValue("@user", textUser.Text);
+                            sqlcmd.Parameters.AddWithValue("@pwd", textPass.Text);
 
-                        reader = sqlcmd.ExecuteReader();
-                        if (reader.Read())
-                        {
-                            MessageBox.Show("Welcom "+textUser.Text+"!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            (menu as Menu).DesactiveConnection();
-                            (menu as Menu).ActiveSideBarButtons();
-                            (menu as Menu).panelSetting.Visible = false;
-                            (menu as Menu).controlPanel.Visible = true;
-                            this.Close();
+                            reader = sqlcmd.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                (menu as Menu).DesactiveConnection();
+                                (menu as Menu).ActiveSideBarButtons();
+                                (menu as Menu).panelSetting.Visible = false;
+                                (menu as Menu).controlPanel.Visible = true;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Username or Password is not correct", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
-                        else
+
+                    }
+                    else
+                    {
+                        mycon.Open();
+                        if (mycon.State == ConnectionState.Open)
                         {
-                            MessageBox.Show("Username or Password is not correct", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            String sql = "select * from users where username=@user and pwd=@pwd";
+                            MySqlDataReader reader;
+                            mycmd = new MySqlCommand(sql, mycon);
+                            mycmd.Parameters.AddWithValue("@user", textUser.Text);
+                            mycmd.Parameters.AddWithValue("@pwd", textPass.Text);
+
+                            reader = mycmd.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                (menu as Menu).DesactiveConnection();
+                                (menu as Menu).ActiveSideBarButtons();
+                                (menu as Menu).panelSetting.Visible = false;
+                                (menu as Menu).controlPanel.Visible = true;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Username or Password is not correct", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
+
                     }
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if(sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
+                    }
+                    if(mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
             else
