@@ -130,6 +130,12 @@
     <Compile Include="Modals\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\people\AddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\people\AddUpdatePerson.Designer.cs">
+      <DependentUpon>AddUpdatePerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\Server_Config.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\people\AddUpdatePerson.resx">
+      <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\Server_Config.resx">
       <DependentUpon>Server_Config.cs</DependentUpon>
@@ -284,6 +293,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Users_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modals\Address\" />
+    <Folder Include="Modals\Phone\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_gender_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_name_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

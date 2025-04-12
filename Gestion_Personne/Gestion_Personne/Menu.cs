@@ -15,7 +15,7 @@ namespace Gestion_Personne
 {
     public partial class Menu : Form
     {
-        private readonly string configFilePath = Application.StartupPath + @"\Sqlconfig.ini";
+        private readonly string configFilePath = Application.StartupPath + @"\config.ini";
         private Color activeForeColor = Color.FromArgb(94, 69, 255);
         private Color activeBackColor = Color.White;
         private Color defaultForeColor = Color.White;

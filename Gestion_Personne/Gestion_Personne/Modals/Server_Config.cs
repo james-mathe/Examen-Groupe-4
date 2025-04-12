@@ -38,7 +38,6 @@ namespace Gestion_Personne.Modals
                     writer.WriteLine(textPass.Text); // Crypter le mot de passe
                 }
                 MessageBox.Show("Server Config saved Successfully", "Save Config", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
             }
             catch (Exception ex)
             {
@@ -112,7 +111,7 @@ namespace Gestion_Personne.Modals
                     }
 
                 }
-                else if (config.ServerType == "Mysql")
+                else if (config.ServerType == "MySql")
                 {
                     this.Dispose();
                     MySqlConnection mycon = config.getMySqlConnection();
