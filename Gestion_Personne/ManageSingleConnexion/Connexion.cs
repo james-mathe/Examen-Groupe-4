@@ -8,9 +8,20 @@ namespace ManageSingleConnexion
 {
     public class Connexion
     {
+        public static Connexion _instance = null;
+
+        public static Connexion GetInstance()
+        {
+            if (_instance == null)
+                _instance = new Connexion();
+            return _instance;
+        }
         public Connexion()
         {
-
+            Serveur = "votre_serveur";
+            Database = "votre_base_de_données";
+            User = "votre_utilisateur";
+            Password = "votre_mot_de_passe";
         }
 
         string _serveur = "serveur";

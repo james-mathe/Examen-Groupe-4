@@ -3,3 +3,4 @@ C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\ManageSingleConnexion\bin\Debug\
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\ManageSingleConnexion\bin\Debug\MySql.Data.dll
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.dll
 C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.csprojResolveAssemblyReference.cache
