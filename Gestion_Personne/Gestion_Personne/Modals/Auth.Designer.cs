@@ -156,9 +156,9 @@ namespace Gestion_Personne.Modals
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 181);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 181);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox4.Size = new System.Drawing.Size(51, 52);
             this.pictureBox4.TabIndex = 42;
             this.pictureBox4.TabStop = false;
             // 
@@ -167,9 +167,9 @@ namespace Gestion_Personne.Modals
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 89);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 89);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(51, 52);
             this.pictureBox3.TabIndex = 39;
             this.pictureBox3.TabStop = false;
             // 

@@ -41,12 +41,12 @@ namespace Gestion_Personne.Modals
             this.panel5 = new System.Windows.Forms.Panel();
             this.textPass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.eyes = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btExit = new System.Windows.Forms.Button();
-            this.eyes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -195,39 +195,52 @@ namespace Gestion_Personne.Modals
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // eyes
+            // 
+            this.eyes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eyes.FlatAppearance.BorderSize = 0;
+            this.eyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
+            this.eyes.Location = new System.Drawing.Point(314, 323);
+            this.eyes.Name = "eyes";
+            this.eyes.Size = new System.Drawing.Size(36, 20);
+            this.eyes.TabIndex = 45;
+            this.eyes.UseVisualStyleBackColor = true;
+            this.eyes.Click += new System.EventHandler(this.eyes_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
-            this.pictureBox4.Location = new System.Drawing.Point(19, 307);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 307);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox4.Size = new System.Drawing.Size(52, 52);
             this.pictureBox4.TabIndex = 19;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
-            this.pictureBox3.Location = new System.Drawing.Point(19, 234);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 234);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(52, 52);
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Gestion_Personne.Properties.Resources.icons8_server_50px;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 156);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 156);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(52, 52);
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_database_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 78);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(52, 52);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -243,19 +256,6 @@ namespace Gestion_Personne.Modals
             this.btExit.TabIndex = 4;
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // eyes
-            // 
-            this.eyes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.eyes.FlatAppearance.BorderSize = 0;
-            this.eyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
-            this.eyes.Location = new System.Drawing.Point(314, 323);
-            this.eyes.Name = "eyes";
-            this.eyes.Size = new System.Drawing.Size(36, 20);
-            this.eyes.TabIndex = 45;
-            this.eyes.UseVisualStyleBackColor = true;
-            this.eyes.Click += new System.EventHandler(this.eyes_Click);
             // 
             // Server_Config
             // 

@@ -203,6 +203,16 @@ namespace Gestion_Personne.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_gender_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_gender_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hide_24px {
             get {
                 object obj = ResourceManager.GetObject("icons8_hide_24px", resourceCulture);
@@ -226,6 +236,16 @@ namespace Gestion_Personne.Properties {
         internal static System.Drawing.Bitmap icons8_multiply_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_multiply_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_name_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_name_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
