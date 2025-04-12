@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gestion_Personne.Modals.people;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Gestion_Personne.UserControls
 {
@@ -15,6 +17,12 @@ namespace Gestion_Personne.UserControls
     {
         private static User_Personne person;
         public int idP;
+        private Classes.Config config;
+        private SqlConnection sqlcon;
+        private MySqlConnection mycon;
+        private SqlCommand sqlcmd;
+        private MySqlCommand mycmd;
+        
         public static User_Personne instance
         {
             get
@@ -29,6 +37,62 @@ namespace Gestion_Personne.UserControls
         public User_Personne()
         {
             InitializeComponent();
+        }
+
+        public void DisplayPerson()
+        {
+            config = new Classes.Config();
+            sqlcon = config.getSqlConnection();
+            mycon = config.getMySqlConnection();
+            String sql = "Select * from personne";
+            if (config.ServerType == "Sql Server")
+            {
+                try
+                {
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        tablePerson.Rows.Clear();
+                        sqlcmd = new SqlCommand(sql, sqlcon);
+                        SqlDataReader dataReader = sqlcmd.ExecuteReader();
+                        int num = 1;
+                        while (dataReader.Read())
+                        {
+                            try
+                            {
+                                tablePerson.Rows.Add(num, dataReader.GetValue(0), dataReader.GetString(3), dataReader.GetString(2), dataReader.GetString(1), dataReader.GetString(4));
+                                num++;
+                            }
+                            catch(Exception sqlEx)
+                            {
+                                MessageBox.Show(sqlEx.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch(SqlException sqlEx)
+                {
+                    MessageBox.Show(sqlEx.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+
+                    }
+                }
+                catch (MySqlException myEx)
+                {
+                    MessageBox.Show(myEx.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
         }
 
         private void textSearch_Enter(object sender, EventArgs e)
@@ -51,12 +115,7 @@ namespace Gestion_Personne.UserControls
 
         private void User_personne_Load(object sender, EventArgs e)
         {
-            tablePerson.Rows.Add(1, 1, "james", "mathe", "Kambale","M");
-            tablePerson.Rows.Add(2, 6, "james", "mathe", "Kambale", "M");
-            tablePerson.Rows.Add(3, 5, "james", "mathe", "Kambale", "M");
-            tablePerson.Rows.Add(4, 7, "james", "mathe", "Kambale", "M");
-            tablePerson.Rows.Add(5, 7, "james", "mathe", "Kambale", "M");
-            tablePerson.Rows.Add(6, 1, "james", "mathe", "Kambale", "M");
+            DisplayPerson();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +129,7 @@ namespace Gestion_Personne.UserControls
             if(tablePerson.Rows.Count > 0)
             {
                 AddUpdatePerson updatePerson = new AddUpdatePerson(this);
-                updatePerson.idP = (int)tablePerson.CurrentRow.Cells[1].Value;
+                updatePerson.idP = Convert.ToInt32(tablePerson.CurrentRow.Cells[1].Value);
                 updatePerson.textname.Text = tablePerson.CurrentRow.Cells[4].Value.ToString();
                 updatePerson.textLastname.Text = tablePerson.CurrentRow.Cells[3].Value.ToString();
                 updatePerson.textFirstname.Text = tablePerson.CurrentRow.Cells[2].Value.ToString();
@@ -113,6 +172,11 @@ namespace Gestion_Personne.UserControls
             {
                 MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void tablePerson_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
