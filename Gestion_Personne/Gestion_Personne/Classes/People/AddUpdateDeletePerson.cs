@@ -34,7 +34,7 @@ namespace Gestion_Personne.Classes.People
                 {
                     String sql = "";
                     sqlcmd = new SqlCommand(sql, sqlcon);
-                    sqlcmd.Parameters.AddWithValue("@", name);
+                    sqlcmd.Parameters.AddWithValue("@name", name);
 
                     if(sqlcmd.ExecuteNonQuery() > 0)
                     {
