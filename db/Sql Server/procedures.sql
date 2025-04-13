@@ -16,11 +16,17 @@ as
 begin
 	update personne set nom=@nom,postnom=@pnom,prenom=@prnom,sexe=@sex where idP=@id
 end
+go
 -- procedure for searching personne
 
+create or alter proc SearchPerson @nom varchar(250),@pnom varchar(250),@prnom varchar(250),@sex char(1)
+as
+begin
+	select * from personne  where nom like '%'+@nom+'%' or postnom like '%'+@pnom+'%' or prenom like '%'+@prnom+'%' or sexe like '%'+@sex+'%'
+end
 -- procedure for deleting personne
 
 
-exec UpdatePerson 2,'Kahindo','mathe','yvone','F'
+--exec UpdatePerson 2,'Kahindo','mathe','yvone','F'
 
 select * from personne
