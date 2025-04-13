@@ -3,7 +3,7 @@ use g_personne
 go
 -- procedure for inserting personne
 
-create or alter proc addPerson @nom varchar(250),@pnom varchar(250),@prnom varchar(250),@sex char(1)
+create or alter proc AddPerson @nom varchar(250),@pnom varchar(250),@prnom varchar(250),@sex char(1)
 as
 begin
 	insert into personne(nom,postnom,prenom,sexe) values(@nom,@pnom,@prnom,@sex)
@@ -24,9 +24,16 @@ as
 begin
 	select * from personne  where nom like '%'+@nom+'%' or postnom like '%'+@pnom+'%' or prenom like '%'+@prnom+'%' or sexe like '%'+@sex+'%'
 end
+go
 -- procedure for deleting personne
 
+create or alter proc DeletePerson @id bigint
+as
+begin
+	delete from personne  where idP=@id
+end
 
---exec UpdatePerson 2,'Kahindo','mathe','yvone','F'
+exec DeletePerson 3
+exec addPerson 'jhj','jhjh','rtrt','F'
 
 select * from personne
