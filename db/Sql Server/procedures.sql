@@ -32,8 +32,3 @@ as
 begin
 	delete from personne  where idP=@id
 end
-
-exec DeletePerson 3
-exec addPerson 'jhj','jhjh','rtrt','F'
-
-select * from personne
