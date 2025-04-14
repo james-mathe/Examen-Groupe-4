@@ -66,10 +66,10 @@ go
 
 -- procedure for searching users
 
-create or alter proc SearchUser @user varchar(250)
+create or alter proc SearchUser @username varchar(250)
 as
 begin
-	select * from users where username like '%'+@user+'%'
+	select * from users where username like '%'+@username+'%'
 end
 go
 
