@@ -75,6 +75,13 @@ go
 
 -- procedure for deleting users
 
+create or alter proc DeleteUser @id bigint
+as
+begin
+	delete from users where idU=@id
+end
+go
+
 
 -- ==================== END USER PROCEDURE==========================================
 
