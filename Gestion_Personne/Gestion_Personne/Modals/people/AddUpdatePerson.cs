@@ -143,10 +143,17 @@ namespace Gestion_Personne.Modals.people
                         {
                             if (titlePerson.Text == "Add Person")
                             {
-
-                                (person as UserControls.User_Personne).DisplayPerson();
-                                MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                Classes.People.AddUpdateDeletePerson add = new Classes.People.AddUpdateDeletePerson();
+                                if(add.addPersonSql(textname.Text,textLastname.Text,textFirstname.Text,Convert.ToChar(comboGender.Text)) == true)
+                                {
+                                    (person as UserControls.User_Personne).DisplayPerson();
+                                    MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error Adding Person", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                             else
                             {
