@@ -48,10 +48,10 @@ go
 
 -- procedure for inserting users
 
-create or alter proc AddUser @user varchar(250),@pwd varchar(250)
+create or alter proc AddUser @username varchar(250),@pwd varchar(250)
 as
 begin
-	insert into users(username,pwd) values(@user,@pwd)
+	insert into users(username,pwd) values(@username,@pwd)
 end
 go
 
