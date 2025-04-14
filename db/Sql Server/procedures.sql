@@ -48,6 +48,13 @@ go
 
 -- procedure for inserting users
 
+create or alter proc AddUser @user varchar(250),@pwd varchar(250)
+as
+begin
+	insert into users(username,pwd) values(@user,@pwd)
+end
+go
+
 -- procedure for updating users
 
 -- procedure for searching users
