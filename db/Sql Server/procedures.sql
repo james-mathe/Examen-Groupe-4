@@ -57,10 +57,10 @@ go
 
 -- procedure for updating users
 
-create or alter proc UpdateUser @id bigint,@user varchar(250),@pwd varchar(250)
+create or alter proc UpdateUser @id bigint,@username varchar(250),@pwd varchar(250)
 as
 begin
-	Update users set username=@user,pwd=@pwd where idU=@id
+	Update users set username=@username,pwd=@pwd where idU=@id
 end
 go
 
