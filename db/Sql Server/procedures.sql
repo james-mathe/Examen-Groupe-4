@@ -57,6 +57,13 @@ go
 
 -- procedure for updating users
 
+create or alter proc UpdateUser @id bigint,@user varchar(250),@pwd varchar(250)
+as
+begin
+	Update users set username=@user,pwd=@pwd where idU=@id
+end
+go
+
 -- procedure for searching users
 
 -- procedure for deleting users
