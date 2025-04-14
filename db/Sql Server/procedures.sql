@@ -66,6 +66,13 @@ go
 
 -- procedure for searching users
 
+create or alter proc SearchUser @user varchar(250)
+as
+begin
+	select * from users where username like '%'+@user+'%'
+end
+go
+
 -- procedure for deleting users
 
 
