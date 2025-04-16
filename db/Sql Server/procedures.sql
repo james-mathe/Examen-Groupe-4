@@ -91,11 +91,39 @@ go
 
 -- procedure for inserting telephone
 
+create or alter proc AddPhone @idP bigint,@initial varchar(4),@num varchar(9)
+as
+begin
+	insert into telephone(idP,initial,numero) values(@idP,@initial,@num)
+end
+go
+
 -- procedure for updating telephone
+
+create or alter proc UpdatePhone @idT bigint,@idP bigint,@initial varchar(4),@num varchar(9)
+as
+begin
+	update telephone set idP=@idP,initial=@initial,numero=@num where idT=@idT
+end
+go
 
 -- procedure for searching telephone
 
+create or alter proc SearchPhone @initial varchar(4),@num varchar(9)
+as
+begin
+	select * from telephone where initial like '%'+@initial+'%' or numero like '%'+@num+'%' 
+end
+go
+
 -- procedure for deleting telephone
+
+create or alter proc DeletePhone @idT bigint
+as
+begin
+	delete from telephone where idT=@idT
+end
+go
 
 
 -- ==================== END TELEPHONE PROCEDURE==========================================
@@ -106,11 +134,39 @@ go
 
 -- procedure for inserting adresse
 
+create or alter proc AddAddress @idP bigint,@av varchar(250),@qua varchar(250),@com varchar(250),@ville varchar(250),@pays varchar(250)
+as
+begin
+	insert into adresse(idP,avenue,quartier,commune,ville,pays) values(@idP,@av,@qua,@com,@ville,@pays)
+end
+go
+
 -- procedure for updating adresse
+
+create or alter proc UpdateAddress @idA bigint,@idP bigint,@av varchar(250),@qua varchar(250),@com varchar(250),@ville varchar(250),@pays varchar(250)
+as
+begin
+	update adresse set idP=@idP,avenue=@av,quartier=@qua,commune=@com,ville=@ville,pays=@pays where idA=@idA
+end
+go
 
 -- procedure for searching adresse
 
+create or alter proc SearchAddress @av varchar(250),@qua varchar(250),@com varchar(250),@ville varchar(250),@pays varchar(250)
+as
+begin
+	select * from adresse where avenue like '%'+@av+'%' or quartier like '%'+@qua+'%' or commune like '%'+@com+'%' or ville like '%'+@ville+'%' or  pays like '%'+@pays+'%'
+end
+go
+
 -- procedure for deleting adresse
+
+create or alter proc DeleteAddress @idA bigint
+as
+begin
+	delete from adresse  where idA=@idA
+end
+go
 
 
 -- ==================== END ADDRESS PROCEDURE==========================================
