@@ -39,16 +39,16 @@ namespace Gestion_Personne.UserControls
             this.panel3 = new System.Windows.Forms.Panel();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.tablePerson = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablePerson)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@ namespace Gestion_Personne.UserControls
             this.textSearch.TabIndex = 26;
             this.textSearch.Text = "Search";
             this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
             this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
             // 
@@ -165,6 +166,44 @@ namespace Gestion_Personne.UserControls
             this.tablePerson.Size = new System.Drawing.Size(969, 368);
             this.tablePerson.TabIndex = 28;
             this.tablePerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablePerson_CellContentClick);
+            // 
+            // num
+            // 
+            this.num.FillWeight = 25F;
+            this.num.HeaderText = "#";
+            this.num.Name = "num";
+            this.num.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // fName
+            // 
+            this.fName.HeaderText = "First-Name";
+            this.fName.Name = "fName";
+            this.fName.ReadOnly = true;
+            // 
+            // LName
+            // 
+            this.LName.HeaderText = "Last-Name";
+            this.LName.Name = "LName";
+            this.LName.ReadOnly = true;
+            // 
+            // nam
+            // 
+            this.nam.HeaderText = "Name";
+            this.nam.Name = "nam";
+            this.nam.ReadOnly = true;
+            // 
+            // sex
+            // 
+            this.sex.HeaderText = "Sex";
+            this.sex.Name = "sex";
+            this.sex.ReadOnly = true;
             // 
             // button4
             // 
@@ -239,44 +278,6 @@ namespace Gestion_Personne.UserControls
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // num
-            // 
-            this.num.FillWeight = 25F;
-            this.num.HeaderText = "#";
-            this.num.Name = "num";
-            this.num.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // fName
-            // 
-            this.fName.HeaderText = "First-Name";
-            this.fName.Name = "fName";
-            this.fName.ReadOnly = true;
-            // 
-            // LName
-            // 
-            this.LName.HeaderText = "Last-Name";
-            this.LName.Name = "LName";
-            this.LName.ReadOnly = true;
-            // 
-            // nam
-            // 
-            this.nam.HeaderText = "Name";
-            this.nam.Name = "nam";
-            this.nam.ReadOnly = true;
-            // 
-            // sex
-            // 
-            this.sex.HeaderText = "Sex";
-            this.sex.Name = "sex";
-            this.sex.ReadOnly = true;
             // 
             // User_Personne
             // 

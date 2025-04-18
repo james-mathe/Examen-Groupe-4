@@ -40,12 +40,13 @@ namespace Gestion_Personne.UserControls
             InitializeComponent();
         }
 
-        public void DisplayPerson()
+        public void DisplayPerson(String text)
         {
             config = new Classes.Config();
             sqlcon = config.getSqlConnection();
             mycon = config.getMySqlConnection();
-            String sql = "Select * from personne";
+            String proc = "SearchPerson";
+            String sql = "Select * from personne where nom like '%'+@nom+'%' or postnom like '%'+@pnom+'%' or prenom like '%'+@prnom+'%' or sexe like '%'+@sex+'%'";
             if (config.ServerType == "Sql Server")
             {
                 try
@@ -54,7 +55,16 @@ namespace Gestion_Personne.UserControls
                     if (sqlcon.State == ConnectionState.Open)
                     {
                         tablePerson.Rows.Clear();
-                        sqlcmd = new SqlCommand(sql, sqlcon);
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        //sqlcmd.Parameters.AddWithValue("@nom", text);
+                        //sqlcmd.Parameters.AddWithValue("@pnom", text);
+                        //sqlcmd.Parameters.AddWithValue("@prnom", text);
+                        //sqlcmd.Parameters.AddWithValue("@sex", text);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@nom", SqlDbType.VarChar, 250)).Value = text;
+                        sqlcmd.Parameters.Add(new SqlParameter("@pnom", SqlDbType.VarChar, 250)).Value = text;
+                        sqlcmd.Parameters.Add(new SqlParameter("@prnom", SqlDbType.VarChar, 250)).Value = text;
+                        sqlcmd.Parameters.Add(new SqlParameter("@sex", SqlDbType.VarChar, 250)).Value = text;
                         SqlDataReader dataReader = sqlcmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
@@ -69,6 +79,7 @@ namespace Gestion_Personne.UserControls
                                 MessageBox.Show(sqlEx.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        dataReader.Close();
                     }
                 }
                 catch(SqlException sqlEx)
@@ -100,6 +111,7 @@ namespace Gestion_Personne.UserControls
                                 MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        dataReader.Close();
 
                     }
                 }
@@ -132,7 +144,7 @@ namespace Gestion_Personne.UserControls
 
         private void User_personne_Load(object sender, EventArgs e)
         {
-            DisplayPerson();
+            DisplayPerson("");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -183,7 +195,7 @@ namespace Gestion_Personne.UserControls
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
-                        DisplayPerson();
+                        DisplayPerson("");
                         MessageBox.Show("Person and phone number Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -198,7 +210,7 @@ namespace Gestion_Personne.UserControls
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
-                        DisplayPerson();
+                        DisplayPerson("");
                         MessageBox.Show("Person and Address Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -213,7 +225,7 @@ namespace Gestion_Personne.UserControls
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
-                        DisplayPerson();
+                        DisplayPerson("");
                         MessageBox.Show("Person Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -233,6 +245,24 @@ namespace Gestion_Personne.UserControls
         private void tablePerson_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            SqlDataReader dataReader;
+            if (textSearch.Text == "" || textSearch.Text == "Search")
+            {
+                DisplayPerson("");
+            }
+            else
+            {
+                tablePerson.Rows.Clear();
+                if (config.ServerType == "Sql Server")
+                {
+                    DisplayPerson(textSearch.Text);
+
+                }
+            }
         }
     }
 }

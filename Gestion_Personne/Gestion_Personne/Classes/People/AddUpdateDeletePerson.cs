@@ -51,6 +51,13 @@ namespace Gestion_Personne.Classes.People
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                {
+                    sqlcon.Close();
+                }
+            }
             return saved;
 
         }
@@ -83,6 +90,13 @@ namespace Gestion_Personne.Classes.People
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                {
+                    sqlcon.Close();
+                }
+            }
             return saved;
 
         }
@@ -111,6 +125,13 @@ namespace Gestion_Personne.Classes.People
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                {
+                    sqlcon.Close();
+                }
+            }
             return saved;
 
         }
@@ -138,7 +159,14 @@ namespace Gestion_Personne.Classes.People
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return 0;
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                {
+                    sqlcon.Close();
+                }
+            }
+            return totPhone;
         }
         public int selectAddressByIdsql(int idP)
         {
@@ -164,7 +192,14 @@ namespace Gestion_Personne.Classes.People
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return 0;
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                {
+                    sqlcon.Close();
+                }
+            }
+            return totaddress;
         }
     }
 }

@@ -148,7 +148,7 @@ namespace Gestion_Personne.Modals.people
                                 Classes.People.AddUpdateDeletePerson sqladd = new Classes.People.AddUpdateDeletePerson();
                                 if(sqladd.addPersonSql(textname.Text,textLastname.Text,textFirstname.Text,Convert.ToChar(comboGender.Text)) == true)
                                 {
-                                    (person as UserControls.User_Personne).DisplayPerson();
+                                    (person as UserControls.User_Personne).DisplayPerson("");
                                     MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
@@ -165,7 +165,7 @@ namespace Gestion_Personne.Modals.people
                                 {
                                     if(sqlupdate.updatePersonSql(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
                                     {
-                                        (person as UserControls.User_Personne).DisplayPerson();
+                                        (person as UserControls.User_Personne).DisplayPerson("");
                                         MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         this.Close();
                                     }
