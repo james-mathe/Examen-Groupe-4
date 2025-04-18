@@ -22,7 +22,8 @@ namespace Gestion_Personne.UserControls
         private MySqlConnection mycon;
         private SqlCommand sqlcmd;
         private MySqlCommand mycmd;
-        
+        private DialogResult Dr;
+
         public static User_Personne instance
         {
             get
@@ -172,16 +173,54 @@ namespace Gestion_Personne.UserControls
             if (tablePerson.Rows.Count > 0)
             {
                 
-                idP = (int)tablePerson.CurrentRow.Cells[1].Value;
-                Classes.People.AddUpdateDeletePerson deletesql = new Classes.People.AddUpdateDeletePerson();
-                DialogResult DR = MessageBox.Show("Do you Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DR == DialogResult.Yes)
+                idP = Convert.ToInt32(tablePerson.CurrentRow.Cells[1].Value);
+                Classes.People.AddUpdateDeletePerson sqldelete = new Classes.People.AddUpdateDeletePerson();
+                int numtel = sqldelete.selectPhoneByIdsql(1);
+                int numaddres = sqldelete.selectAddressByIdsql(1);
+                if(numtel > 0 && numaddres == 0)
                 {
-                    MessageBox.Show("Person Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dr = MessageBox.Show("This Persone has " + numtel + " phone number. Do you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        sqldelete.deletePersonSql(idP);
+                        DisplayPerson();
+                        MessageBox.Show("Person and phone number Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else if(numtel == 0 && numaddres > 0)
+                {
+                    Dr = MessageBox.Show("This Persone has " + numaddres + " Address. Do you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        sqldelete.deletePersonSql(idP);
+                        DisplayPerson();
+                        MessageBox.Show("Person and Address Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dr = MessageBox.Show("Do you Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        sqldelete.deletePersonSql(idP);
+                        DisplayPerson();
+                        MessageBox.Show("Person Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
 
             }

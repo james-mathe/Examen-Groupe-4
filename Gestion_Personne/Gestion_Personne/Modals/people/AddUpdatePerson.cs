@@ -145,8 +145,8 @@ namespace Gestion_Personne.Modals.people
                         {
                             if (titlePerson.Text == "Add Person")
                             {
-                                Classes.People.AddUpdateDeletePerson add = new Classes.People.AddUpdateDeletePerson();
-                                if(add.addPersonSql(textname.Text,textLastname.Text,textFirstname.Text,Convert.ToChar(comboGender.Text)) == true)
+                                Classes.People.AddUpdateDeletePerson sqladd = new Classes.People.AddUpdateDeletePerson();
+                                if(sqladd.addPersonSql(textname.Text,textLastname.Text,textFirstname.Text,Convert.ToChar(comboGender.Text)) == true)
                                 {
                                     (person as UserControls.User_Personne).DisplayPerson();
                                     MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -159,11 +159,11 @@ namespace Gestion_Personne.Modals.people
                             }
                             else
                             {
-                                Classes.People.AddUpdateDeletePerson update = new Classes.People.AddUpdateDeletePerson();
+                                Classes.People.AddUpdateDeletePerson sqlupdate = new Classes.People.AddUpdateDeletePerson();
                                 DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (DR == DialogResult.Yes)
                                 {
-                                    if(update.updatePersonSql(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
+                                    if(sqlupdate.updatePersonSql(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
                                     {
                                         (person as UserControls.User_Personne).DisplayPerson();
                                         MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
