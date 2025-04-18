@@ -46,7 +46,6 @@ namespace Gestion_Personne.UserControls
             sqlcon = config.getSqlConnection();
             mycon = config.getMySqlConnection();
             String proc = "SearchPerson";
-            String sql = "Select * from personne where nom like '%'+@nom+'%' or postnom like '%'+@pnom+'%' or prenom like '%'+@prnom+'%' or sexe like '%'+@sex+'%'";
             if (config.ServerType == "Sql Server")
             {
                 try
@@ -56,10 +55,6 @@ namespace Gestion_Personne.UserControls
                     {
                         tablePerson.Rows.Clear();
                         sqlcmd = new SqlCommand(proc, sqlcon);
-                        //sqlcmd.Parameters.AddWithValue("@nom", text);
-                        //sqlcmd.Parameters.AddWithValue("@pnom", text);
-                        //sqlcmd.Parameters.AddWithValue("@prnom", text);
-                        //sqlcmd.Parameters.AddWithValue("@sex", text);
                         sqlcmd.CommandType = CommandType.StoredProcedure;
                         sqlcmd.Parameters.Add(new SqlParameter("@nom", SqlDbType.VarChar, 250)).Value = text;
                         sqlcmd.Parameters.Add(new SqlParameter("@pnom", SqlDbType.VarChar, 250)).Value = text;
@@ -96,7 +91,7 @@ namespace Gestion_Personne.UserControls
                     if (mycon.State == ConnectionState.Open)
                     {
                         tablePerson.Rows.Clear();
-                        mycmd = new MySqlCommand(sql, mycon);
+                        mycmd = new MySqlCommand(proc, mycon);
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
@@ -249,7 +244,6 @@ namespace Gestion_Personne.UserControls
 
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            SqlDataReader dataReader;
             if (textSearch.Text == "" || textSearch.Text == "Search")
             {
                 DisplayPerson("");
