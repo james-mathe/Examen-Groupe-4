@@ -173,6 +173,7 @@ namespace Gestion_Personne.UserControls
             {
                 
                 idP = (int)tablePerson.CurrentRow.Cells[1].Value;
+                Classes.People.AddUpdateDeletePerson deletesql = new Classes.People.AddUpdateDeletePerson();
                 DialogResult DR = MessageBox.Show("Do you Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DR == DialogResult.Yes)
                 {
