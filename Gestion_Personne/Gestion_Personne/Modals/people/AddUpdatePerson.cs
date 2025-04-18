@@ -159,12 +159,21 @@ namespace Gestion_Personne.Modals.people
                             }
                             else
                             {
-                                
+                                Classes.People.AddUpdateDeletePerson update = new Classes.People.AddUpdateDeletePerson();
                                 DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (DR == DialogResult.Yes)
                                 {
-                                    MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
+                                    if(update.updatePersonSql(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
+                                    {
+                                        (person as UserControls.User_Personne).DisplayPerson();
+                                        MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error Updated Person", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        this.Close();
+                                    }
                                 }
                                 else
                                 {
