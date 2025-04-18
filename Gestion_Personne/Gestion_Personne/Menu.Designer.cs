@@ -32,24 +32,24 @@ namespace Gestion_Personne
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.controlPanel = new System.Windows.Forms.Panel();
-            this.btDecon = new System.Windows.Forms.Button();
-            this.btCon = new System.Windows.Forms.Button();
             this.btUsers = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btPhone = new System.Windows.Forms.Button();
             this.btPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.btDecon = new System.Windows.Forms.Button();
+            this.btCon = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.controlPanel = new System.Windows.Forms.Panel();
             this.btMin = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btSettings = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSetting.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,82 +75,6 @@ namespace Gestion_Personne
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 696);
             this.panel2.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestion";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // panelSetting
-            // 
-            this.panelSetting.BackColor = System.Drawing.Color.White;
-            this.panelSetting.Controls.Add(this.btDecon);
-            this.panelSetting.Controls.Add(this.btCon);
-            this.panelSetting.Location = new System.Drawing.Point(276, 16);
-            this.panelSetting.Name = "panelSetting";
-            this.panelSetting.Size = new System.Drawing.Size(309, 117);
-            this.panelSetting.TabIndex = 6;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.controlPanel);
-            this.mainPanel.Location = new System.Drawing.Point(201, 84);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(975, 622);
-            this.mainPanel.TabIndex = 7;
-            // 
-            // controlPanel
-            // 
-            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlPanel.Location = new System.Drawing.Point(0, 0);
-            this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(975, 622);
-            this.controlPanel.TabIndex = 8;
-            // 
-            // btDecon
-            // 
-            this.btDecon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDecon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btDecon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDecon.ForeColor = System.Drawing.Color.Red;
-            this.btDecon.Image = global::Gestion_Personne.Properties.Resources.icons8_disconnected_50px;
-            this.btDecon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDecon.Location = new System.Drawing.Point(3, 60);
-            this.btDecon.Name = "btDecon";
-            this.btDecon.Size = new System.Drawing.Size(303, 52);
-            this.btDecon.TabIndex = 8;
-            this.btDecon.Text = "        Deconnection";
-            this.btDecon.UseVisualStyleBackColor = true;
-            this.btDecon.Click += new System.EventHandler(this.btDecon_Click);
-            // 
-            // btCon
-            // 
-            this.btCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCon.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btCon.FlatAppearance.BorderSize = 2;
-            this.btCon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCon.ForeColor = System.Drawing.Color.Green;
-            this.btCon.Image = global::Gestion_Personne.Properties.Resources.icons8_connected_50px;
-            this.btCon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCon.Location = new System.Drawing.Point(3, 5);
-            this.btCon.Name = "btCon";
-            this.btCon.Size = new System.Drawing.Size(303, 52);
-            this.btCon.TabIndex = 7;
-            this.btCon.Text = "        Connection";
-            this.btCon.UseVisualStyleBackColor = true;
-            this.btCon.Click += new System.EventHandler(this.btCon_Click);
             // 
             // btUsers
             // 
@@ -231,6 +155,82 @@ namespace Gestion_Personne
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(37, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestion";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // panelSetting
+            // 
+            this.panelSetting.BackColor = System.Drawing.Color.White;
+            this.panelSetting.Controls.Add(this.btDecon);
+            this.panelSetting.Controls.Add(this.btCon);
+            this.panelSetting.Location = new System.Drawing.Point(276, 16);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(309, 117);
+            this.panelSetting.TabIndex = 6;
+            // 
+            // btDecon
+            // 
+            this.btDecon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDecon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btDecon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDecon.ForeColor = System.Drawing.Color.Red;
+            this.btDecon.Image = global::Gestion_Personne.Properties.Resources.icons8_disconnected_50px;
+            this.btDecon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDecon.Location = new System.Drawing.Point(3, 60);
+            this.btDecon.Name = "btDecon";
+            this.btDecon.Size = new System.Drawing.Size(303, 52);
+            this.btDecon.TabIndex = 8;
+            this.btDecon.Text = "        Deconnection";
+            this.btDecon.UseVisualStyleBackColor = true;
+            this.btDecon.Click += new System.EventHandler(this.btDecon_Click);
+            // 
+            // btCon
+            // 
+            this.btCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCon.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btCon.FlatAppearance.BorderSize = 2;
+            this.btCon.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCon.ForeColor = System.Drawing.Color.Green;
+            this.btCon.Image = global::Gestion_Personne.Properties.Resources.icons8_connected_50px;
+            this.btCon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCon.Location = new System.Drawing.Point(3, 5);
+            this.btCon.Name = "btCon";
+            this.btCon.Size = new System.Drawing.Size(303, 52);
+            this.btCon.TabIndex = 7;
+            this.btCon.Text = "        Connection";
+            this.btCon.UseVisualStyleBackColor = true;
+            this.btCon.Click += new System.EventHandler(this.btCon_Click);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.controlPanel);
+            this.mainPanel.Location = new System.Drawing.Point(201, 84);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(975, 622);
+            this.mainPanel.TabIndex = 7;
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlPanel.Location = new System.Drawing.Point(0, 0);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(975, 622);
+            this.controlPanel.TabIndex = 8;
+            // 
             // btMin
             // 
             this.btMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -290,9 +290,9 @@ namespace Gestion_Personne
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSetting.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

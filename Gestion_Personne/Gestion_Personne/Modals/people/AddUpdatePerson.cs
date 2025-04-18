@@ -128,6 +128,8 @@ namespace Gestion_Personne.Modals.people
             MySqlConnection mycon = config.getMySqlConnection();
             SqlCommand sqlcmd;
             MySqlCommand mycmd;
+            String sql = "select * from telephone where idT='"+idP;
+            sqlcmd = new SqlCommand(sql, sqlcon);
             if (isEmpty() != null)
             {
                 MessageBox.Show(isEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -157,6 +159,7 @@ namespace Gestion_Personne.Modals.people
                             }
                             else
                             {
+                                
                                 DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (DR == DialogResult.Yes)
                                 {
