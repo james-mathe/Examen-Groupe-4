@@ -92,6 +92,11 @@ namespace Gestion_Personne.UserControls
                     {
                         tablePerson.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@pnom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@prnom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@sex", MySqlDbType.VarChar, 250)).Value = text;
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
