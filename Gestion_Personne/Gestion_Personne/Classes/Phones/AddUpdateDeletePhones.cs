@@ -12,7 +12,7 @@ namespace Gestion_Personne.Classes.Phones
 {
     class AddUpdateDeletePhones
     {
-        private Config db;
+        private Config db = new Config();
         private SqlConnection sqlcon;
         private MySqlConnection mycon;
         private SqlCommand sqlcmd;

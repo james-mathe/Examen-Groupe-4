@@ -137,6 +137,12 @@
     <Compile Include="Modals\people\AddUpdatePerson.Designer.cs">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\Phones\AddUpdatePhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\Phones\AddUpdatePhone.Designer.cs">
+      <DependentUpon>AddUpdatePhone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\Server_Config.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\people\AddUpdatePerson.resx">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Phones\AddUpdatePhone.resx">
+      <DependentUpon>AddUpdatePhone.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\Server_Config.resx">
       <DependentUpon>Server_Config.cs</DependentUpon>
@@ -296,8 +305,7 @@
     <None Include="Resources\icons8_Users_50px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modals\Address\" />
-    <Folder Include="Modals\Phone\" />
+    <None Include="Resources\icons8_phone_50px.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_gender_50px.png" />
@@ -310,6 +318,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_delete_file_45px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_country_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

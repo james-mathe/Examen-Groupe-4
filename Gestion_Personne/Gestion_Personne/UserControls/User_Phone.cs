@@ -15,7 +15,7 @@ namespace Gestion_Personne.UserControls
     public partial class User_Phone : UserControl
     {
         private static User_Phone phone;
-        public int idP;
+        public int idT;
         private Classes.Config config;
         private SqlConnection sqlcon;
         private MySqlConnection mycon;
@@ -151,6 +151,60 @@ namespace Gestion_Personne.UserControls
             {
                 tablePhone.Rows.Clear();
                 DisplayPhone(textSearch.Text);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Modals.Phones.AddUpdatePhone addModal = new Modals.Phones.AddUpdatePhone(this);
+            addModal.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(tablePhone.Rows.Count > 0)
+            {
+                Modals.Phones.AddUpdatePhone update = new Modals.Phones.AddUpdatePhone(this);
+                update.idT = Convert.ToInt32(tablePhone.CurrentRow.Cells[1].Value);
+                update.idP = Convert.ToInt32(tablePhone.CurrentRow.Cells[2].Value);
+                update.textfullname.Text = tablePhone.CurrentRow.Cells[3].Value.ToString();
+                update.textinitial.Text = tablePhone.CurrentRow.Cells[4].Value.ToString();
+                update.textnumber.Text = tablePhone.CurrentRow.Cells[5].Value.ToString();
+
+                update.textinitial.ForeColor = Color.DimGray;
+                update.textnumber.ForeColor = Color.DimGray;
+                update.titlePhone.Text = "Update Number";
+                update.btsavePhone.Text = "Update";
+                update.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(tablePhone.Rows.Count > 0)
+            {
+                Classes.Phones.AddUpdateDeletePhones delete = new Classes.Phones.AddUpdateDeletePhones();
+                idT = Convert.ToInt32(tablePhone.CurrentRow.Cells[1].Value);
+                Dr = MessageBox.Show("Do you Want to Delete this Phone Number??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Dr == DialogResult.Yes)
+                {
+
+                    delete.DeletePhoneSql(idT);
+                    DisplayPhone("");
+                    MessageBox.Show("Phone Number Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

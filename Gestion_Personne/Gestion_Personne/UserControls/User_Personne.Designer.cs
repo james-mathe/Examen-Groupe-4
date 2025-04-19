@@ -116,7 +116,7 @@ namespace Gestion_Personne.UserControls
             // 
             this.tablePerson.AllowUserToAddRows = false;
             this.tablePerson.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             this.tablePerson.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
