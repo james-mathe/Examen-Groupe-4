@@ -1,9 +1,0 @@
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\TestConsole.exe.config
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\TestConsole.exe
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\TestConsole.pdb
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\obj\Debug\TestConsole.exe
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\obj\Debug\TestConsole.pdb
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\ManageSingleConnexion.dll
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\MySql.Data.dll
-C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\TestConsole\bin\Debug\ManageSingleConnexion.pdb
