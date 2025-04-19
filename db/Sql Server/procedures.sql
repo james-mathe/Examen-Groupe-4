@@ -100,10 +100,10 @@ go
 
 -- procedure for updating telephone
 
-create or alter proc UpdatePhone @idT bigint,@idP bigint,@initial varchar(4),@num varchar(9)
+create or alter proc UpdatePhone @idT bigint,@idP bigint,@initial varchar(4),@numero varchar(9)
 as
 begin
-	update telephone set idP=@idP,initial=@initial,numero=@num where idT=@idT
+	update telephone set idP=@idP,initial=@initial,numero=@numero where idT=@idT
 end
 go
 
