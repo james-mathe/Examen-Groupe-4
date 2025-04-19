@@ -29,17 +29,16 @@ create table telephone
 	numero varchar(9) not null
 )
 go
---  to Create a View for the personne and telephone
-create view listPersonNumber as
-select t.idT,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero from telephone as t
-inner join personne as p on t.idP = p.idP
-
-go
 
 alter table telephone add constraint pk_T primary key(idT)
 -- to create a foreign key to link the IdP from telephone to the primary key 'idP' of Personne and will be deleted if the premary key was
 alter table telephone add constraint fk_T_P foreign key(idP) references personne(idP) on delete cascade
 
+go
+--  to Create a View for the personne and telephone
+create or alter view listPersonNumber as
+select t.idT,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero from telephone as t
+inner join personne as p on t.idP = p.idP
 go
 
 create table adresse
@@ -56,6 +55,12 @@ go
 
 alter table adresse add constraint pk_A primary key(idA)
 alter table adresse add constraint fk_A_P foreign key(idP) references personne(idP) on delete cascade
+
+go
+-- create a view for the personne and address
+create or alter view listPersonAddress as
+select a.idA,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,a.avenue,a.quartier,a.ville,a.commune,a.pays from adresse as a
+inner join personne as p on a.idP = p.idP
 
 go
 
