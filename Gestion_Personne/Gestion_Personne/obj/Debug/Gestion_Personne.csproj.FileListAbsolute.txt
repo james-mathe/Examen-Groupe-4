@@ -47,3 +47,5 @@ C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.people.AddUpdatePerson.resources
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.AssemblyReference.cache
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.Phones.AddUpdatePhone.resources
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.Modals.Address.AddUpdateAddress.resources
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.UserControls.User_Address.resources

@@ -207,5 +207,10 @@ namespace Gestion_Personne.UserControls
                 MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DisplayPhone("");
+        }
     }
 }

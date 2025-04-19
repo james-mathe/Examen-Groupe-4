@@ -34,17 +34,18 @@ namespace Gestion_Personne.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablePhone = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textSearch = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.init = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -93,7 +94,7 @@ namespace Gestion_Personne.UserControls
             this.tablePhone.DefaultCellStyle = dataGridViewCellStyle3;
             this.tablePhone.EnableHeadersVisualStyles = false;
             this.tablePhone.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.tablePhone.Location = new System.Drawing.Point(3, 187);
+            this.tablePhone.Location = new System.Drawing.Point(3, 185);
             this.tablePhone.MultiSelect = false;
             this.tablePhone.Name = "tablePhone";
             this.tablePhone.ReadOnly = true;
@@ -107,66 +108,6 @@ namespace Gestion_Personne.UserControls
             this.tablePhone.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tablePhone.Size = new System.Drawing.Size(969, 368);
             this.tablePhone.TabIndex = 38;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(211, 168);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(516, 3);
-            this.panel3.TabIndex = 37;
-            // 
-            // textSearch
-            // 
-            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textSearch.BackColor = System.Drawing.Color.White;
-            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(211, 134);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(516, 32);
-            this.textSearch.TabIndex = 36;
-            this.textSearch.Text = "Search";
-            this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
-            this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
-            this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(3, 178);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(969, 3);
-            this.panel2.TabIndex = 35;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 125);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 3);
-            this.panel1.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(427, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 40);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Phones";
             // 
             // num
             // 
@@ -207,6 +148,84 @@ namespace Gestion_Personne.UserControls
             this.Pnum.Name = "Pnum";
             this.Pnum.ReadOnly = true;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(211, 166);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(516, 3);
+            this.panel3.TabIndex = 37;
+            // 
+            // textSearch
+            // 
+            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textSearch.BackColor = System.Drawing.Color.White;
+            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.textSearch.Location = new System.Drawing.Point(211, 132);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(516, 32);
+            this.textSearch.TabIndex = 36;
+            this.textSearch.Text = "Search";
+            this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
+            this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
+            this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(3, 176);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(969, 3);
+            this.panel2.TabIndex = 35;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(3, 123);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(969, 3);
+            this.panel1.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(427, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 40);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Phones";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 130);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(181, 41);
+            this.button5.TabIndex = 40;
+            this.button5.Text = "Refresh";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -218,7 +237,7 @@ namespace Gestion_Personne.UserControls
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button4.Image = global::Gestion_Personne.Properties.Resources.icons8_print_50px;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(337, 561);
+            this.button4.Location = new System.Drawing.Point(337, 559);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(304, 58);
             this.button4.TabIndex = 39;
@@ -236,7 +255,7 @@ namespace Gestion_Personne.UserControls
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button3.Image = global::Gestion_Personne.Properties.Resources.icons8_trash_50px;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(668, 61);
+            this.button3.Location = new System.Drawing.Point(668, 59);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(304, 58);
             this.button3.TabIndex = 33;
@@ -255,7 +274,7 @@ namespace Gestion_Personne.UserControls
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button2.Image = global::Gestion_Personne.Properties.Resources.icons8_update_50px;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(337, 61);
+            this.button2.Location = new System.Drawing.Point(337, 59);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(304, 58);
             this.button2.TabIndex = 32;
@@ -273,7 +292,7 @@ namespace Gestion_Personne.UserControls
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button1.Image = global::Gestion_Personne.Properties.Resources.icons8_plus_math_50px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 61);
+            this.button1.Location = new System.Drawing.Point(3, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(304, 58);
             this.button1.TabIndex = 31;
@@ -286,6 +305,7 @@ namespace Gestion_Personne.UserControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.tablePhone);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textSearch);
@@ -323,5 +343,6 @@ namespace Gestion_Personne.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn nam;
         private System.Windows.Forms.DataGridViewTextBoxColumn init;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pnum;
+        private System.Windows.Forms.Button button5;
     }
 }

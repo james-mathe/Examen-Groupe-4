@@ -172,6 +172,8 @@ namespace Gestion_Personne
             btAdd.ForeColor = defaultForeColor;
             btUsers.BackColor = defaultBackColor;
             btUsers.ForeColor = defaultForeColor;
+            User_Phone user_Phone = new User_Phone();
+            
             if (!controlPanel.Controls.Contains(User_Phone.instace))
             {
                 controlPanel.Controls.Add(User_Phone.instace);
