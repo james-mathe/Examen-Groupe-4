@@ -91,10 +91,10 @@ go
 
 -- procedure for inserting telephone
 
-create or alter proc AddPhone @idP bigint,@initial varchar(4),@num varchar(9)
+create or alter proc AddPhone @idP bigint,@initial varchar(4),@numero varchar(9)
 as
 begin
-	insert into telephone(idP,initial,numero) values(@idP,@initial,@num)
+	insert into telephone(idP,initial,numero) values(@idP,@initial,@numero)
 end
 go
 
