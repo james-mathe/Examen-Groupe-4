@@ -110,7 +110,7 @@ go
 create or alter proc SearchPhone @initial varchar(4),@numero varchar(9)
 as
 begin
-	select * from telephone where initial like '%'+@initial+'%' or numero like '%'+@numero+'%' 
+	select * from listPersonNumber where fullname like '%'+''+'%' or initial like '%'+@initial+'%' or numero like '%'+@numero+'%' 
 end
 go
 
