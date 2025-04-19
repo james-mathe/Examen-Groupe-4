@@ -82,12 +82,10 @@ begin
 end
 go
 
-
 -- ==================== END USER PROCEDURE==========================================
 
 
 -- ==================== START TELEPHONE PROCEDURE==========================================
-
 
 -- procedure for inserting telephone
 
@@ -109,10 +107,10 @@ go
 
 -- procedure for searching telephone
 
-create or alter proc SearchPhone @initial varchar(4),@num varchar(9)
+create or alter proc SearchPhone @initial varchar(4),@numero varchar(9)
 as
 begin
-	select * from telephone where initial like '%'+@initial+'%' or numero like '%'+@num+'%' 
+	select * from telephone where initial like '%'+@initial+'%' or numero like '%'+@numero+'%' 
 end
 go
 
@@ -152,10 +150,10 @@ go
 
 -- procedure for searching adresse
 
-create or alter proc SearchAddress @av varchar(250),@qua varchar(250),@com varchar(250),@ville varchar(250),@pays varchar(250)
+create or alter proc SearchAddress @fullname varchar(250),@av varchar(250),@qua varchar(250),@com varchar(250),@ville varchar(250),@pays varchar(250)
 as
 begin
-	select * from adresse where avenue like '%'+@av+'%' or quartier like '%'+@qua+'%' or commune like '%'+@com+'%' or ville like '%'+@ville+'%' or  pays like '%'+@pays+'%'
+	select * from listPersonAddress where fullname like '%'+@fullname+'%' or avenue like '%'+@av+'%' or quartier like '%'+@qua+'%' or ville like '%'+@ville+'%' or commune like '%'+@com+'%' or pays like '%'+@pays+'%'
 end
 go
 
