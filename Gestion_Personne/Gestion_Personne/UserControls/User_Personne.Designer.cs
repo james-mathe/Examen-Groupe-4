@@ -163,6 +163,8 @@ namespace Gestion_Personne.UserControls
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
             this.tablePerson.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tablePerson.RowTemplate.Height = 30;
+            this.tablePerson.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tablePerson.Size = new System.Drawing.Size(969, 368);
             this.tablePerson.TabIndex = 28;
             this.tablePerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablePerson_CellContentClick);

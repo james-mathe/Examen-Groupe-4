@@ -69,6 +69,7 @@ namespace Gestion_Personne.Modals
                                 (menu as Menu).ActiveSideBarButtons();
                                 (menu as Menu).panelSetting.Visible = false;
                                 (menu as Menu).controlPanel.Visible = true;
+                                (menu as Menu).btRestore.Enabled = false;
                                 this.Close();
                             }
                             else

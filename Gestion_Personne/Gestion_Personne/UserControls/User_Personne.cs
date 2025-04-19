@@ -187,8 +187,8 @@ namespace Gestion_Personne.UserControls
                 
                 idP = Convert.ToInt32(tablePerson.CurrentRow.Cells[1].Value);
                 Classes.People.AddUpdateDeletePerson sqldelete = new Classes.People.AddUpdateDeletePerson();
-                int numtel = sqldelete.selectPhoneByIdsql(1);
-                int numaddres = sqldelete.selectAddressByIdsql(1);
+                int numtel = sqldelete.selectPhoneByIdsql(idP);
+                int numaddres = sqldelete.selectAddressByIdsql(idP);
                 if(numtel > 0 && numaddres == 0)
                 {
                     Dr = MessageBox.Show("This Persone has " + numtel + " phone number. Do you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

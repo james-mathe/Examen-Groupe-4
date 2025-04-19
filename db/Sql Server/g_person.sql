@@ -29,6 +29,12 @@ create table telephone
 	numero varchar(9) not null
 )
 go
+--  to Create a View for the personne and telephone
+create view listPersonNumber as
+select t.idT,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero from telephone as t
+inner join personne as p on t.idP = p.idP
+
+go
 
 alter table telephone add constraint pk_T primary key(idT)
 -- to create a foreign key to link the IdP from telephone to the primary key 'idP' of Personne and will be deleted if the premary key was

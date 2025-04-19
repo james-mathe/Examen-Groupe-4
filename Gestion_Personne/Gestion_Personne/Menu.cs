@@ -20,7 +20,6 @@ namespace Gestion_Personne
         private Color activeBackColor = Color.White;
         private Color defaultForeColor = Color.White;
         private Color defaultBackColor = Color.FromArgb(94, 69, 255);
-        private Classes.Config co;
         public Menu()
         {
             InitializeComponent();
@@ -51,6 +50,23 @@ namespace Gestion_Personne
             panelSetting.Visible = false;
             DesactiveSideBarButtons();
             ActiveConnection();
+            try
+            {
+
+                if (!File.Exists(configFilePath))
+                {
+                    btRestore.Enabled = false;
+                }
+                else
+                {
+                    btRestore.Enabled = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du chargement de la configuration : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void ActiveSideBarButtons()
@@ -96,9 +112,7 @@ namespace Gestion_Personne
                 }
                 else
                 {
-                    co = new Classes.Config();
                     Auth auth = new Auth(this);
-                    auth.textUser.Text = co.Password;
                     auth.ShowDialog();
                 }
 
@@ -123,7 +137,7 @@ namespace Gestion_Personne
             btAdd.ForeColor = defaultForeColor;
             btUsers.BackColor = defaultBackColor;
             btUsers.ForeColor = defaultForeColor;
-
+            btRestore.Enabled = true;
         }
 
         private void btPerson_Click(object sender, EventArgs e)
@@ -158,6 +172,16 @@ namespace Gestion_Personne
             btAdd.ForeColor = defaultForeColor;
             btUsers.BackColor = defaultBackColor;
             btUsers.ForeColor = defaultForeColor;
+            if (!controlPanel.Controls.Contains(User_Phone.instace))
+            {
+                controlPanel.Controls.Add(User_Phone.instace);
+                User_Phone.instace.Dock = DockStyle.Fill;
+                User_Phone.instace.BringToFront();
+            }
+            else
+            {
+                User_Phone.instace.BringToFront();
+            }
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -183,6 +207,33 @@ namespace Gestion_Personne
             btUsers.BackColor = activeBackColor;
             btUsers.ForeColor = activeForeColor;
 
+        }
+
+        private void btRestore_Click(object sender, EventArgs e)
+        {
+            DialogResult Dr;
+            try
+            {
+
+                if (File.Exists(configFilePath))
+                {
+                    Dr = MessageBox.Show("Are you Sure You want to Delete this configuration??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        File.Delete(configFilePath);
+                        MessageBox.Show("Configuration Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la Suppression de la configuration : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
