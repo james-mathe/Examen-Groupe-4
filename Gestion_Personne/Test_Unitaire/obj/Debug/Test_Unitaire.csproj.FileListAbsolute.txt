@@ -1,0 +1,13 @@
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\obj\Debug\Test_Unitaire.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\Test_Unitaire.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\Test_Unitaire.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\obj\Debug\Test_Unitaire.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\obj\Debug\Test_Unitaire.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\ManageSingleConnexion.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\ManageSingleConnexion.pdb
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\nunit.framework.dll
+C:\Users\Admin\Examen-Groupe-4\Gestion_Personne\Test_Unitaire\bin\Debug\nunit.framework.xml
