@@ -107,10 +107,10 @@ go
 
 -- procedure for searching telephone
 
-create or alter proc SearchPhone @initial varchar(4),@numero varchar(9)
+create or alter proc SearchPhone @fullname varchar(4),@initial varchar(4),@numero varchar(9)
 as
 begin
-	select * from listPersonNumber where fullname like '%'+''+'%' or initial like '%'+@initial+'%' or numero like '%'+@numero+'%' 
+	select * from listPersonNumber where fullname like '%'+@fullname+'%' or initial like '%'+@initial+'%' or numero like '%'+@numero+'%' 
 end
 go
 
