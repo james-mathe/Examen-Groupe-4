@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="Classes\Address\AddUpdateDeleteAddress.cs" />
     <Compile Include="Classes\Config.cs" />
+    <Compile Include="Classes\Cryptage.cs" />
     <Compile Include="Classes\IConnection.cs" />
     <Compile Include="Classes\People\AddUpdateDeletePerson.cs" />
     <Compile Include="Classes\Phones\AddUpdateDeletePhones.cs" />

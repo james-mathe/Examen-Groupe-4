@@ -20,6 +20,7 @@ namespace Gestion_Personne
         private Color activeBackColor = Color.White;
         private Color defaultForeColor = Color.White;
         private Color defaultBackColor = Color.FromArgb(94, 69, 255);
+        private Classes.Config co;
         public Menu()
         {
             InitializeComponent();
@@ -95,7 +96,9 @@ namespace Gestion_Personne
                 }
                 else
                 {
+                    co = new Classes.Config();
                     Auth auth = new Auth(this);
+                    auth.textUser.Text = co.Password;
                     auth.ShowDialog();
                 }
 

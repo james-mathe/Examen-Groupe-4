@@ -17,6 +17,7 @@ namespace Gestion_Personne.Classes
         public String ServerName;
         public String Username;
         public String Password;
+        private Cryptage cryptage;
         public Config()
         {
             
@@ -30,12 +31,13 @@ namespace Gestion_Personne.Classes
             try
             {
                 string[] lines = File.ReadAllLines(configFilePath);
+                cryptage = new Cryptage();
                 if (lines.Length == 4)
                 {
                     ServerType = lines[0].Trim();
                     ServerName = lines[1].Trim();
                     Username = lines[2].Trim();
-                    Password = lines[3].Trim();
+                    Password = cryptage.DecryptData(lines[3]);
 
                 }
                 else

@@ -19,6 +19,7 @@ namespace Gestion_Personne.Modals
         private readonly string configFilePath = Application.StartupPath + @"\config.ini";
         private Form menu;
         private Config config;
+        private Cryptage cryptage;
         public Server_Config(Form m)
         {
             InitializeComponent();
@@ -31,11 +32,13 @@ namespace Gestion_Personne.Modals
             {
                 using (StreamWriter writer = new StreamWriter(configFilePath))
                 {
+                    cryptage = new Cryptage();
+                    
                     writer.WriteLine(comboDatabase.Text);
                     writer.WriteLine(textServ.Text);
                     //writer.WriteLine(txtbd.Text);
                     writer.WriteLine(textUser.Text);
-                    writer.WriteLine(textPass.Text); // Crypter le mot de passe
+                    writer.WriteLine(cryptage.EncryptData(textPass.Text)); // Crypter le mot de passe
                 }
                 MessageBox.Show("Server Config saved Successfully", "Save Config", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

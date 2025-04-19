@@ -224,7 +224,7 @@ namespace Gestion_Personne.Modals
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.Button eyes;
+        public System.Windows.Forms.TextBox textUser;
     }
 }
