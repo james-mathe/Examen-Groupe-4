@@ -45,6 +45,7 @@ namespace Gestion_Personne.UserControls
             this.button1 = new System.Windows.Forms.Button();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.init = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +79,7 @@ namespace Gestion_Personne.UserControls
             this.tablePhone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.num,
             this.id,
+            this.personId,
             this.nam,
             this.init,
             this.Pnum});
@@ -130,6 +132,7 @@ namespace Gestion_Personne.UserControls
             this.textSearch.TabIndex = 36;
             this.textSearch.Text = "Search";
             this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
             this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
             // 
@@ -250,6 +253,13 @@ namespace Gestion_Personne.UserControls
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
+            // personId
+            // 
+            this.personId.HeaderText = "IdP";
+            this.personId.Name = "personId";
+            this.personId.ReadOnly = true;
+            this.personId.Visible = false;
+            // 
             // nam
             // 
             this.nam.HeaderText = "Name";
@@ -306,6 +316,7 @@ namespace Gestion_Personne.UserControls
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn num;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personId;
         private System.Windows.Forms.DataGridViewTextBoxColumn nam;
         private System.Windows.Forms.DataGridViewTextBoxColumn init;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pnum;

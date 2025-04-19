@@ -37,22 +37,7 @@ namespace Gestion_Personne.UserControls
         {
             InitializeComponent();
         }
-        public String getfullName(long idp)
-        {
-            String name = null;
-            String sql = "select CONCAT(nom,' ',postnom,' ',prenom) from personne where idP=@idp";
-            try
-            {
-                SqlCommand sqlcmd = new SqlCommand(sql, sqlcon);
-                sqlcmd.Parameters.AddWithValue("@idp", idp);
-                name = Convert.ToString(sqlcmd.ExecuteScalar());
-            }
-            catch (Exception sqlEx)
-            {
-                MessageBox.Show(sqlEx.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return name;
-        }
+
         public void DisplayPhone(String text)
         {
             config = new Classes.Config();
@@ -69,6 +54,7 @@ namespace Gestion_Personne.UserControls
                         tablePhone.Rows.Clear();
                         sqlcmd = new SqlCommand(proc, sqlcon);
                         sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@fullname", SqlDbType.VarChar, 250)).Value = text;
                         sqlcmd.Parameters.Add(new SqlParameter("@initial", SqlDbType.VarChar, 4)).Value = text;
                         sqlcmd.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar, 9)).Value = text;
                         SqlDataReader dataReader = sqlcmd.ExecuteReader();
@@ -77,7 +63,7 @@ namespace Gestion_Personne.UserControls
                         {
                             try
                             {
-                                tablePhone.Rows.Add(num, dataReader.GetValue(0), getfullName(dataReader.GetInt64(1)), dataReader.GetString(2), dataReader.GetString(3));
+                                tablePhone.Rows.Add(num, dataReader.GetValue(0), dataReader.GetValue(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetString(4));
                                 num++;
                             }
                             catch (Exception sqlEx)
@@ -104,6 +90,7 @@ namespace Gestion_Personne.UserControls
                         tablePhone.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@fullname", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@initial", MySqlDbType.VarChar, 4)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@numero", MySqlDbType.VarChar, 9)).Value = text;
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
@@ -112,11 +99,8 @@ namespace Gestion_Personne.UserControls
                         {
                             try
                             {
-                                //mycmd = new MySqlCommand(sql, mycon);
-                                //mycmd.Parameters.AddWithValue("@idp", dataReader.GetString(1));
-                                //String name = (string)mycmd.ExecuteScalar();
-                                //tablePhone.Rows.Add(num, dataReader.GetValue(0), name, dataReader.GetString(2), dataReader.GetString(3));
-                                //num++;
+                                tablePhone.Rows.Add(num, dataReader.GetValue(0), dataReader.GetValue(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetString(4));
+                                num++;
                             }
                             catch (Exception ex)
                             {
@@ -155,6 +139,19 @@ namespace Gestion_Personne.UserControls
         private void User_Phone_Load(object sender, EventArgs e)
         {
             DisplayPhone("");
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(textSearch.Text == "" || textSearch.Text == "Search")
+            {
+                DisplayPhone("");
+            }
+            else
+            {
+                tablePhone.Rows.Clear();
+                DisplayPhone(textSearch.Text);
+            }
         }
     }
 }
