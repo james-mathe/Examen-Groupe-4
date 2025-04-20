@@ -181,5 +181,29 @@ namespace Gestion_Personne.UserControls
                 MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(tableUser.Rows.Count > 0)
+            {
+                Classes.User.AddUpdateDeleteUser delete = new Classes.User.AddUpdateDeleteUser();
+                idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Dr == DialogResult.Yes)
+                {
+                    delete.DeleteUserSql(idU);
+                    DisplayUser("");
+                    MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

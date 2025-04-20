@@ -37,7 +37,7 @@ alter table telephone add constraint fk_T_P foreign key(idP) references personne
 go
 --  to Create a View for the personne and telephone
 create or alter view listPersonNumber as
-select t.idT,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero from telephone as t
+select t.idT,t.idP,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero from telephone as t
 inner join personne as p on t.idP = p.idP
 go
 
@@ -59,7 +59,7 @@ alter table adresse add constraint fk_A_P foreign key(idP) references personne(i
 go
 -- create a view for the personne and address
 create or alter view listPersonAddress as
-select a.idA,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,a.avenue,a.quartier,a.ville,a.commune,a.pays from adresse as a
+select a.idA,a.idP,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,a.avenue,a.quartier,a.ville,a.commune,a.pays from adresse as a
 inner join personne as p on a.idP = p.idP
 
 go
@@ -67,9 +67,11 @@ go
 create table users
 (
 	idU bigint identity(1,1) not null,
-	username varchar(50),
-	pwd varchar(50)
+	username varchar(250),
+	pwd varchar(250)
 )
 go 
 
 alter table users add constraint pk_U primary key(idU)
+
+insert into users(username,pwd) values('admin','admin')

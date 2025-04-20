@@ -19,6 +19,7 @@ namespace Gestion_Personne.Modals
         private Config config;
         private SqlConnection sqlcon;
         private SqlCommand sqlcmd;
+        private Cryptage cryptage;
 
         private MySqlConnection mycon;
         private MySqlCommand mycmd;
@@ -46,6 +47,7 @@ namespace Gestion_Personne.Modals
         {
             if(IsEmpty() == null)
             {
+                cryptage = new Cryptage();
                 sqlcon = config.getSqlConnection();
                 mycon = config.getMySqlConnection();
                 try
@@ -55,26 +57,41 @@ namespace Gestion_Personne.Modals
                         sqlcon.Open();
                         if (sqlcon.State == ConnectionState.Open)
                         {
-                            String sql = "select * from users where username=@user and pwd=@pwd";
+                            String sql = "select * from users where username=@user";
                             SqlDataReader reader;
                             sqlcmd = new SqlCommand(sql, sqlcon);
                             sqlcmd.Parameters.AddWithValue("@user", textUser.Text);
-                            sqlcmd.Parameters.AddWithValue("@pwd", textPass.Text);
 
                             reader = sqlcmd.ExecuteReader();
                             if (reader.Read())
                             {
-                                MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                (menu as Menu).DesactiveConnection();
-                                (menu as Menu).ActiveSideBarButtons();
-                                (menu as Menu).panelSetting.Visible = false;
-                                (menu as Menu).controlPanel.Visible = true;
-                                (menu as Menu).btRestore.Enabled = false;
-                                this.Close();
+                                if(cryptage.VerifyPassword(textPass.Text, reader.GetValue(2).ToString()))
+                                {
+                                    (menu as Menu).DesactiveConnection();
+                                    (menu as Menu).ActiveSideBarButtons();
+                                    (menu as Menu).panelSetting.Visible = false;
+                                    (menu as Menu).controlPanel.Visible = true;
+                                    (menu as Menu).btRestore.Enabled = false;
+                                    this.Close();
+
+                                }
+                                else if(textPass.Text == reader.GetString(2))
+                                {
+                                    (menu as Menu).DesactiveConnection();
+                                    (menu as Menu).ActiveSideBarButtons();
+                                    (menu as Menu).panelSetting.Visible = false;
+                                    (menu as Menu).controlPanel.Visible = true;
+                                    (menu as Menu).btRestore.Enabled = false;
+                                    this.Close();
+                                }
+                                else {
+
+                                    MessageBox.Show("Pasword is Incorect", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Username or Password is not correct", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Username Doesn't Exist", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
 

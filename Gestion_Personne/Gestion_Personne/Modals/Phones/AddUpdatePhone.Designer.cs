@@ -46,13 +46,13 @@ namespace Gestion_Personne.Modals.Phones
             this.textfullname = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tablePerson = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textSearch = new System.Windows.Forms.TextBox();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textSearch = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btExit = new System.Windows.Forms.Button();
@@ -170,6 +170,7 @@ namespace Gestion_Personne.Modals.Phones
             this.textinitial.Location = new System.Drawing.Point(515, 278);
             this.textinitial.MaxLength = 4;
             this.textinitial.Name = "textinitial";
+            this.textinitial.ReadOnly = true;
             this.textinitial.Size = new System.Drawing.Size(64, 32);
             this.textinitial.TabIndex = 66;
             // 
@@ -269,34 +270,6 @@ namespace Gestion_Personne.Modals.Phones
             this.tablePerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablePerson_CellContentClick);
             this.tablePerson.Click += new System.EventHandler(this.tablePerson_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.panel2.Location = new System.Drawing.Point(6, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 3);
-            this.panel2.TabIndex = 29;
-            // 
-            // textSearch
-            // 
-            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(6, 31);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(437, 32);
-            this.textSearch.TabIndex = 28;
-            this.textSearch.Text = "Search";
-            this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
-            this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
-            this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
-            // 
             // num
             // 
             this.num.FillWeight = 25F;
@@ -328,6 +301,34 @@ namespace Gestion_Personne.Modals.Phones
             this.fName.HeaderText = "First-Name";
             this.fName.Name = "fName";
             this.fName.ReadOnly = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.panel2.Location = new System.Drawing.Point(6, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(437, 3);
+            this.panel2.TabIndex = 29;
+            // 
+            // textSearch
+            // 
+            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.textSearch.Location = new System.Drawing.Point(6, 31);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(437, 32);
+            this.textSearch.TabIndex = 28;
+            this.textSearch.Text = "Search";
+            this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
+            this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
+            this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
             // 
             // pictureBox4
             // 
