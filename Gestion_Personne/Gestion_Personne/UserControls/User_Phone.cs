@@ -70,7 +70,7 @@ namespace Gestion_Personne.UserControls
                             {
                                 MessageBox.Show(sqlEx.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-            }
+                        }
                         dataReader.Close();
                     }
                 }

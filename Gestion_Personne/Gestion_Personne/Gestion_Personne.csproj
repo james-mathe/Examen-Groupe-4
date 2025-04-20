@@ -175,6 +175,12 @@
     <Compile Include="UserControls\User_Phone.Designer.cs">
       <DependentUpon>User_Phone.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\User_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\User_User.Designer.cs">
+      <DependentUpon>User_User.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\User_Phone.resx">
       <DependentUpon>User_Phone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\User_User.resx">
+      <DependentUpon>User_User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -339,6 +348,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_country_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_city_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_embassy_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_city_hall_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_streets_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
