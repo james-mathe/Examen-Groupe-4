@@ -21,6 +21,7 @@ namespace Gestion_Personne.UserControls
         private MySqlConnection mycon;
         private SqlCommand sqlcmd;
         private MySqlCommand mycmd;
+        private Classes.Cryptage cryptage;
         private DialogResult Dr;
 
         public static User_User instance
@@ -135,6 +136,49 @@ namespace Gestion_Personne.UserControls
             {
                 textSearch.Text = "Search";
                 textSearch.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Modals.Users.AddUpdateUser addModal = new Modals.Users.AddUpdateUser(this);
+            addModal.ShowDialog();
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(textSearch.Text == "" || textSearch.Text == "Search")
+            {
+                DisplayUser("");
+            }
+            else
+            {
+                tableUser.Rows.Clear();
+                DisplayUser(textSearch.Text);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(tableUser.Rows.Count > 0)
+            {
+                cryptage = new Classes.Cryptage();
+                Modals.Users.AddUpdateUser updateModal = new Modals.Users.AddUpdateUser(this);
+                updateModal.idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                updateModal.textUser.Text = tableUser.CurrentRow.Cells[2].Value.ToString();
+                updateModal.textPass.Text = cryptage.DecryptData(tableUser.CurrentRow.Cells[3].Value.ToString());
+                updateModal.textPass.UseSystemPasswordChar = false;
+                updateModal.eyes.Image = Properties.Resources.icons8_hide_24px;
+
+                updateModal.titleUser.Text = "Update User";
+                updateModal.btsaveUser.Text = "Update";
+                updateModal.textUser.ForeColor = Color.DimGray;
+                updateModal.textPass.ForeColor = Color.DimGray;
+                updateModal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

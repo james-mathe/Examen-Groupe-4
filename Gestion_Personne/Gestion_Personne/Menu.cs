@@ -217,6 +217,16 @@ namespace Gestion_Personne
             btAdd.ForeColor = defaultForeColor;
             btUsers.BackColor = activeBackColor;
             btUsers.ForeColor = activeForeColor;
+            if (!controlPanel.Controls.Contains(User_User.instance))
+            {
+                controlPanel.Controls.Add(User_User.instance);
+                User_User.instance.Dock = DockStyle.Fill;
+                User_User.instance.BringToFront();
+            }
+            else
+            {
+                User_User.instance.BringToFront();
+            }
 
         }
 
