@@ -123,6 +123,26 @@ namespace Gestion_Personne.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_city_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_city_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_city_hall_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_city_hall_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Close_40px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Close_40px", resourceCulture);
@@ -216,6 +236,16 @@ namespace Gestion_Personne.Properties {
         internal static System.Drawing.Bitmap icons8_disconnected_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_disconnected_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_embassy_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_embassy_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +376,16 @@ namespace Gestion_Personne.Properties {
         internal static System.Drawing.Bitmap icons8_staff_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_staff_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_streets_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_streets_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -172,8 +172,6 @@ namespace Gestion_Personne
             btAdd.ForeColor = defaultForeColor;
             btUsers.BackColor = defaultBackColor;
             btUsers.ForeColor = defaultForeColor;
-            User_Phone user_Phone = new User_Phone();
-            
             if (!controlPanel.Controls.Contains(User_Phone.instace))
             {
                 controlPanel.Controls.Add(User_Phone.instace);
@@ -196,6 +194,17 @@ namespace Gestion_Personne
             btAdd.ForeColor = activeForeColor;
             btUsers.BackColor = defaultBackColor;
             btUsers.ForeColor = defaultForeColor;
+            if (!controlPanel.Controls.Contains(User_Address.instance))
+            {
+                controlPanel.Controls.Add(User_Address.instance);
+                User_Address.instance.Dock = DockStyle.Fill;
+                User_Address.instance.BringToFront();
+            }
+            else
+            {
+                User_Address.instance.BringToFront();
+            }
+
         }
 
         private void btUsers_Click(object sender, EventArgs e)
