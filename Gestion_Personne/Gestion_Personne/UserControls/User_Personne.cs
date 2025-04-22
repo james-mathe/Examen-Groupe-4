@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Gestion_Personne.Modals.people;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Microsoft.Reporting.WinForms;
 
 namespace Gestion_Personne.UserControls
 {
@@ -276,6 +277,53 @@ namespace Gestion_Personne.UserControls
                     DisplayPerson(textSearch.Text);
 
                 }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Modals.RapportModal printer = new Modals.RapportModal();
+            config = new Classes.Config();
+            sqlcon = config.getSqlConnection();
+            if(tablePerson.Rows.Count > 0)
+            {
+                try
+                {
+                    if (config.ServerType == "Sql Server")
+                    {
+                        sqlcon.Open();
+                        try
+                        {
+                            if (sqlcon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from personne";
+                                
+                                sqlcmd = new SqlCommand(sql, sqlcon);
+                                SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePerson = new DataTable();
+                                data.Fill(tablePerson);
+                                var listPersonne = tablePerson;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPerson.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("Person", listPersonne));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

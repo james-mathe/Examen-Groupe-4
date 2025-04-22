@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -86,8 +87,8 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.3.0\lib\net462\MySql.Data.dll</HintPath>
@@ -143,78 +144,58 @@
     <Compile Include="Classes\People\AddUpdateDeletePerson.cs" />
     <Compile Include="Classes\Phones\AddUpdateDeletePhones.cs" />
     <Compile Include="Classes\User\AddUpdateDeleteUser.cs" />
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
+    <Compile Include="g_personneDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>g_personneDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs" />
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Address\AddUpdateAddress.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\Address\AddUpdateAddress.cs" />
     <Compile Include="Modals\Address\AddUpdateAddress.Designer.cs">
       <DependentUpon>AddUpdateAddress.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Auth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\Auth.cs" />
     <Compile Include="Modals\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\people\AddUpdatePerson.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\people\AddUpdatePerson.cs" />
     <Compile Include="Modals\people\AddUpdatePerson.Designer.cs">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Phones\AddUpdatePhone.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\Phones\AddUpdatePhone.cs" />
     <Compile Include="Modals\Phones\AddUpdatePhone.Designer.cs">
       <DependentUpon>AddUpdatePhone.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\RapportModal.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\RapportModal.cs" />
     <Compile Include="Modals\RapportModal.Designer.cs">
       <DependentUpon>RapportModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Server_Config.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\Server_Config.cs" />
     <Compile Include="Modals\Server_Config.Designer.cs">
       <DependentUpon>Server_Config.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Users\AddUpdateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Modals\Users\AddUpdateUser.cs" />
     <Compile Include="Modals\Users\AddUpdateUser.Designer.cs">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UserControls\User_Address.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\User_Address.cs" />
     <Compile Include="UserControls\User_Address.Designer.cs">
       <DependentUpon>User_Address.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_Personne.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\User_Personne.cs" />
     <Compile Include="UserControls\User_Personne.Designer.cs">
       <DependentUpon>User_Personne.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_Phone.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\User_Phone.cs" />
     <Compile Include="UserControls\User_Phone.Designer.cs">
       <DependentUpon>User_Phone.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_User.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\User_User.cs" />
     <Compile Include="UserControls\User_User.Designer.cs">
       <DependentUpon>User_User.cs</DependentUpon>
     </Compile>
@@ -233,6 +214,9 @@
     <EmbeddedResource Include="Modals\Phones\AddUpdatePhone.resx">
       <DependentUpon>AddUpdatePhone.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\RapportModal.resx">
+      <DependentUpon>RapportModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\Server_Config.resx">
       <DependentUpon>Server_Config.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +234,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Rapport\RapportPerson.rdlc" />
+    <EmbeddedResource Include="Rapport\RapportPersonWithNumber.rdlc" />
     <EmbeddedResource Include="UserControls\User_Address.resx">
       <DependentUpon>User_Address.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +247,17 @@
     <EmbeddedResource Include="UserControls\User_User.resx">
       <DependentUpon>User_User.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="g_personneDataSet.xsc">
+      <DependentUpon>g_personneDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="g_personneDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>g_personneDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="g_personneDataSet.xss">
+      <DependentUpon>g_personneDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -402,20 +398,11 @@
   <ItemGroup>
     <None Include="Resources\icons8_streets_50px.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>
