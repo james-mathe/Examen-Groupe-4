@@ -1,0 +1,159 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Gestion_Personne.Modals.Users
+{
+    public partial class AddUpdateUser : Form
+    {
+        private UserControl user;
+        public int idU;
+        private Classes.Config config;
+        private DialogResult Dr;
+        public AddUpdateUser(UserControl u)
+        {
+            InitializeComponent();
+            this.user = u;
+        }
+
+        private void AddUpdateUser_Load(object sender, EventArgs e)
+        {
+            textPass.UseSystemPasswordChar = false;
+        }
+        public String IsEmpty()
+        {
+            if (textUser.Text == "username" || textUser.Text == "")
+            {
+                return "Fill the Username Field";
+            }
+            if (textPass.Text == "password" || textPass.Text == "")
+            {
+                return "Fill the Password Field";
+            }
+            return null;
+        }
+
+        private void textUser_Enter(object sender, EventArgs e)
+        {
+            if (textUser.Text == "username")
+            {
+                textUser.Text = "";
+                textUser.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void textUser_Leave(object sender, EventArgs e)
+        {
+            if (textUser.Text == "" || textUser.Text == "username")
+            {
+                textUser.Text = "username";
+                textUser.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void textPass_Enter(object sender, EventArgs e)
+        {
+            if (textPass.Text == "password")
+            {
+                textPass.Text = "";
+                textPass.UseSystemPasswordChar = true;
+                textPass.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void textPass_Leave(object sender, EventArgs e)
+        {
+            if (textPass.Text == "" || textPass.Text == "password")
+            {
+                textPass.Text = "password";
+                textPass.UseSystemPasswordChar = false;
+                textPass.ForeColor = Color.FromArgb(198, 190, 255);
+            }
+        }
+
+        private void eyes_Click(object sender, EventArgs e)
+        {
+            if (textPass.UseSystemPasswordChar == true)
+            {
+                textPass.UseSystemPasswordChar = false;
+                eyes.Image = Properties.Resources.icons8_hide_24px;
+            }
+            else
+            {
+                textPass.UseSystemPasswordChar = true;
+                eyes.Image = Properties.Resources.icons8_eye_24px;
+            }
+        }
+
+        private void btsaveUser_Click(object sender, EventArgs e)
+        {
+            config = new Classes.Config();
+            if (IsEmpty() == null)
+            {
+                if (config.ServerType == "Sql Server")
+                {
+                    if (titleUser.Text == "Add User")
+                    {
+                        Classes.User.AddUpdateDeleteUser add = new Classes.User.AddUpdateDeleteUser();
+                        if (add.addUserSql( textUser.Text, textPass.Text) == true)
+                        {
+                            (user as UserControls.User_User).DisplayUser("");
+                            MessageBox.Show("User Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error Adding User", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        Classes.User.AddUpdateDeleteUser update = new Classes.User.AddUpdateDeleteUser();
+                        Dr = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Dr == DialogResult.Yes)
+                        {
+                            if (update.UpdateUserSql(idU, textUser.Text, textPass.Text) == true)
+                            {
+                                (user as UserControls.User_User).DisplayUser("");
+                                MessageBox.Show("User Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error Updated User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show(IsEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
