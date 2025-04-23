@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.30556in</Width>
+              <Width>3.86806in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.51389in</Width>
+              <Width>2.07639in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.43056in</Width>
+              <Width>2.99306in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -275,9 +275,8 @@
         </TablixRowHierarchy>
         <DataSetName>PersonWithNumber</DataSetName>
         <Top>0.27083in</Top>
-        <Left>0.82292in</Left>
         <Height>0.72916in</Height>
-        <Width>7.25001in</Width>
+        <Width>8.9375in</Width>
         <Style>
           <Border>
             <Style>None</Style>

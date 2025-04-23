@@ -6,28 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.40885in</Width>
+              <Width>1.44662in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8776in</Width>
+              <Width>0.80078in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04427in</Width>
+              <Width>1.19661in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04427in</Width>
+              <Width>1.08203in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04427in</Width>
+              <Width>1.08203in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.31511in</Width>
+              <Width>1.35287in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.90885in</Width>
+              <Width>0.94662in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04427in</Width>
+              <Width>1.08203in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -691,9 +691,8 @@
         </TablixRowHierarchy>
         <DataSetName>PersonWithNumberAndAddress</DataSetName>
         <Top>0.16667in</Top>
-        <Left>0.16667in</Left>
         <Height>0.94792in</Height>
-        <Width>8.6875in</Width>
+        <Width>8.98959in</Width>
         <Style>
           <Border>
             <Style>None</Style>

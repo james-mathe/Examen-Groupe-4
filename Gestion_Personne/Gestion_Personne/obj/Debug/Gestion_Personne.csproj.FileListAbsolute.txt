@@ -109,7 +109,6 @@ C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.CopyComplete
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.exe
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.pdb
-C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.AssemblyReference.cache
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\x86\SqlServerSpatial160.dll
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\x64\SqlServerSpatial160.dll
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
