@@ -201,7 +201,7 @@ namespace Gestion_Personne.Modals
             if(textPass.UseSystemPasswordChar == true)
             {
                 textPass.UseSystemPasswordChar = false;
-                eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_hide_24px;
+                eyes.Image = Properties.Resources.icons8_hide_24px;
             }
             else
             {
