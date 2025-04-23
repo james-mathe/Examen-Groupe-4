@@ -118,7 +118,7 @@ namespace Gestion_Personne.Modals.Users
                     else
                     {
                         Classes.User.AddUpdateDeleteUser update = new Classes.User.AddUpdateDeleteUser();
-                        Dr = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        Dr = MessageBox.Show("Do you Want to Update this User??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (Dr == DialogResult.Yes)
                         {
                             if (update.UpdateUserSql(idU, textUser.Text, textPass.Text) == true)
