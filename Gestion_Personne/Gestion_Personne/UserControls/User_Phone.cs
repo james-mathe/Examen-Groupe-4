@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using Microsoft.Reporting.WinForms;
 
 namespace Gestion_Personne.UserControls
 {
@@ -211,6 +212,54 @@ namespace Gestion_Personne.UserControls
         private void button5_Click(object sender, EventArgs e)
         {
             DisplayPhone("");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Modals.RapportModal printer = new Modals.RapportModal();
+            config = new Classes.Config();
+            sqlcon = config.getSqlConnection();
+            if (tablePhone.Rows.Count > 0)
+            {
+                try
+                {
+                    if (config.ServerType == "Sql Server")
+                    {
+                        sqlcon.Open();
+                        try
+                        {
+                            if (sqlcon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonNumber";
+
+                                sqlcmd = new SqlCommand(sql, sqlcon);
+                                SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithNum = new DataTable();
+                                data.Fill(tablePersonWithNum);
+                                var listPersonneWithNum = tablePersonWithNum;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithNumber.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithNumber", listPersonneWithNum));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

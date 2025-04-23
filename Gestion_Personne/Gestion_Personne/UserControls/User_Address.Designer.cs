@@ -29,21 +29,12 @@ namespace Gestion_Personne.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button5 = new System.Windows.Forms.Button();
             this.tableAddress = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textSearch = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +44,16 @@ namespace Gestion_Personne.UserControls
             this.com = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableAddress)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,10 +78,10 @@ namespace Gestion_Personne.UserControls
             // 
             this.tableAddress.AllowUserToAddRows = false;
             this.tableAddress.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
-            this.tableAddress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DimGray;
+            this.tableAddress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.tableAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,14 +89,14 @@ namespace Gestion_Personne.UserControls
             this.tableAddress.BackgroundColor = System.Drawing.Color.White;
             this.tableAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableAddress.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableAddress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableAddress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.tableAddress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableAddress.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.num,
@@ -107,14 +108,14 @@ namespace Gestion_Personne.UserControls
             this.com,
             this.city,
             this.country});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAddress.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableAddress.DefaultCellStyle = dataGridViewCellStyle11;
             this.tableAddress.EnableHeadersVisualStyles = false;
             this.tableAddress.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.tableAddress.Location = new System.Drawing.Point(3, 186);
@@ -123,14 +124,77 @@ namespace Gestion_Personne.UserControls
             this.tableAddress.ReadOnly = true;
             this.tableAddress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableAddress.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
-            this.tableAddress.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray;
+            this.tableAddress.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.tableAddress.RowTemplate.Height = 30;
             this.tableAddress.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tableAddress.Size = new System.Drawing.Size(969, 369);
             this.tableAddress.TabIndex = 49;
+            // 
+            // num
+            // 
+            this.num.FillWeight = 25F;
+            this.num.HeaderText = "#";
+            this.num.Name = "num";
+            this.num.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // personId
+            // 
+            this.personId.HeaderText = "IdP";
+            this.personId.Name = "personId";
+            this.personId.ReadOnly = true;
+            this.personId.Visible = false;
+            // 
+            // nam
+            // 
+            this.nam.FillWeight = 150F;
+            this.nam.HeaderText = "Name";
+            this.nam.Name = "nam";
+            this.nam.ReadOnly = true;
+            // 
+            // av
+            // 
+            this.av.FillWeight = 60F;
+            this.av.HeaderText = "Avenue";
+            this.av.Name = "av";
+            this.av.ReadOnly = true;
+            // 
+            // Q
+            // 
+            this.Q.FillWeight = 60F;
+            this.Q.HeaderText = "Quarter";
+            this.Q.Name = "Q";
+            this.Q.ReadOnly = true;
+            // 
+            // com
+            // 
+            this.com.FillWeight = 60F;
+            this.com.HeaderText = "Town";
+            this.com.Name = "com";
+            this.com.ReadOnly = true;
+            // 
+            // city
+            // 
+            this.city.FillWeight = 60F;
+            this.city.HeaderText = "City";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // country
+            // 
+            this.country.FillWeight = 150F;
+            this.country.HeaderText = "Country";
+            this.country.Name = "country";
+            this.country.ReadOnly = true;
             // 
             // panel3
             // 
@@ -222,12 +286,13 @@ namespace Gestion_Personne.UserControls
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.button4.Image = global::Gestion_Personne.Properties.Resources.icons8_print_50px;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(337, 561);
+            this.button4.Location = new System.Drawing.Point(3, 561);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(304, 58);
             this.button4.TabIndex = 50;
             this.button4.Text = "Print ";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -266,74 +331,31 @@ namespace Gestion_Personne.UserControls
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // num
+            // button6
             // 
-            this.num.FillWeight = 25F;
-            this.num.HeaderText = "#";
-            this.num.Name = "num";
-            this.num.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // personId
-            // 
-            this.personId.HeaderText = "IdP";
-            this.personId.Name = "personId";
-            this.personId.ReadOnly = true;
-            this.personId.Visible = false;
-            // 
-            // nam
-            // 
-            this.nam.FillWeight = 150F;
-            this.nam.HeaderText = "Name";
-            this.nam.Name = "nam";
-            this.nam.ReadOnly = true;
-            // 
-            // av
-            // 
-            this.av.FillWeight = 60F;
-            this.av.HeaderText = "Avenue";
-            this.av.Name = "av";
-            this.av.ReadOnly = true;
-            // 
-            // Q
-            // 
-            this.Q.FillWeight = 60F;
-            this.Q.HeaderText = "Quarter";
-            this.Q.Name = "Q";
-            this.Q.ReadOnly = true;
-            // 
-            // com
-            // 
-            this.com.FillWeight = 60F;
-            this.com.HeaderText = "Town";
-            this.com.Name = "com";
-            this.com.ReadOnly = true;
-            // 
-            // city
-            // 
-            this.city.FillWeight = 60F;
-            this.city.HeaderText = "City";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            // 
-            // country
-            // 
-            this.country.FillWeight = 150F;
-            this.country.HeaderText = "Country";
-            this.country.Name = "country";
-            this.country.ReadOnly = true;
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.button6.FlatAppearance.BorderSize = 2;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.button6.Image = global::Gestion_Personne.Properties.Resources.icons8_print_50px;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(668, 561);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(304, 58);
+            this.button6.TabIndex = 52;
+            this.button6.Text = "Print All";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // User_Address
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.tableAddress);
             this.Controls.Add(this.panel3);
@@ -376,5 +398,6 @@ namespace Gestion_Personne.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn com;
         private System.Windows.Forms.DataGridViewTextBoxColumn city;
         private System.Windows.Forms.DataGridViewTextBoxColumn country;
+        private System.Windows.Forms.Button button6;
     }
 }

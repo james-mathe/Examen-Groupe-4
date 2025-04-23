@@ -38,14 +38,14 @@ namespace Gestion_Personne.Modals
             this.reportpreview.Location = new System.Drawing.Point(0, 0);
             this.reportpreview.Name = "reportpreview";
             this.reportpreview.ServerReport.BearerToken = null;
-            this.reportpreview.Size = new System.Drawing.Size(800, 450);
+            this.reportpreview.Size = new System.Drawing.Size(904, 450);
             this.reportpreview.TabIndex = 0;
             // 
             // RapportModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(904, 450);
             this.Controls.Add(this.reportpreview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RapportModal";

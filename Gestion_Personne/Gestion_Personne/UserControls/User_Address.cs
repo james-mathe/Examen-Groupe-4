@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Reporting.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -226,6 +227,101 @@ namespace Gestion_Personne.UserControls
         private void button5_Click(object sender, EventArgs e)
         {
             DisplayAddress("");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Modals.RapportModal printer = new Modals.RapportModal();
+            config = new Classes.Config();
+            sqlcon = config.getSqlConnection();
+            if (tableAddress.Rows.Count > 0)
+            {
+                try
+                {
+                    if (config.ServerType == "Sql Server")
+                    {
+                        sqlcon.Open();
+                        try
+                        {
+                            if (sqlcon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonAddress";
+
+                                sqlcmd = new SqlCommand(sql, sqlcon);
+                                SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithAddr = new DataTable();
+                                data.Fill(tablePersonWithAddr);
+                                var listPersonneWithAddr = tablePersonWithAddr;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithAddress.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithAddress", listPersonneWithAddr));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Modals.RapportModal printer = new Modals.RapportModal();
+            config = new Classes.Config();
+            sqlcon = config.getSqlConnection();
+            if (tableAddress.Rows.Count > 0)
+            {
+                try
+                {
+                    if (config.ServerType == "Sql Server")
+                    {
+                        sqlcon.Open();
+                        try
+                        {
+                            if (sqlcon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonWithNumberAndAddress";
+
+                                sqlcmd = new SqlCommand(sql, sqlcon);
+                                SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithNumandAddr = new DataTable();
+                                data.Fill(tablePersonWithNumandAddr);
+                                var listPersonneWithNumandAddr = tablePersonWithNumandAddr;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithNumberAndAddress.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithNumberAndAddress", listPersonneWithNumandAddr));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

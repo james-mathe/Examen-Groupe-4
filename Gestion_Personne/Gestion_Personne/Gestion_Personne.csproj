@@ -149,53 +149,77 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>g_personneDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Address\AddUpdateAddress.cs" />
+    <Compile Include="Modals\Address\AddUpdateAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\Address\AddUpdateAddress.Designer.cs">
       <DependentUpon>AddUpdateAddress.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Auth.cs" />
+    <Compile Include="Modals\Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\people\AddUpdatePerson.cs" />
+    <Compile Include="Modals\people\AddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\people\AddUpdatePerson.Designer.cs">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Phones\AddUpdatePhone.cs" />
+    <Compile Include="Modals\Phones\AddUpdatePhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\Phones\AddUpdatePhone.Designer.cs">
       <DependentUpon>AddUpdatePhone.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\RapportModal.cs" />
+    <Compile Include="Modals\RapportModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\RapportModal.Designer.cs">
       <DependentUpon>RapportModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Server_Config.cs" />
+    <Compile Include="Modals\Server_Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\Server_Config.Designer.cs">
       <DependentUpon>Server_Config.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\Users\AddUpdateUser.cs" />
+    <Compile Include="Modals\Users\AddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modals\Users\AddUpdateUser.Designer.cs">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\User_Address.cs" />
+    <Compile Include="UserControls\User_Address.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\User_Address.Designer.cs">
       <DependentUpon>User_Address.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_Personne.cs" />
+    <Compile Include="UserControls\User_Personne.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\User_Personne.Designer.cs">
       <DependentUpon>User_Personne.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_Phone.cs" />
+    <Compile Include="UserControls\User_Phone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\User_Phone.Designer.cs">
       <DependentUpon>User_Phone.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\User_User.cs" />
+    <Compile Include="UserControls\User_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\User_User.Designer.cs">
       <DependentUpon>User_User.cs</DependentUpon>
     </Compile>
@@ -234,7 +258,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Rapport\RapportPerson.rdlc" />
+    <EmbeddedResource Include="Rapport\RapportPersonWithAddress.rdlc" />
     <EmbeddedResource Include="Rapport\RapportPersonWithNumber.rdlc" />
+    <EmbeddedResource Include="Rapport\RapportPersonWithNumberAndAddress.rdlc" />
     <EmbeddedResource Include="UserControls\User_Address.resx">
       <DependentUpon>User_Address.cs</DependentUpon>
     </EmbeddedResource>

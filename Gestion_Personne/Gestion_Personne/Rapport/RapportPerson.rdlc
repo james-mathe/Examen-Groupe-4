@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.64844in</Width>
+              <Width>1.85677in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.64844in</Width>
+              <Width>1.85677in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.64844in</Width>
+              <Width>1.85677in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.64844in</Width>
+              <Width>1.85677in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -337,7 +337,7 @@
         <Top>0.35292in</Top>
         <Left>0.83208in</Left>
         <Height>0.8125in</Height>
-        <Width>6.59375in</Width>
+        <Width>7.42709in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -348,7 +348,7 @@
     <Height>3.9375in</Height>
     <Style />
   </Body>
-  <Width>8.10417in</Width>
+  <Width>8.98959in</Width>
   <Page>
     <PageHeader>
       <Height>0.52083in</Height>
@@ -362,7 +362,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>List People</Value>
+                  <Value>Liste Personnes</Value>
                   <Style>
                     <FontFamily>Arial Rounded MT Bold</FontFamily>
                     <FontSize>20pt</FontSize>
@@ -379,7 +379,7 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.03in</Top>
           <Height>0.44792in</Height>
-          <Width>8.10417in</Width>
+          <Width>8.98959in</Width>
           <Style>
             <Border>
               <Style>None</Style>
