@@ -121,3 +121,4 @@ C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\obj\Debug\Gestion_Personne.csproj.AssemblyReference.cache

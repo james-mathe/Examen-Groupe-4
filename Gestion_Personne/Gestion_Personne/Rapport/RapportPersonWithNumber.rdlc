@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nom Complait</Value>
+                              <Value>Nom Complet</Value>
                               <Style>
                                 <FontFamily>Arial Rounded MT Bold</FontFamily>
                                 <FontSize>16pt</FontSize>
