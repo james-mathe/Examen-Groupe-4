@@ -75,3 +75,10 @@ go
 alter table users add constraint pk_U primary key(idU)
 
 insert into users(username,pwd) values('admin','admin')
+go
+--  to Create a View for the personne and telephone
+create or alter view listPersonWithNumberAndAddress as
+select p.idP,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.numero,a.avenue,a.quartier,a.commune,a.ville,a.pays from personne as p
+inner join telephone as t on p.idP = t.idP
+inner join adresse as a on p.idP = a.idP
+go
