@@ -40,6 +40,15 @@ begin
 end
 go
 
+-- procedure for Selecting personne
+
+create or alter proc SelectPerson
+as
+begin
+	select * from personne
+end
+go
+
 -- ==================== END PERSON PROCEDURE==========================================
 
 
