@@ -67,6 +67,7 @@ namespace Gestion_Personne.Modals
                             {
                                 if(cryptage.VerifyPassword(textPass.Text, reader.GetValue(2).ToString()))
                                 {
+                                    MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     (menu as Menu).DesactiveConnection();
                                     (menu as Menu).ActiveSideBarButtons();
                                     (menu as Menu).panelSetting.Visible = false;
@@ -77,6 +78,7 @@ namespace Gestion_Personne.Modals
                                 }
                                 else if(textPass.Text == reader.GetString(2))
                                 {
+                                    MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     (menu as Menu).DesactiveConnection();
                                     (menu as Menu).ActiveSideBarButtons();
                                     (menu as Menu).panelSetting.Visible = false;

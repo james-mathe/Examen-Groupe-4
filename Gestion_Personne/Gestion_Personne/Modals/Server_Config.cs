@@ -75,7 +75,6 @@ namespace Gestion_Personne.Modals
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
             if(IsEmpty() != null)
             {
                 MessageBox.Show(IsEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,7 +92,6 @@ namespace Gestion_Personne.Modals
                         sqlcon.Open();
                         if (sqlcon.State == ConnectionState.Open)
                         {
-                            
                             MessageBox.Show("Connected Successfully to Sql Server", "Sql Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             
                             Auth auth = new Auth(menu);
@@ -136,7 +134,6 @@ namespace Gestion_Personne.Modals
                     }
                     finally
                     {
-
                         if (mycon.State == ConnectionState.Open)
                         {
                             mycon.Close();
