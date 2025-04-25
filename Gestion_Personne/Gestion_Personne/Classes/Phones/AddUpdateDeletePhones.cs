@@ -41,7 +41,7 @@ namespace Gestion_Personne.Classes.Phones
                     }
                 }
             }
-            catch (SqlException ex)
+           
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
