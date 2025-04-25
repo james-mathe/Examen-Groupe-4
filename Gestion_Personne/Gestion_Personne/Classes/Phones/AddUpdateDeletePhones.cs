@@ -62,7 +62,8 @@ namespace Gestion_Personne.Classes.Phones
             try
             {
                 sqlcon.Open();
-                                {
+      if (sqlcon.State == ConnectionState.Open)
+                          {
                     String proc = "UpdatePhone";
                     sqlcmd = new SqlCommand(proc, sqlcon);
                     sqlcmd.CommandType = CommandType.StoredProcedure;
