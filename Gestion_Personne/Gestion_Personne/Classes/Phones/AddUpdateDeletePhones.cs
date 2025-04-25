@@ -16,7 +16,7 @@ namespace Gestion_Personne.Classes.Phones
         private SqlConnection sqlcon;
         private MySqlConnection mycon;
         private SqlCommand sqlcmd;
-        private MySqlCommand mycmd;
+        
 
 
         public bool addPhoneSql(int idP,String initial,String num)
