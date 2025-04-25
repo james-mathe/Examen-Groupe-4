@@ -116,7 +116,8 @@ namespace Gestion_Personne.Classes.Phones
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+   finally
+            {         
                 if (sqlcon.State == ConnectionState.Open)
                 {
                     sqlcon.Close();
