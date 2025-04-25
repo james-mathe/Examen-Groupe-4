@@ -33,7 +33,6 @@ namespace Gestion_Personne.Classes
             }
 
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(plainPassword, workFactor: 11);
-
             return hashedPassword;
         }
         public bool VerifyPassword(string enteredPassword, string storedHash)
