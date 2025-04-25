@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Gestion_Personne.Classes.Phones
 {
     class AddUpdateDeletePhones
-    
+ {   
         private Config db = new Config();
         private SqlConnection sqlcon;
         private MySqlConnection mycon;
