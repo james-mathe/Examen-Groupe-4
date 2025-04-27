@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_Personne.Classes
 {
-    class Cryptage
+    public class Cryptage
     {
         public String EncryptData(string plainText)
         {

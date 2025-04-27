@@ -17,20 +17,20 @@ namespace Test_Gestion
             {
                 SqlConnection con = db.getSqlConnection();
                 con.Open();
-                bool isOpen = con.State == ConnectionState.Open;
-                Assert.IsTrue(isOpen);
+                bool isOpen = false;
+                Assert.IsTrue(isOpen,"Erreur de Connexion");
                 con.Close();
             }
             
         }
-        [TestMethod]
+        [DataTestMethod]
         public void TestInsertUser()
         {
             Gestion_Personne.Classes.User.AddUpdateDeleteUser user = new Gestion_Personne.Classes.User.AddUpdateDeleteUser();
             Config db = new Config();
             if(db.ServerType == "Sql Server")
             {
-                Assert.AreEqual(user.addUserSql("james", "1234"), true);
+                Assert.AreEqual(true, user.addUserSql("james", "1234"));
             }
         }
 
@@ -41,8 +41,19 @@ namespace Test_Gestion
             Config db = new Config();
             if (db.ServerType == "Sql Server")
             {
-                Assert.IsTrue(user.UpdateUserSql(1,"james", "1234"), "User Not Updated");
+                Assert.IsTrue(user.UpdateUserSql(3,"james", "1234") == true, "User Not Updated");
             }
+        }
+
+        [TestMethod]
+        public void test()
+        {
+            Assert.AreEqual(true, somme(4, 4));
+        }
+
+        public bool somme(int a,int b)
+        {
+            return true;
         }
     }
 }

@@ -15,13 +15,10 @@ namespace Gestion_Personne.Classes.User
         private Config db = new Config();
         private Cryptage cryptage;
         private SqlConnection sqlcon;
-        private MySqlConnection mycon;
         private SqlCommand sqlcmd;
-        private MySqlCommand mycmd;
 
         public bool addUserSql(String username, String password)
         {
-            bool saved = false;
             sqlcon = db.getSqlConnection();
             cryptage = new Cryptage();
             try
@@ -36,7 +33,7 @@ namespace Gestion_Personne.Classes.User
                     sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
                     if (sqlcmd.ExecuteNonQuery() > 0)
                     {
-                        saved = true;
+                        return true;
                     }
                 }
             }
@@ -51,7 +48,7 @@ namespace Gestion_Personne.Classes.User
                     sqlcon.Close();
                 }
             }
-            return saved;
+            return false;
         }
 
         public bool UpdateUserSql(int id, String username, String password)
