@@ -17,7 +17,6 @@ namespace Test_Gestion
                 SqlConnection con = db.getSqlConnection();
                 con.Open();
                 bool isOpen = con.State == System.Data.ConnectionState.Open;
-
                 Assert.IsTrue(isOpen);
                 con.Close();
             }
@@ -31,6 +30,17 @@ namespace Test_Gestion
             if(db.ServerType == "Sql Server")
             {
                 Assert.IsTrue(user.addUserSql("james", "1234"), "User Not added");
+            }
+        }
+
+        [TestMethod]
+        public void TestUpdateUser()
+        {
+            Gestion_Personne.Classes.User.AddUpdateDeleteUser user = new Gestion_Personne.Classes.User.AddUpdateDeleteUser();
+            Config db = new Config();
+            if (db.ServerType == "Sql Server")
+            {
+                Assert.IsTrue(user.UpdateUserSql(1,"james", "1234"), "User Not Updated");
             }
         }
     }
