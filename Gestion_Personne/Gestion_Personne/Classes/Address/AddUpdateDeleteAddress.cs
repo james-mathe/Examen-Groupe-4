@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne.Classes.Address
 {
-    class AddUpdateDeleteAddress
+    public class AddUpdateDeleteAddress
     {
         private Config db = new Config();
         private SqlConnection sqlcon;

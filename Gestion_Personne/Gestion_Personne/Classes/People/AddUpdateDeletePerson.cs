@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne.Classes.People
 {
-    class AddUpdateDeletePerson
+    public class AddUpdateDeletePerson
     {
         private Config db;
         private SqlConnection sqlcon;

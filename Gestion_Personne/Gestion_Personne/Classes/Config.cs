@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne.Classes
 {
-    class Config : IConnection
+    public class Config : IConnection
     {
         private readonly string configFilePath = Application.StartupPath + @"\config.ini";
         public String ServerType;
@@ -20,7 +20,6 @@ namespace Gestion_Personne.Classes
         private Cryptage cryptage;
         public Config()
         {
-            
             if (File.Exists(configFilePath))
             {
                 LoadConfiguration();

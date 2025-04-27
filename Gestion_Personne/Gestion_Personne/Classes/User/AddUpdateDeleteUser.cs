@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Gestion_Personne.Classes.User
 {
-    class AddUpdateDeleteUser
+    public class AddUpdateDeleteUser
     {
         private Config db = new Config();
         private Cryptage cryptage;
