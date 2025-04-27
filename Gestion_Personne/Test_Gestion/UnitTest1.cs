@@ -2,6 +2,7 @@
 using System;
 using Gestion_Personne.Classes;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Test_Gestion
 {
@@ -16,7 +17,7 @@ namespace Test_Gestion
             {
                 SqlConnection con = db.getSqlConnection();
                 con.Open();
-                bool isOpen = con.State == System.Data.ConnectionState.Open;
+                bool isOpen = con.State == ConnectionState.Open;
                 Assert.IsTrue(isOpen);
                 con.Close();
             }
@@ -29,7 +30,7 @@ namespace Test_Gestion
             Config db = new Config();
             if(db.ServerType == "Sql Server")
             {
-                Assert.IsTrue(user.addUserSql("james", "1234"), "User Not added");
+                Assert.AreEqual(user.addUserSql("james", "1234"), true);
             }
         }
 
