@@ -192,7 +192,7 @@ namespace Gestion_Personne.UserControls
                 int numaddres = sqldelete.selectAddressByIdsql(idP);
                 if(numtel > 0 && numaddres == 0)
                 {
-                    Dr = MessageBox.Show("This Persone has " + numtel + " phone number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    Dr = MessageBox.Show("This Person has " + numtel + " phone number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
@@ -207,7 +207,7 @@ namespace Gestion_Personne.UserControls
                 }
                 else if(numtel == 0 && numaddres > 0)
                 {
-                    Dr = MessageBox.Show("This Persone has " + numaddres + " Address.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    Dr = MessageBox.Show("This Person has " + numaddres + " Address.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
@@ -222,7 +222,7 @@ namespace Gestion_Personne.UserControls
                 }
                 else if (numtel >= 0 && numaddres > 0)
                 {
-                    Dr = MessageBox.Show("This Persone has " + numaddres + " Address and "+ numtel + " Phone Number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    Dr = MessageBox.Show("This Person has " + numaddres + " Address and "+ numtel + " Phone Number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
