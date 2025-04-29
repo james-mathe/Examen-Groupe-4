@@ -179,7 +179,7 @@ namespace Gestion_Personne.UserControls
                 {
                     delete.DeleteAddressSql(idA);
                     DisplayAddress("");
-                    MessageBox.Show("Address Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

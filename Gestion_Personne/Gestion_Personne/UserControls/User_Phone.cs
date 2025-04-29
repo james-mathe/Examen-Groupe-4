@@ -196,7 +196,7 @@ namespace Gestion_Personne.UserControls
 
                     delete.DeletePhoneSql(idT);
                     DisplayPhone("");
-                    MessageBox.Show("Phone Number Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Phone Number Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -257,7 +257,7 @@ namespace Gestion_Personne.UserControls
             }
             else
             {
-                MessageBox.Show("Table is Empty, fill it before", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Table is Empty, fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

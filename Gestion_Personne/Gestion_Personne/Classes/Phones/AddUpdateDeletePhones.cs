@@ -41,7 +41,7 @@ namespace Gestion_Personne.Classes.Phones
                     }
                 }
             }
-    catch (SqlException ex)        
+            catch (SqlException ex)        
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -62,7 +62,7 @@ namespace Gestion_Personne.Classes.Phones
             try
             {
                 sqlcon.Open();
-      if (sqlcon.State == ConnectionState.Open)
+                if (sqlcon.State == ConnectionState.Open)
                           {
                     String proc = "UpdatePhone";
                     sqlcmd = new SqlCommand(proc, sqlcon);
@@ -116,7 +116,7 @@ namespace Gestion_Personne.Classes.Phones
             {
                 MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-   finally
+            finally
             {         
                 if (sqlcon.State == ConnectionState.Open)
                 {
