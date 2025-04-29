@@ -220,14 +220,14 @@ namespace Gestion_Personne.UserControls
                     }
 
                 }
-                else if (numtel >= 0 && numaddres > 0)
+                else if (numtel > 0 && numaddres > 0)
                 {
                     Dr = MessageBox.Show("This Person has " + numaddres + " Address and "+ numtel + " Phone Number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
                         sqldelete.deletePersonSql(idP);
                         DisplayPerson("");
-                        MessageBox.Show("Person and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Person, Phone Number and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
