@@ -125,11 +125,6 @@ namespace Gestion_Personne.Modals.people
         {
             config = new Classes.Config();
             SqlConnection sqlcon = config.getSqlConnection();
-            MySqlConnection mycon = config.getMySqlConnection();
-            SqlCommand sqlcmd;
-            MySqlCommand mycmd;
-            String sql = "select * from telephone where idT='"+idP;
-            sqlcmd = new SqlCommand(sql, sqlcon);
             if (isEmpty() != null)
             {
                 MessageBox.Show(isEmpty(), "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);

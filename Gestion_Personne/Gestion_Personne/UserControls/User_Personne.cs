@@ -197,7 +197,7 @@ namespace Gestion_Personne.UserControls
                     {
                         sqldelete.deletePersonSql(idP);
                         DisplayPerson("");
-                        MessageBox.Show("Person and phone number Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Person and phone number Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -212,7 +212,7 @@ namespace Gestion_Personne.UserControls
                     {
                         sqldelete.deletePersonSql(idP);
                         DisplayPerson("");
-                        MessageBox.Show("Person and Address Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Person and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -227,7 +227,7 @@ namespace Gestion_Personne.UserControls
                     {
                         sqldelete.deletePersonSql(idP);
                         DisplayPerson("");
-                        MessageBox.Show("Person and Address Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Person and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -242,7 +242,7 @@ namespace Gestion_Personne.UserControls
                     {
                         sqldelete.deletePersonSql(idP);
                         DisplayPerson("");
-                        MessageBox.Show("Person Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Person Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

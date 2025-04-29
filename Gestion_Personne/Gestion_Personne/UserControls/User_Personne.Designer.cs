@@ -89,7 +89,7 @@ namespace Gestion_Personne.UserControls
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(211, 165);
+            this.panel3.Location = new System.Drawing.Point(219, 165);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(516, 3);
             this.panel3.TabIndex = 27;
@@ -102,7 +102,7 @@ namespace Gestion_Personne.UserControls
             this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(211, 131);
+            this.textSearch.Location = new System.Drawing.Point(219, 131);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(516, 32);
             this.textSearch.TabIndex = 26;
