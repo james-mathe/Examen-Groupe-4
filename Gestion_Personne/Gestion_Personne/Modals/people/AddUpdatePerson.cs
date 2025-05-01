@@ -55,7 +55,7 @@ namespace Gestion_Personne.Modals.people
 
         private void textname_Leave(object sender, EventArgs e)
         {
-            if(textname.Text == "" || textname.Text == "name")
+            if(textname.Text == "" || textname.Text == "name" || textname.Text.Contains(" "))
             {
                 textname.Text = "name";
                 textname.ForeColor = Color.FromArgb(198, 190, 255);
@@ -73,7 +73,7 @@ namespace Gestion_Personne.Modals.people
 
         private void textLastname_Leave(object sender, EventArgs e)
         {
-            if (textLastname.Text == "" || textLastname.Text == "lastname")
+            if (textLastname.Text == "" || textLastname.Text == "lastname" || textLastname.Text.Contains(" "))
             {
                 textLastname.Text = "lastname";
                 textLastname.ForeColor = Color.FromArgb(198, 190, 255);
@@ -91,7 +91,7 @@ namespace Gestion_Personne.Modals.people
 
         private void textFirstname_Leave(object sender, EventArgs e)
         {
-            if (textFirstname.Text == "" || textFirstname.Text == "firstname")
+            if (textFirstname.Text == "" || textFirstname.Text == "firstname" || textFirstname.Text.Contains(" "))
             {
                 textFirstname.Text = "firstname";
                 textFirstname.ForeColor = Color.FromArgb(198, 190, 255);
@@ -109,7 +109,7 @@ namespace Gestion_Personne.Modals.people
 
         private void comboGender_Leave(object sender, EventArgs e)
         {
-            if (comboGender.Text == "" || comboGender.Text == "select gender")
+            if (comboGender.Text == "" || comboGender.Text == "select gender" || comboGender.Text.Contains(" "))
             {
                 comboGender.Text = "select gender";
                 comboGender.ForeColor = Color.FromArgb(198, 190, 255);
