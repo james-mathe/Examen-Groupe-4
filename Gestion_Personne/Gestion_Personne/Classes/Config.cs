@@ -58,5 +58,10 @@ namespace Gestion_Personne.Classes
         {
             return new SqlConnection("Data source=" + ServerName + ";Initial catalog=g_personne;User=" + Username + ";Password=" + Password);
         }
+
+        public void afficher()
+        {
+            
+        }
     }
 }

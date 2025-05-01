@@ -186,18 +186,25 @@ namespace Gestion_Personne.UserControls
         {
             if(tableUser.Rows.Count > 0)
             {
-                Classes.User.AddUpdateDeleteUser delete = new Classes.User.AddUpdateDeleteUser();
-                idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
-                Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Dr == DialogResult.Yes)
+                if(tableUser.Rows.Count == 1)
                 {
-                    delete.DeleteUserSql(idU);
-                    DisplayUser("");
-                    MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("You Can't Delete All the User Because you Need at least one User to Log in", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Classes.User.AddUpdateDeleteUser delete = new Classes.User.AddUpdateDeleteUser();
+                    idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                    Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        delete.DeleteUserSql(idU);
+                        DisplayUser("");
+                        MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else

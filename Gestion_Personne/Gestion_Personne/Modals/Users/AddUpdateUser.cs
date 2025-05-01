@@ -38,6 +38,10 @@ namespace Gestion_Personne.Modals.Users
             {
                 return "Fill the Password Field";
             }
+            if (textCpass.Text == "Confirm Pass" || textCpass.Text == "")
+            {
+                return "Fill the Confirm Password Field";
+            }
             return null;
         }
 
@@ -100,43 +104,50 @@ namespace Gestion_Personne.Modals.Users
             {
                 if (config.ServerType == "Sql Server")
                 {
-                    if (titleUser.Text == "Add User")
+                    if(textPass.Text == textCpass.Text)
                     {
-                        Classes.User.AddUpdateDeleteUser add = new Classes.User.AddUpdateDeleteUser();
-                        if (add.addUserSql( textUser.Text, textPass.Text) == true)
+                        if (titleUser.Text == "Add User")
                         {
-                            (user as UserControls.User_User).DisplayUser("");
-                            MessageBox.Show("User Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            Classes.User.AddUpdateDeleteUser add = new Classes.User.AddUpdateDeleteUser();
+                            if (add.addUserSql(textUser.Text, textPass.Text) == true)
+                            {
+                                (user as UserControls.User_User).DisplayUser("");
+                                MessageBox.Show("User Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error Adding User", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Error Adding User", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            Classes.User.AddUpdateDeleteUser update = new Classes.User.AddUpdateDeleteUser();
+                            Dr = MessageBox.Show("Do you Want to Update this User??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (Dr == DialogResult.Yes)
+                            {
+                                if (update.UpdateUserSql(idU, textUser.Text, textPass.Text) == true)
+                                {
+                                    (user as UserControls.User_User).DisplayUser("");
+                                    MessageBox.Show("User Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error Updated User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                     else
                     {
-                        Classes.User.AddUpdateDeleteUser update = new Classes.User.AddUpdateDeleteUser();
-                        Dr = MessageBox.Show("Do you Want to Update this User??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (Dr == DialogResult.Yes)
-                        {
-                            if (update.UpdateUserSql(idU, textUser.Text, textPass.Text) == true)
-                            {
-                                (user as UserControls.User_User).DisplayUser("");
-                                MessageBox.Show("User Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error Updated User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show("The Password Doesn't Match. Try Again!!", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -154,6 +165,40 @@ namespace Gestion_Personne.Modals.Users
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void eyesCpass_Click(object sender, EventArgs e)
+        {
+            if (textCpass.UseSystemPasswordChar == true)
+            {
+                textCpass.UseSystemPasswordChar = false;
+                eyesCpass.Image = Properties.Resources.icons8_hide_24px;
+            }
+            else
+            {
+                textCpass.UseSystemPasswordChar = true;
+                eyesCpass.Image = Properties.Resources.icons8_eye_24px;
+            }
+        }
+
+        private void textCpass_Enter(object sender, EventArgs e)
+        {
+            if (textCpass.Text == "Confirm Pass")
+            {
+                textCpass.Text = "";
+                textCpass.UseSystemPasswordChar = true;
+                textCpass.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void textCpass_Leave(object sender, EventArgs e)
+        {
+            if (textCpass.Text == "" || textCpass.Text == "Confirm Pass")
+            {
+                textCpass.Text = "Confirm Pass";
+                textCpass.UseSystemPasswordChar = false;
+                textCpass.ForeColor = Color.FromArgb(198, 190, 255);
+            }
         }
     }
 }

@@ -41,8 +41,13 @@ namespace Gestion_Personne.Modals.Users
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btExit = new System.Windows.Forms.Button();
+            this.eyesCpass = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textCpass = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btsaveUser
@@ -56,9 +61,9 @@ namespace Gestion_Personne.Modals.Users
             this.btsaveUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btsaveUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.btsaveUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btsaveUser.Location = new System.Drawing.Point(6, 289);
+            this.btsaveUser.Location = new System.Drawing.Point(6, 368);
             this.btsaveUser.Name = "btsaveUser";
-            this.btsaveUser.Size = new System.Drawing.Size(338, 48);
+            this.btsaveUser.Size = new System.Drawing.Size(341, 48);
             this.btsaveUser.TabIndex = 54;
             this.btsaveUser.Text = "Add";
             this.btsaveUser.UseVisualStyleBackColor = false;
@@ -71,7 +76,7 @@ namespace Gestion_Personne.Modals.Users
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.panel5.Location = new System.Drawing.Point(61, 229);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(283, 3);
+            this.panel5.Size = new System.Drawing.Size(286, 3);
             this.panel5.TabIndex = 52;
             // 
             // textPass
@@ -84,7 +89,7 @@ namespace Gestion_Personne.Modals.Users
             this.textPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.textPass.Location = new System.Drawing.Point(61, 195);
             this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(283, 32);
+            this.textPass.Size = new System.Drawing.Size(286, 32);
             this.textPass.TabIndex = 51;
             this.textPass.Text = "password";
             this.textPass.UseSystemPasswordChar = true;
@@ -98,7 +103,7 @@ namespace Gestion_Personne.Modals.Users
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
             this.panel4.Location = new System.Drawing.Point(61, 136);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(283, 3);
+            this.panel4.Size = new System.Drawing.Size(286, 3);
             this.panel4.TabIndex = 49;
             // 
             // textUser
@@ -111,7 +116,7 @@ namespace Gestion_Personne.Modals.Users
             this.textUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.textUser.Location = new System.Drawing.Point(61, 102);
             this.textUser.Name = "textUser";
-            this.textUser.Size = new System.Drawing.Size(283, 32);
+            this.textUser.Size = new System.Drawing.Size(286, 32);
             this.textUser.TabIndex = 48;
             this.textUser.Text = "username";
             this.textUser.Enter += new System.EventHandler(this.textUser_Enter);
@@ -123,7 +128,7 @@ namespace Gestion_Personne.Modals.Users
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(353, 10);
+            this.panel1.Size = new System.Drawing.Size(356, 10);
             this.panel1.TabIndex = 46;
             // 
             // titleUser
@@ -145,7 +150,7 @@ namespace Gestion_Personne.Modals.Users
             this.eyes.FlatAppearance.BorderSize = 0;
             this.eyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eyes.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
-            this.eyes.Location = new System.Drawing.Point(308, 201);
+            this.eyes.Location = new System.Drawing.Point(311, 201);
             this.eyes.Name = "eyes";
             this.eyes.Size = new System.Drawing.Size(36, 20);
             this.eyes.TabIndex = 55;
@@ -159,7 +164,7 @@ namespace Gestion_Personne.Modals.Users
             this.pictureBox4.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
             this.pictureBox4.Location = new System.Drawing.Point(6, 182);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(51, 52);
+            this.pictureBox4.Size = new System.Drawing.Size(54, 52);
             this.pictureBox4.TabIndex = 53;
             this.pictureBox4.TabStop = false;
             // 
@@ -170,7 +175,7 @@ namespace Gestion_Personne.Modals.Users
             this.pictureBox3.Image = global::Gestion_Personne.Properties.Resources.icons8_user_50px;
             this.pictureBox3.Location = new System.Drawing.Point(6, 90);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(54, 52);
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
             // 
@@ -180,18 +185,73 @@ namespace Gestion_Personne.Modals.Users
             this.btExit.FlatAppearance.BorderSize = 0;
             this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExit.Image = global::Gestion_Personne.Properties.Resources.icons8_Close_40px;
-            this.btExit.Location = new System.Drawing.Point(314, 13);
+            this.btExit.Location = new System.Drawing.Point(317, 13);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(36, 29);
             this.btExit.TabIndex = 47;
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // eyesCpass
+            // 
+            this.eyesCpass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eyesCpass.FlatAppearance.BorderSize = 0;
+            this.eyesCpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eyesCpass.Image = global::Gestion_Personne.Properties.Resources.icons8_eye_24px;
+            this.eyesCpass.Location = new System.Drawing.Point(311, 296);
+            this.eyesCpass.Name = "eyesCpass";
+            this.eyesCpass.Size = new System.Drawing.Size(36, 20);
+            this.eyesCpass.TabIndex = 59;
+            this.eyesCpass.UseVisualStyleBackColor = true;
+            this.eyesCpass.Click += new System.EventHandler(this.eyesCpass_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
+            this.panel2.Location = new System.Drawing.Point(61, 324);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(286, 3);
+            this.panel2.TabIndex = 57;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Gestion_Personne.Properties.Resources.icons8_password_50px;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 277);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 52);
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textCpass
+            // 
+            this.textCpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCpass.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textCpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textCpass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.textCpass.Location = new System.Drawing.Point(61, 290);
+            this.textCpass.Name = "textCpass";
+            this.textCpass.Size = new System.Drawing.Size(286, 32);
+            this.textCpass.TabIndex = 56;
+            this.textCpass.Text = "Confirm Pass";
+            this.textCpass.UseSystemPasswordChar = true;
+            this.textCpass.Enter += new System.EventHandler(this.textCpass_Enter);
+            this.textCpass.Leave += new System.EventHandler(this.textCpass_Leave);
+            // 
             // AddUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 349);
+            this.ClientSize = new System.Drawing.Size(356, 428);
+            this.Controls.Add(this.eyesCpass);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textCpass);
             this.Controls.Add(this.eyes);
             this.Controls.Add(this.btsaveUser);
             this.Controls.Add(this.panel5);
@@ -211,6 +271,7 @@ namespace Gestion_Personne.Modals.Users
             this.Load += new System.EventHandler(this.AddUpdateUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +289,9 @@ namespace Gestion_Personne.Modals.Users
         public System.Windows.Forms.Button btsaveUser;
         public System.Windows.Forms.TextBox textPass;
         public System.Windows.Forms.Label titleUser;
+        public System.Windows.Forms.Button eyesCpass;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox textCpass;
     }
 }
