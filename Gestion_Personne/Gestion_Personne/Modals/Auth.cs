@@ -88,7 +88,7 @@ namespace Gestion_Personne.Modals
                                 }
                                 else {
 
-                                    MessageBox.Show("Pasword is Incorect", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Password is Incorect", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             else
