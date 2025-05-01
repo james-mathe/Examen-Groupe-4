@@ -171,6 +171,7 @@ namespace Gestion_Personne.UserControls
                 updateModal.eyes.Image = Properties.Resources.icons8_hide_24px;
 
                 updateModal.titleUser.Text = "Update User";
+                updateModal.titleUser.Location = new Point();
                 updateModal.btsaveUser.Text = "Update";
                 updateModal.textUser.ForeColor = Color.DimGray;
                 updateModal.textPass.ForeColor = Color.DimGray;
