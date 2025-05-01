@@ -138,7 +138,7 @@ namespace Gestion_Personne.Modals.Users
             this.titleUser.AutoSize = true;
             this.titleUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(69)))), ((int)(((byte)(255)))));
-            this.titleUser.Location = new System.Drawing.Point(84, 13);
+            this.titleUser.Location = new System.Drawing.Point(89, 9);
             this.titleUser.Name = "titleUser";
             this.titleUser.Size = new System.Drawing.Size(177, 40);
             this.titleUser.TabIndex = 45;
