@@ -136,7 +136,7 @@ namespace Gestion_Personne.Modals.Users
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Error Updated User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Error Updating User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     this.Close();
                                 }
                             }
