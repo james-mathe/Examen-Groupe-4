@@ -327,7 +327,7 @@ namespace Gestion_Personne.Modals.Address
 
         private void comboCountry_Leave(object sender, EventArgs e)
         {
-            if(comboCountry.Text == "" || comboCountry.Text == "Select Country")
+            if(comboCountry.Text == "" || comboCountry.Text == "Select Country" || comboCountry.Text.Contains(" "))
             {
                 comboCountry.Text = "Select Country";
                 comboCountry.ForeColor = Color.FromArgb(198, 190, 255);
@@ -345,7 +345,7 @@ namespace Gestion_Personne.Modals.Address
 
         private void textCity_Leave(object sender, EventArgs e)
         {
-            if (textCity.Text == "" || textCity.Text == "City")
+            if (textCity.Text == "" || textCity.Text == "City" || textCity.Text.Contains(" "))
             {
                 textCity.Text = "City";
                 textCity.ForeColor = Color.FromArgb(198, 190, 255);
@@ -363,7 +363,7 @@ namespace Gestion_Personne.Modals.Address
 
         private void textTown_Leave(object sender, EventArgs e)
         {
-            if (textTown.Text == "" || textTown.Text == "Town")
+            if (textTown.Text == "" || textTown.Text == "Town" || textTown.Text.Contains(" "))
             {
                 textTown.Text = "Town";
                 textTown.ForeColor = Color.FromArgb(198, 190, 255);
@@ -381,7 +381,7 @@ namespace Gestion_Personne.Modals.Address
 
         private void textqua_Leave(object sender, EventArgs e)
         {
-            if (textqua.Text == "" || textqua.Text == "Quarter")
+            if (textqua.Text == "" || textqua.Text == "Quarter" || textqua.Text.Contains(" "))
             {
                 textqua.Text = "Quarter";
                 textqua.ForeColor = Color.FromArgb(198, 190, 255);
@@ -399,7 +399,7 @@ namespace Gestion_Personne.Modals.Address
 
         private void textAv_Leave(object sender, EventArgs e)
         {
-            if (textAv.Text == "" || textAv.Text == "Avenue")
+            if (textAv.Text == "" || textAv.Text == "Avenue" || textAv.Text.Contains(" "))
             {
                 textAv.Text = "Avenue";
                 textAv.ForeColor = Color.FromArgb(198, 190, 255);
