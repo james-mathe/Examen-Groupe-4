@@ -142,7 +142,7 @@ namespace Gestion_Personne.Modals.Users
                             }
                             else
                             {
-                                MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Update Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
