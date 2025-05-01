@@ -148,7 +148,7 @@ namespace Gestion_Personne.Modals.Users
                     }
                     else
                     {
-                        MessageBox.Show("The Password Doesn't Match. Try Again!!", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("The Password Doesn't Match each other. Try Again!!", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
