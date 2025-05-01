@@ -27,6 +27,7 @@ namespace Gestion_Personne.Modals.Users
         private void AddUpdateUser_Load(object sender, EventArgs e)
         {
             textPass.UseSystemPasswordChar = false;
+            textCpass.UseSystemPasswordChar = false;
         }
         public String IsEmpty()
         {

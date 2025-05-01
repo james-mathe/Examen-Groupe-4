@@ -161,7 +161,7 @@ namespace Gestion_Personne.Modals
 
         private void textUser_Leave(object sender, EventArgs e)
         {
-            if(textUser.Text == "" || textUser.Text == "username")
+            if(textUser.Text == "" || textUser.Text == "username" || textUser.Text.Contains(" "))
             {
                 textUser.Text = "username";
                 textUser.ForeColor = Color.FromArgb(198, 190, 255);
