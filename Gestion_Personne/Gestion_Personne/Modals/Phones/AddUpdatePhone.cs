@@ -221,7 +221,7 @@ namespace Gestion_Personne.Modals.Phones
 
         private void textSearch_Leave(object sender, EventArgs e)
         {
-            if (textSearch.Text == "" || textSearch.Text == "Search")
+            if (textSearch.Text == "" || textSearch.Text == "Search" || textSearch.Text.Contains(" "))
             {
                 textSearch.Text = "Search";
                 textSearch.ForeColor = Color.FromArgb(198, 190, 255);
@@ -283,7 +283,7 @@ namespace Gestion_Personne.Modals.Phones
 
         private void textnumber_Leave(object sender, EventArgs e)
         {
-            if(textnumber.Text == "" || textnumber.Text == "9xx")
+            if(textnumber.Text == "" || textnumber.Text == "9xx" || textnumber.Text.Contains(" "))
             {
                 textnumber.Text = "9xx";
                 textnumber.ForeColor = Color.FromArgb(198, 190, 255);
@@ -394,7 +394,7 @@ namespace Gestion_Personne.Modals.Phones
 
         private void comboCountry_Leave(object sender, EventArgs e)
         {
-            if(comboCountry.Text == "" || comboCountry.Text == "Select Country")
+            if(comboCountry.Text == "" || comboCountry.Text == "Select Country" || comboCountry.Text.Contains(" "))
             {
                 comboCountry.Text = "Select Country";
                 comboCountry.ForeColor = Color.FromArgb(198, 190, 255);
