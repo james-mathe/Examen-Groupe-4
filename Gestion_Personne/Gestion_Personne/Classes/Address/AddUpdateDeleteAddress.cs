@@ -18,231 +18,234 @@ namespace Gestion_Personne.Classes.Address
         private SqlCommand sqlcmd;
         private MySqlCommand mycmd;
 
-        
+        public AddUpdateDeleteAddress()
+        {
+            db = new Config();
+            sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
+        }
         public bool addAddressSql(int idP, String Av, String Qua, String com, String ville, String pays)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
+            
+            if(db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "AddAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
-                    sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
-                    sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
-                    sqlcmd.Parameters.Add(new SqlParameter("@ville", SqlDbType.VarChar, 250)).Value = ville;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "AddAddress";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
+                        sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
+                        sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
+                        sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
+                        sqlcmd.Parameters.Add(new SqlParameter("@ville", SqlDbType.VarChar, 250)).Value = ville;
+                        sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "AddAddress";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@idPs", MySqlDbType.Int32)).Value = idP;
+                        mycmd.Parameters.Add(new MySqlParameter("@av", MySqlDbType.VarChar, 250)).Value = Av;
+                        mycmd.Parameters.Add(new MySqlParameter("@qua", MySqlDbType.VarChar, 250)).Value = Qua;
+                        mycmd.Parameters.Add(new MySqlParameter("@com", MySqlDbType.VarChar, 250)).Value = com;
+                        mycmd.Parameters.Add(new MySqlParameter("@villes", MySqlDbType.VarChar, 250)).Value = ville;
+                        mycmd.Parameters.Add(new MySqlParameter("@payss", MySqlDbType.VarChar, 250)).Value = pays;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
-            return saved;
+            
+            return false;
         }
 
         public bool UpdateAddressSql(int id, int idP, String Av, String Qua, String com, String ville, String pays)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
-            {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    String proc = "UpdateAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
-                    sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
-                    sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
-                    sqlcmd.Parameters.Add(new SqlParameter("@ville", SqlDbType.VarChar, 250)).Value = ville;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
 
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+            if (db.ServerType == "Sql Server")
+            {
+                try
+                {
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "UpdateAddress";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
+                        sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
+                        sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
+                        sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
+                        sqlcmd.Parameters.Add(new SqlParameter("@ville", SqlDbType.VarChar, 250)).Value = ville;
+                        sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "UpdateAddress";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+                        mycmd.Parameters.Add(new MySqlParameter("@idPs", MySqlDbType.Int32)).Value = idP;
+                        mycmd.Parameters.Add(new MySqlParameter("@av", MySqlDbType.VarChar, 250)).Value = Av;
+                        mycmd.Parameters.Add(new MySqlParameter("@qua", MySqlDbType.VarChar, 250)).Value = Qua;
+                        mycmd.Parameters.Add(new MySqlParameter("@com", MySqlDbType.VarChar, 250)).Value = com;
+                        mycmd.Parameters.Add(new MySqlParameter("@villes", MySqlDbType.VarChar, 250)).Value = ville;
+                        mycmd.Parameters.Add(new MySqlParameter("@payss", MySqlDbType.VarChar, 250)).Value = pays;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
-            return saved;
+            
+            return false;
         }
 
         public bool DeleteAddressSql(int id)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
-            {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    String proc = "DeleteAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
 
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+            if (db.ServerType == "Sql Server")
+            {
+                try
+                {
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "DeleteAddress";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
-        }
-
-        public bool addAddressMySql(int idP, String Av, String Qua, String com, String ville, String pays)
-        {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
-            {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    String proc = "AddAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
-                    sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
-                    sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
-                    sqlcmd.Parameters.Add(new SqlParameter("@villes", SqlDbType.VarChar, 250)).Value = ville;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "DeleteAddress";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
+            
+            return false;
         }
 
-        public bool UpdateAddressMySql(int id, int idP, String Av, String Qua, String com, String ville, String pays)
-        {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
-            {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    String proc = "UpdateAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@av", SqlDbType.VarChar, 250)).Value = Av;
-                    sqlcmd.Parameters.Add(new SqlParameter("@qua", SqlDbType.VarChar, 250)).Value = Qua;
-                    sqlcmd.Parameters.Add(new SqlParameter("@com", SqlDbType.VarChar, 250)).Value = com;
-                    sqlcmd.Parameters.Add(new SqlParameter("@villes", SqlDbType.VarChar, 250)).Value = ville;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pays", SqlDbType.VarChar, 250)).Value = pays;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
-                    {
-                        saved = true;
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
-        }
-
-        public bool DeleteAddressMySql(int id)
-        {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
-            {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    String proc = "DeleteAddress";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idA", SqlDbType.BigInt)).Value = id;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
-                    {
-                        saved = true;
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
-        }
     }
 }
