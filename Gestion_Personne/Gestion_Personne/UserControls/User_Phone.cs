@@ -91,9 +91,9 @@ namespace Gestion_Personne.UserControls
                         tablePhone.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@fullname", MySqlDbType.VarChar, 250)).Value = text;
-                        mycmd.Parameters.Add(new MySqlParameter("@initial", MySqlDbType.VarChar, 4)).Value = text;
-                        mycmd.Parameters.Add(new MySqlParameter("@numero", MySqlDbType.VarChar, 9)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@fullnames", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@initials", MySqlDbType.VarChar, 4)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@numeros", MySqlDbType.VarChar, 9)).Value = text;
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
@@ -194,7 +194,7 @@ namespace Gestion_Personne.UserControls
                 if (Dr == DialogResult.Yes)
                 {
 
-                    delete.DeletePhoneSql(idT);
+                    delete.DeletePhone(idT);
                     DisplayPhone("");
                     MessageBox.Show("Phone Number Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -219,6 +219,7 @@ namespace Gestion_Personne.UserControls
             Modals.RapportModal printer = new Modals.RapportModal();
             config = new Classes.Config();
             sqlcon = config.getSqlConnection();
+            mycon = config.getMySqlConnection();
             if (tablePhone.Rows.Count > 0)
             {
                 try
@@ -234,6 +235,32 @@ namespace Gestion_Personne.UserControls
 
                                 sqlcmd = new SqlCommand(sql, sqlcon);
                                 SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithNum = new DataTable();
+                                data.Fill(tablePersonWithNum);
+                                var listPersonneWithNum = tablePersonWithNum;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithNumber.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithNumber", listPersonneWithNum));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        mycon.Open();
+                        try
+                        {
+                            if (mycon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonNumber";
+
+                                mycmd = new MySqlCommand(sql, mycon);
+                                MySqlDataAdapter data = new MySqlDataAdapter(mycmd);
                                 DataTable tablePersonWithNum = new DataTable();
                                 data.Fill(tablePersonWithNum);
                                 var listPersonneWithNum = tablePersonWithNum;
