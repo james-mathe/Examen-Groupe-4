@@ -213,5 +213,10 @@ namespace Gestion_Personne.UserControls
                 MessageBox.Show("Table is Empty, Fill it before", "Table", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void tableUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

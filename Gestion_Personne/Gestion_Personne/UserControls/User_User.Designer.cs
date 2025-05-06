@@ -34,6 +34,10 @@ namespace Gestion_Personne.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableUser = new System.Windows.Forms.DataGridView();
+            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,10 +46,6 @@ namespace Gestion_Personne.UserControls
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,34 @@ namespace Gestion_Personne.UserControls
             this.tableUser.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tableUser.Size = new System.Drawing.Size(969, 435);
             this.tableUser.TabIndex = 60;
+            this.tableUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableUser_CellContentClick);
+            // 
+            // num
+            // 
+            this.num.FillWeight = 25F;
+            this.num.HeaderText = "#";
+            this.num.Name = "num";
+            this.num.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nam
+            // 
+            this.nam.HeaderText = "Username";
+            this.nam.Name = "nam";
+            this.nam.ReadOnly = true;
+            // 
+            // pwd
+            // 
+            this.pwd.FillWeight = 200F;
+            this.pwd.HeaderText = "Password";
+            this.pwd.Name = "pwd";
+            this.pwd.ReadOnly = true;
             // 
             // panel3
             // 
@@ -218,33 +246,6 @@ namespace Gestion_Personne.UserControls
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // num
-            // 
-            this.num.FillWeight = 25F;
-            this.num.HeaderText = "#";
-            this.num.Name = "num";
-            this.num.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nam
-            // 
-            this.nam.HeaderText = "Username";
-            this.nam.Name = "nam";
-            this.nam.ReadOnly = true;
-            // 
-            // pwd
-            // 
-            this.pwd.FillWeight = 200F;
-            this.pwd.HeaderText = "Password";
-            this.pwd.Name = "pwd";
-            this.pwd.ReadOnly = true;
             // 
             // User_User
             // 

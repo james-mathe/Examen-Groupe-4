@@ -37,7 +37,6 @@ namespace Gestion_Personne.Classes
                     ServerName = lines[1].Trim();
                     Username = lines[2].Trim();
                     Password = cryptage.DecryptData(lines[3]);
-
                 }
                 else
                 {
@@ -59,9 +58,5 @@ namespace Gestion_Personne.Classes
             return new SqlConnection("Data source=" + ServerName + ";Initial catalog=g_personne;User=" + Username + ";Password=" + Password);
         }
 
-        public void afficher()
-        {
-            
-        }
     }
 }
