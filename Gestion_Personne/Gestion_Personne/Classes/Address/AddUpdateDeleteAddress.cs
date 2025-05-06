@@ -24,7 +24,7 @@ namespace Gestion_Personne.Classes.Address
             sqlcon = db.getSqlConnection();
             mycon = db.getMySqlConnection();
         }
-        public bool addAddressSql(int idP, String Av, String Qua, String com, String ville, String pays)
+        public bool addAddress(int idP, String Av, String Qua, String com, String ville, String pays)
         {
             
             if(db.ServerType == "Sql Server")
@@ -101,7 +101,7 @@ namespace Gestion_Personne.Classes.Address
             return false;
         }
 
-        public bool UpdateAddressSql(int id, int idP, String Av, String Qua, String com, String ville, String pays)
+        public bool UpdateAddress(int id, int idP, String Av, String Qua, String com, String ville, String pays)
         {
 
             if (db.ServerType == "Sql Server")
@@ -180,7 +180,7 @@ namespace Gestion_Personne.Classes.Address
             return false;
         }
 
-        public bool DeleteAddressSql(int id)
+        public bool DeleteAddress(int id)
         {
 
             if (db.ServerType == "Sql Server")
