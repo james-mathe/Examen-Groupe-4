@@ -24,7 +24,7 @@ namespace Gestion_Personne.Classes.People
             mycon = db.getMySqlConnection();
         }
 
-        public bool addPersonSql(String name,String lastname,String firstname,char sex)
+        public bool addPerson(String name,String lastname,String firstname,char sex)
         {
             if(db.ServerType == "Sql Server")
             {
@@ -99,7 +99,7 @@ namespace Gestion_Personne.Classes.People
 
         }
 
-        public bool updatePersonSql(int id,String name, String lastname, String firstname, char sex)
+        public bool updatePerson(int id,String name, String lastname, String firstname, char sex)
         {
             if (db.ServerType == "Sql Server")
             {
@@ -176,7 +176,7 @@ namespace Gestion_Personne.Classes.People
 
         }
 
-        public bool deletePersonSql(int id)
+        public bool deletePerson(int id)
         {
             if (db.ServerType == "Sql Server")
             {
@@ -244,7 +244,7 @@ namespace Gestion_Personne.Classes.People
             return false;
 
         }
-        public int selectPhoneByIdsql(int idP)
+        public int selectPhoneById(int idP)
         {
             int totPhone = 0;
             if (db.ServerType == "Sql Server")
@@ -312,7 +312,7 @@ namespace Gestion_Personne.Classes.People
             
             return totPhone;
         }
-        public int selectAddressByIdsql(int idP)
+        public int selectAddressById(int idP)
         {
             int totaddress = 0;
             if (db.ServerType == "Sql Server")
