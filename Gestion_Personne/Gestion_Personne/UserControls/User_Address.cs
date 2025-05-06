@@ -94,12 +94,12 @@ namespace Gestion_Personne.UserControls
                         tableAddress.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@fullname", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@fullnames", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@av", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@qua", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@com", MySqlDbType.VarChar, 250)).Value = text;
-                        mycmd.Parameters.Add(new MySqlParameter("@ville", MySqlDbType.VarChar, 250)).Value = text;
-                        mycmd.Parameters.Add(new MySqlParameter("@pays", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@villes", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@payss", MySqlDbType.VarChar, 250)).Value = text;
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
@@ -177,7 +177,7 @@ namespace Gestion_Personne.UserControls
                 Dr = MessageBox.Show("Do you Want to Delete this Address??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Dr == DialogResult.Yes)
                 {
-                    delete.DeleteAddressSql(idA);
+                    delete.DeleteAddress(idA);
                     DisplayAddress("");
                     MessageBox.Show("Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -234,6 +234,7 @@ namespace Gestion_Personne.UserControls
             Modals.RapportModal printer = new Modals.RapportModal();
             config = new Classes.Config();
             sqlcon = config.getSqlConnection();
+            mycon = config.getMySqlConnection();
             if (tableAddress.Rows.Count > 0)
             {
                 try
@@ -249,6 +250,32 @@ namespace Gestion_Personne.UserControls
 
                                 sqlcmd = new SqlCommand(sql, sqlcon);
                                 SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithAddr = new DataTable();
+                                data.Fill(tablePersonWithAddr);
+                                var listPersonneWithAddr = tablePersonWithAddr;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithAddress.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithAddress", listPersonneWithAddr));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        mycon.Open();
+                        try
+                        {
+                            if (mycon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonAddress";
+
+                                mycmd = new MySqlCommand(sql, mycon);
+                                MySqlDataAdapter data = new MySqlDataAdapter(mycmd);
                                 DataTable tablePersonWithAddr = new DataTable();
                                 data.Fill(tablePersonWithAddr);
                                 var listPersonneWithAddr = tablePersonWithAddr;
@@ -281,6 +308,7 @@ namespace Gestion_Personne.UserControls
             Modals.RapportModal printer = new Modals.RapportModal();
             config = new Classes.Config();
             sqlcon = config.getSqlConnection();
+            mycon = config.getMySqlConnection();
             if (tableAddress.Rows.Count > 0)
             {
                 try
@@ -296,6 +324,32 @@ namespace Gestion_Personne.UserControls
 
                                 sqlcmd = new SqlCommand(sql, sqlcon);
                                 SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePersonWithNumandAddr = new DataTable();
+                                data.Fill(tablePersonWithNumandAddr);
+                                var listPersonneWithNumandAddr = tablePersonWithNumandAddr;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPersonWithNumberAndAddress.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("PersonWithNumberAndAddress", listPersonneWithNumandAddr));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        mycon.Open();
+                        try
+                        {
+                            if (mycon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from listPersonWithNumberAndAddress";
+
+                                mycmd = new MySqlCommand(sql, mycon);
+                                MySqlDataAdapter data = new MySqlDataAdapter(mycmd);
                                 DataTable tablePersonWithNumandAddr = new DataTable();
                                 data.Fill(tablePersonWithNumandAddr);
                                 var listPersonneWithNumandAddr = tablePersonWithNumandAddr;
