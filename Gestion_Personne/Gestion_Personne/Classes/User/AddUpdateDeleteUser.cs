@@ -16,6 +16,8 @@ namespace Gestion_Personne.Classes.User
         private Cryptage cryptage;
         private SqlConnection sqlcon;
         private SqlCommand sqlcmd;
+        private MySqlConnection mycon;
+        private MySqlCommand mycmd;
 
         public bool addUserSql(String username, String password)
         {
@@ -124,19 +126,19 @@ namespace Gestion_Personne.Classes.User
 
         public bool addUserMySql(String username, String password)
         {
-            sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
             cryptage = new Cryptage();
             try
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                mycon.Open();
+                if (mycon.State == ConnectionState.Open)
                 {
                     String proc = "AddUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    mycmd = new MySqlCommand(proc, mycon);
+                    mycmd.CommandType = CommandType.StoredProcedure;
+                    mycmd.Parameters.Add(new MySqlParameter("@usernames", MySqlDbType.VarChar, 250)).Value = username;
+                    mycmd.Parameters.Add(new MySqlParameter("@pwds", MySqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+                    if (mycmd.ExecuteNonQuery() > 0)
                     {
                         return true;
                     }
@@ -148,9 +150,9 @@ namespace Gestion_Personne.Classes.User
             }
             finally
             {
-                if (sqlcon.State == ConnectionState.Open)
+                if (mycon.State == ConnectionState.Open)
                 {
-                    sqlcon.Close();
+                    mycon.Close();
                 }
             }
             return false;
@@ -159,21 +161,21 @@ namespace Gestion_Personne.Classes.User
         public bool UpdateUserMySql(int id, String username, String password)
         {
             bool saved = false;
-            sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
             cryptage = new Cryptage();
             try
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                mycon.Open();
+                if (mycon.State == ConnectionState.Open)
                 {
                     String proc = "UpdateUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
-                    sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+                    mycmd = new MySqlCommand(proc, mycon);
+                    mycmd.CommandType = CommandType.StoredProcedure;
+                    mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+                    mycmd.Parameters.Add(new MySqlParameter("@usernames", MySqlDbType.VarChar, 250)).Value = username;
+                    mycmd.Parameters.Add(new MySqlParameter("@pwds", MySqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
 
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    if (mycmd.ExecuteNonQuery() > 0)
                     {
                         saved = true;
                     }
@@ -185,9 +187,9 @@ namespace Gestion_Personne.Classes.User
             }
             finally
             {
-                if (sqlcon.State == ConnectionState.Open)
+                if (mycon.State == ConnectionState.Open)
                 {
-                    sqlcon.Close();
+                    mycon.Close();
                 }
             }
             return saved;
@@ -196,18 +198,18 @@ namespace Gestion_Personne.Classes.User
         public bool DeleteUserMySql(int id)
         {
             bool saved = false;
-            sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
             try
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                mycon.Open();
+                if (mycon.State == ConnectionState.Open)
                 {
                     String proc = "DeleteUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
+                    mycmd = new MySqlCommand(proc, mycon);
+                    mycmd.CommandType = CommandType.StoredProcedure;
+                    mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
 
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    if (mycmd.ExecuteNonQuery() > 0)
                     {
                         saved = true;
                     }
@@ -219,9 +221,9 @@ namespace Gestion_Personne.Classes.User
             }
             finally
             {
-                if (sqlcon.State == ConnectionState.Open)
+                if (mycon.State == ConnectionState.Open)
                 {
-                    sqlcon.Close();
+                    mycon.Close();
                 }
             }
             return saved;

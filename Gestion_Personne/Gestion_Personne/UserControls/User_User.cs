@@ -90,7 +90,7 @@ namespace Gestion_Personne.UserControls
                         tableUser.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@username", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@usernames", MySqlDbType.VarChar, 250)).Value = text;
                         MySqlDataReader dataReader = mycmd.ExecuteReader();
                         int num = 1;
                         while (dataReader.Read())
@@ -185,7 +185,8 @@ namespace Gestion_Personne.UserControls
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(tableUser.Rows.Count > 0)
+            config = new Classes.Config();
+            if (tableUser.Rows.Count > 0)
             {
                 if(tableUser.Rows.Count == 1)
                 {
@@ -194,17 +195,35 @@ namespace Gestion_Personne.UserControls
                 else
                 {
                     Classes.User.AddUpdateDeleteUser delete = new Classes.User.AddUpdateDeleteUser();
-                    idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
-                    Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (Dr == DialogResult.Yes)
+                    if(config.ServerType == "Sql Server")
                     {
-                        delete.DeleteUserSql(idU);
-                        DisplayUser("");
-                        MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                        Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Dr == DialogResult.Yes)
+                        {
+                            delete.DeleteUserSql(idU);
+                            DisplayUser("");
+                            MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                        Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Dr == DialogResult.Yes)
+                        {
+                            delete.DeleteUserMySql(idU);
+                            DisplayUser("");
+                            MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }

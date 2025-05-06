@@ -154,7 +154,51 @@ namespace Gestion_Personne.Modals.Users
                 }
                 else
                 {
+                    if (textPass.Text == textCpass.Text)
+                    {
+                        if (titleUser.Text == "Add User")
+                        {
+                            Classes.User.AddUpdateDeleteUser add = new Classes.User.AddUpdateDeleteUser();
+                            if (add.addUserMySql(textUser.Text, textPass.Text) == true)
+                            {
+                                (user as UserControls.User_User).DisplayUser("");
+                                MessageBox.Show("User Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error Adding User", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            Classes.User.AddUpdateDeleteUser update = new Classes.User.AddUpdateDeleteUser();
+                            Dr = MessageBox.Show("Do you Want to Update this User??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (Dr == DialogResult.Yes)
+                            {
+                                if (update.UpdateUserMySql(idU, textUser.Text, textPass.Text) == true)
+                                {
+                                    (user as UserControls.User_User).DisplayUser("");
+                                    MessageBox.Show("User Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error Updating User", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Update Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Password Doesn't Match each other. Try Again!!", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             else
