@@ -94,7 +94,7 @@ namespace Gestion_Personne.UserControls
                         tablePerson.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@noms", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@pnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@prnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@sex", MySqlDbType.VarChar, 250)).Value = text;
@@ -188,14 +188,14 @@ namespace Gestion_Personne.UserControls
                 
                 idP = Convert.ToInt32(tablePerson.CurrentRow.Cells[1].Value);
                 Classes.People.AddUpdateDeletePerson sqldelete = new Classes.People.AddUpdateDeletePerson();
-                int numtel = sqldelete.selectPhoneByIdsql(idP);
-                int numaddres = sqldelete.selectAddressByIdsql(idP);
+                int numtel = sqldelete.selectPhoneById(idP);
+                int numaddres = sqldelete.selectAddressById(idP);
                 if(numtel > 0 && numaddres == 0)
                 {
                     Dr = MessageBox.Show("This Person has " + numtel + " phone number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
-                        sqldelete.deletePersonSql(idP);
+                        sqldelete.deletePerson(idP);
                         DisplayPerson("");
                         MessageBox.Show("Person and phone number Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -210,7 +210,7 @@ namespace Gestion_Personne.UserControls
                     Dr = MessageBox.Show("This Person has " + numaddres + " Address.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
-                        sqldelete.deletePersonSql(idP);
+                        sqldelete.deletePerson(idP);
                         DisplayPerson("");
                         MessageBox.Show("Person and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -225,7 +225,7 @@ namespace Gestion_Personne.UserControls
                     Dr = MessageBox.Show("This Person has " + numaddres + " Address and "+ numtel + " Phone Number.\nDo you still Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
-                        sqldelete.deletePersonSql(idP);
+                        sqldelete.deletePerson(idP);
                         DisplayPerson("");
                         MessageBox.Show("Person, Phone Number and Address Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -240,7 +240,7 @@ namespace Gestion_Personne.UserControls
                     Dr = MessageBox.Show("Do you Want to Delete this Person??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Dr == DialogResult.Yes)
                     {
-                        sqldelete.deletePersonSql(idP);
+                        sqldelete.deletePerson(idP);
                         DisplayPerson("");
                         MessageBox.Show("Person Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -300,6 +300,32 @@ namespace Gestion_Personne.UserControls
                                 
                                 sqlcmd = new SqlCommand(sql, sqlcon);
                                 SqlDataAdapter data = new SqlDataAdapter(sqlcmd);
+                                DataTable tablePerson = new DataTable();
+                                data.Fill(tablePerson);
+                                var listPersonne = tablePerson;
+
+                                printer.reportpreview.LocalReport.ReportEmbeddedResource = "Gestion_Personne.Rapport.RapportPerson.rdlc";
+                                printer.reportpreview.LocalReport.DataSources.Add(new ReportDataSource("Person", listPersonne));
+                                printer.reportpreview.RefreshReport();
+                                printer.ShowDialog();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        mycon.Open();
+                        try
+                        {
+                            if (mycon.State == ConnectionState.Open)
+                            {
+                                String sql = "select * from personne";
+
+                                mycmd = new MySqlCommand(sql, mycon);
+                                MySqlDataAdapter data = new MySqlDataAdapter(mycmd);
                                 DataTable tablePerson = new DataTable();
                                 data.Fill(tablePerson);
                                 var listPersonne = tablePerson;
