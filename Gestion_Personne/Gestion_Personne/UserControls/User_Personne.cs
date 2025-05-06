@@ -39,6 +39,7 @@ namespace Gestion_Personne.UserControls
         public User_Personne()
         {
             InitializeComponent();
+            DisplayPerson("");
         }
 
         public void DisplayPerson(String text)
@@ -285,7 +286,8 @@ namespace Gestion_Personne.UserControls
             Modals.RapportModal printer = new Modals.RapportModal();
             config = new Classes.Config();
             sqlcon = config.getSqlConnection();
-            if(tablePerson.Rows.Count > 0)
+            mycon = config.getMySqlConnection();
+            if (tablePerson.Rows.Count > 0)
             {
                 try
                 {

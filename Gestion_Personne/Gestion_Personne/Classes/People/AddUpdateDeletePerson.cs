@@ -288,7 +288,7 @@ namespace Gestion_Personne.Classes.People
                         String sql = "select COUNT(idP) from telephone where idP=@idP";
                         mycmd = new MySqlCommand(sql, mycon);
                         mycmd.Parameters.AddWithValue("@idP", idP);
-                        totPhone = (int)mycmd.ExecuteScalar();
+                        totPhone = Convert.ToInt32(mycmd.ExecuteScalar());
 
                         if (mycmd.ExecuteNonQuery() > 0)
                         {
@@ -356,7 +356,7 @@ namespace Gestion_Personne.Classes.People
                         String sql = "select COUNT(idP) from adresse where idP=@idP";
                         mycmd = new MySqlCommand(sql, mycon);
                         mycmd.Parameters.AddWithValue("@idP", idP);
-                        totaddress = (int)mycmd.ExecuteScalar();
+                        totaddress = Convert.ToInt32(mycmd.ExecuteScalar());
 
                         if (mycmd.ExecuteNonQuery() > 0)
                         {

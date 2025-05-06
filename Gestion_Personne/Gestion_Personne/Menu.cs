@@ -142,6 +142,8 @@ namespace Gestion_Personne
 
         private void btPerson_Click(object sender, EventArgs e)
         {
+            Classes.Config config = new Classes.Config();
+            User_Personne.instance.DisplayPerson("");
             btPerson.BackColor = activeBackColor;
             btPerson.ForeColor = activeForeColor;
             btPhone.BackColor = defaultBackColor;
@@ -164,6 +166,8 @@ namespace Gestion_Personne
 
         private void btPhone_Click(object sender, EventArgs e)
         {
+            Classes.Config config = new Classes.Config();
+            User_Phone.instace.DisplayPhone("");
             btPerson.BackColor = defaultBackColor;
             btPerson.ForeColor = defaultForeColor;
             btPhone.BackColor = activeBackColor;
@@ -186,6 +190,8 @@ namespace Gestion_Personne
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            Classes.Config config = new Classes.Config();
+            User_Address.instance.DisplayAddress("");
             btPerson.BackColor = defaultBackColor;
             btPerson.ForeColor = defaultForeColor;
             btPhone.BackColor = defaultBackColor;
@@ -209,6 +215,8 @@ namespace Gestion_Personne
 
         private void btUsers_Click(object sender, EventArgs e)
         {
+            Classes.Config config = new Classes.Config();
+            User_User.instance.DisplayUser("");
             btPerson.BackColor = defaultBackColor;
             btPerson.ForeColor = defaultForeColor;
             btPhone.BackColor = defaultBackColor;
@@ -243,6 +251,7 @@ namespace Gestion_Personne
                     {
                         File.Delete(configFilePath);
                         MessageBox.Show("Configuration Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
                     else
                     {
