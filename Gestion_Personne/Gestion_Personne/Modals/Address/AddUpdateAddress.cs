@@ -28,7 +28,6 @@ namespace Gestion_Personne.Modals.Address
             InitializeComponent();
             this.address = user;
             PopulateCountryData();
-            // call to fill the ComboCountry
         }
 
         private void PopulateCountryData()

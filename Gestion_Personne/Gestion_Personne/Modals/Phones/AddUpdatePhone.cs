@@ -29,7 +29,6 @@ namespace Gestion_Personne.Modals.Phones
             InitializeComponent();
             this.phone = user;
             PopulateCountryData();
-            // Appeler la méthode pour remplir le ComboBox
             InitializeComboBox();
         }
 
@@ -359,7 +358,6 @@ namespace Gestion_Personne.Modals.Phones
             {
                 if (africanCountries.TryGetValue(selectedCountry, out string countryCode))
                 {
-                    // Met à jour le TextBox avec l'indicatif trouvé
                     textinitial.Text = countryCode;
                 }
                 else

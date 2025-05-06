@@ -36,9 +36,8 @@ namespace Gestion_Personne.Modals
                     
                     writer.WriteLine(comboDatabase.Text);
                     writer.WriteLine(textServ.Text);
-                    //writer.WriteLine(txtbd.Text);
                     writer.WriteLine(textUser.Text);
-                    writer.WriteLine(cryptage.EncryptData(textPass.Text)); // Crypter le mot de passe
+                    writer.WriteLine(cryptage.EncryptData(textPass.Text)); 
                 }
                 MessageBox.Show("Server Config saved Successfully", "Save Config", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

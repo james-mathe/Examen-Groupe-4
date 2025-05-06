@@ -338,7 +338,7 @@
                             <TextRun>
                               <Value>=Fields!fullname.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -371,7 +371,7 @@
                             <TextRun>
                               <Value>=Fields!initial.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -404,7 +404,7 @@
                             <TextRun>
                               <Value>=Fields!numero.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -437,7 +437,7 @@
                             <TextRun>
                               <Value>=Fields!avenue.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -470,7 +470,7 @@
                             <TextRun>
                               <Value>=Fields!quartier.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -503,7 +503,7 @@
                             <TextRun>
                               <Value>=Fields!commune.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -536,7 +536,7 @@
                             <TextRun>
                               <Value>=Fields!ville.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -569,7 +569,7 @@
                             <TextRun>
                               <Value>=Fields!pays.Value</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
                                 <Color>DimGray</Color>
                               </Style>
                             </TextRun>
@@ -619,8 +619,8 @@
         </TablixRowHierarchy>
         <DataSetName>PersonWithNumberAndAddress</DataSetName>
         <Top>0.39458in</Top>
-        <Height>0.94792in</Height>
-        <Width>9.36333in</Width>
+        <Height>0.94791in</Height>
+        <Width>9.36332in</Width>
         <Style>
           <Border>
             <Style>None</Style>

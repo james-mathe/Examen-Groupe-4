@@ -82,7 +82,7 @@ namespace Gestion_Personne.Classes.Phones
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -153,7 +153,7 @@ namespace Gestion_Personne.Classes.Phones
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -219,7 +219,7 @@ namespace Gestion_Personne.Classes.Phones
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
