@@ -131,64 +131,56 @@ namespace Gestion_Personne.Modals.people
             }
             else
             {
-                if(config.ServerType == "Sql Server")
+                try
                 {
-                    try
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        sqlcon.Open();
-                        if(sqlcon.State == ConnectionState.Open)
+                        if (titlePerson.Text == "Add Person")
                         {
-                            if (titlePerson.Text == "Add Person")
+                            Classes.People.AddUpdateDeletePerson sqladd = new Classes.People.AddUpdateDeletePerson();
+                            if (sqladd.addPerson(textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
                             {
-                                Classes.People.AddUpdateDeletePerson sqladd = new Classes.People.AddUpdateDeletePerson();
-                                if(sqladd.addPersonSql(textname.Text,textLastname.Text,textFirstname.Text,Convert.ToChar(comboGender.Text)) == true)
+                                (person as UserControls.User_Personne).DisplayPerson("");
+                                MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error Adding Person", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            Classes.People.AddUpdateDeletePerson sqlupdate = new Classes.People.AddUpdateDeletePerson();
+                            DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (DR == DialogResult.Yes)
+                            {
+                                if (sqlupdate.updatePerson(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
                                 {
                                     (person as UserControls.User_Personne).DisplayPerson("");
-                                    MessageBox.Show("Person Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Error Adding Person", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Error Updated Person", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    this.Close();
                                 }
                             }
                             else
                             {
-                                Classes.People.AddUpdateDeletePerson sqlupdate = new Classes.People.AddUpdateDeletePerson();
-                                DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                if (DR == DialogResult.Yes)
-                                {
-                                    if(sqlupdate.updatePersonSql(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
-                                    {
-                                        (person as UserControls.User_Personne).DisplayPerson("");
-                                        MessageBox.Show("Person Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        this.Close();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Error Updated Person", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        this.Close();
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
+                                MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-
                         }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
 
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
         }
 
