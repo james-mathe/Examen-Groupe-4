@@ -154,7 +154,7 @@ namespace Gestion_Personne.Modals.Phones
                         tablePerson.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@noms", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@pnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@prnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@sex", MySqlDbType.VarChar, 250)).Value = text;
@@ -294,51 +294,43 @@ namespace Gestion_Personne.Modals.Phones
         {
             if(isEmpty() == null)
             {
-                if(config.ServerType == "Sql Server")
+                if (titlePhone.Text == "Add Number")
                 {
-                    if(titlePhone.Text == "Add Number")
+                    Classes.Phones.AddUpdateDeletePhones add = new Classes.Phones.AddUpdateDeletePhones();
+                    if (add.addPhone(idP, textinitial.Text, textnumber.Text) == true)
                     {
-                        Classes.Phones.AddUpdateDeletePhones add = new Classes.Phones.AddUpdateDeletePhones();
-                        if(add.addPhoneSql(idP,textinitial.Text,textnumber.Text) == true)
+                        (phone as UserControls.User_Phone).DisplayPhone("");
+                        MessageBox.Show("Phone Number Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Adding Phone Number", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    Classes.Phones.AddUpdateDeletePhones update = new Classes.Phones.AddUpdateDeletePhones();
+                    DialogResult DR = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (DR == DialogResult.Yes)
+                    {
+                        if (update.UpdatePhone(idT, idP, textinitial.Text, textnumber.Text) == true)
                         {
                             (phone as UserControls.User_Phone).DisplayPhone("");
-                            MessageBox.Show("Phone Number Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Phone Number Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
-
                         }
                         else
                         {
-                            MessageBox.Show("Error Adding Phone Number", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Error Updated Phone Number", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            this.Close();
                         }
                     }
                     else
                     {
-                        Classes.Phones.AddUpdateDeletePhones update = new Classes.Phones.AddUpdateDeletePhones();
-                        DialogResult DR = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (DR == DialogResult.Yes)
-                        {
-                            if (update.UpdatePhoneSql(idT,idP,textinitial.Text,textnumber.Text) == true)
-                            {
-                                (phone as UserControls.User_Phone).DisplayPhone("");
-                                MessageBox.Show("Phone Number Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error Updated Phone Number", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                }
-                else
-                {
-
                 }
             }
             else
