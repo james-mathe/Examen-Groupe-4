@@ -25,7 +25,7 @@ namespace Gestion_Personne.Classes.Phones
             mycon = db.getMySqlConnection();
         }
 
-        public bool addPhoneSql(int idP,String initial,String num)
+        public bool addPhone(int idP,String initial,String num)
         {
             
             if(db.ServerType == "Sql Server")
@@ -95,7 +95,7 @@ namespace Gestion_Personne.Classes.Phones
             return false;
         }
 
-        public bool UpdatePhoneSql(int id,int idP, String initial, String num)
+        public bool UpdatePhone(int id,int idP, String initial, String num)
         {
             if (db.ServerType == "Sql Server")
             {
@@ -167,7 +167,7 @@ namespace Gestion_Personne.Classes.Phones
             return false;
         }
 
-        public bool DeletePhoneSql(int id)
+        public bool DeletePhone(int id)
         {
             if (db.ServerType == "Sql Server")
             {
