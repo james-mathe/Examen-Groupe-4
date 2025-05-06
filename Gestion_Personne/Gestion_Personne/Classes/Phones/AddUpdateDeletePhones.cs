@@ -18,112 +18,219 @@ namespace Gestion_Personne.Classes.Phones
         private SqlCommand sqlcmd;
         private MySqlCommand mycmd;
 
+        public AddUpdateDeletePhones()
+        {
+            db = new Config();
+            sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
+        }
 
         public bool addPhoneSql(int idP,String initial,String num)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
+            
+            if(db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if(sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "AddPhone";
-                    sqlcmd = new SqlCommand(proc,sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@initial", SqlDbType.VarChar,4)).Value = initial;
-                    sqlcmd.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar,9)).Value = num;
-
-                    if(sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "AddPhone";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
+                        sqlcmd.Parameters.Add(new SqlParameter("@initial", SqlDbType.VarChar, 4)).Value = initial;
+                        sqlcmd.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar, 9)).Value = num;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)        
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "AddPhone";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@idPs", MySqlDbType.Int32)).Value = idP;
+                        mycmd.Parameters.Add(new MySqlParameter("@initials", MySqlDbType.VarChar, 4)).Value = initial;
+                        mycmd.Parameters.Add(new MySqlParameter("@numeros", MySqlDbType.VarChar, 9)).Value = num;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
-            return saved;
+            return false;
         }
 
         public bool UpdatePhoneSql(int id,int idP, String initial, String num)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
+            if (db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
-                          {
-                    String proc = "UpdatePhone";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idT", SqlDbType.BigInt)).Value = id;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
-                    sqlcmd.Parameters.Add(new SqlParameter("@initial", SqlDbType.VarChar, 4)).Value = initial;
-                    sqlcmd.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar, 9)).Value = num;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                try
+                {
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "UpdatePhone";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idT", SqlDbType.BigInt)).Value = id;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idP", SqlDbType.BigInt)).Value = idP;
+                        sqlcmd.Parameters.Add(new SqlParameter("@initial", SqlDbType.VarChar, 4)).Value = initial;
+                        sqlcmd.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar, 9)).Value = num;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "UpdatePhone";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+                        mycmd.Parameters.Add(new MySqlParameter("@idPs", MySqlDbType.Int32)).Value = idP;
+                        mycmd.Parameters.Add(new MySqlParameter("@initials", MySqlDbType.VarChar, 4)).Value = initial;
+                        mycmd.Parameters.Add(new MySqlParameter("@numeros", MySqlDbType.VarChar, 9)).Value = num;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
-            return saved;
+            
+            return false;
         }
 
         public bool DeletePhoneSql(int id)
         {
-            bool saved = false;
-            sqlcon = db.getSqlConnection();
-            try
+            if (db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "DeletePhone";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@idT", SqlDbType.BigInt)).Value = id;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "DeletePhone";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@idT", SqlDbType.BigInt)).Value = id;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {         
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    sqlcon.Close();
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "DeletePhone";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
-            return saved;
+            
+            return false;
         }
     }
 }
