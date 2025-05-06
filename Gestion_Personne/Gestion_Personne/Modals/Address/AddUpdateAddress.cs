@@ -193,7 +193,7 @@ namespace Gestion_Personne.Modals.Address
                         tablePerson.Rows.Clear();
                         mycmd = new MySqlCommand(proc, mycon);
                         mycmd.CommandType = CommandType.StoredProcedure;
-                        mycmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar, 250)).Value = text;
+                        mycmd.Parameters.Add(new MySqlParameter("@noms", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@pnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@prnom", MySqlDbType.VarChar, 250)).Value = text;
                         mycmd.Parameters.Add(new MySqlParameter("@sex", MySqlDbType.VarChar, 250)).Value = text;
@@ -263,51 +263,43 @@ namespace Gestion_Personne.Modals.Address
         {
             if(isEmpty() == null)
             {
-                if (config.ServerType == "Sql Server")
+                if (titleAddress.Text == "Add Address")
                 {
-                    if (titleAddress.Text == "Add Address")
+                    Classes.Address.AddUpdateDeleteAddress add = new Classes.Address.AddUpdateDeleteAddress();
+                    if (add.addAddress(idP, textAv.Text, textqua.Text, textTown.Text, textCity.Text, comboCountry.Text) == true)
                     {
-                        Classes.Address.AddUpdateDeleteAddress add = new Classes.Address.AddUpdateDeleteAddress();
-                        if (add.addAddressSql(idP,textAv.Text,textqua.Text,textTown.Text,textCity.Text,comboCountry.Text) == true)
+                        (address as UserControls.User_Address).DisplayAddress("");
+                        MessageBox.Show("Address Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Adding Address", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    Classes.Address.AddUpdateDeleteAddress update = new Classes.Address.AddUpdateDeleteAddress();
+                    DialogResult DR = MessageBox.Show("Do you Want to Update this Address??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (DR == DialogResult.Yes)
+                    {
+                        if (update.UpdateAddress(idA, idP, textAv.Text, textqua.Text, textTown.Text, textCity.Text, comboCountry.Text) == true)
                         {
                             (address as UserControls.User_Address).DisplayAddress("");
-                            MessageBox.Show("Address Added Successfully", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Address Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
-
                         }
                         else
                         {
-                            MessageBox.Show("Error Adding Address", "Add", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Error Updated Address", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            this.Close();
                         }
                     }
                     else
                     {
-                        Classes.Address.AddUpdateDeleteAddress update = new Classes.Address.AddUpdateDeleteAddress();
-                        DialogResult DR = MessageBox.Show("Do you Want to Update this Address??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (DR == DialogResult.Yes)
-                        {
-                            if (update.UpdateAddressSql(idA, idP, textAv.Text, textqua.Text, textTown.Text, textCity.Text, comboCountry.Text) == true)
-                            {
-                                (address as UserControls.User_Address).DisplayAddress("");
-                                MessageBox.Show("Address Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error Updated Address", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show("Updated Canceled", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                }
-                else
-                {
-
                 }
             }
             else
