@@ -17,6 +17,7 @@ namespace Gestion_Personne.Modals.people
         private UserControl person;
         public int idP;
         private Classes.Config config;
+        DialogResult Dr;
         public AddUpdatePerson(UserControl p)
         {
             InitializeComponent();
@@ -150,8 +151,8 @@ namespace Gestion_Personne.Modals.people
                     else
                     {
                         Classes.People.AddUpdateDeletePerson sqlupdate = new Classes.People.AddUpdateDeletePerson();
-                        DialogResult DR = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (DR == DialogResult.Yes)
+                        Dr = MessageBox.Show("Do you Want to Update this Person??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Dr == DialogResult.Yes)
                         {
                             if (sqlupdate.updatePerson(idP, textname.Text, textLastname.Text, textFirstname.Text, Convert.ToChar(comboGender.Text)) == true)
                             {

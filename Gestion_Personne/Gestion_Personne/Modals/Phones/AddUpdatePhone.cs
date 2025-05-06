@@ -312,8 +312,8 @@ namespace Gestion_Personne.Modals.Phones
                 else
                 {
                     Classes.Phones.AddUpdateDeletePhones update = new Classes.Phones.AddUpdateDeletePhones();
-                    DialogResult DR = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (DR == DialogResult.Yes)
+                    Dr = MessageBox.Show("Do you Want to Update this Phone Number??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
                     {
                         if (update.UpdatePhone(idT, idP, textinitial.Text, textnumber.Text) == true)
                         {

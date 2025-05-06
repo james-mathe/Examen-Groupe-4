@@ -281,8 +281,8 @@ namespace Gestion_Personne.Modals.Address
                 else
                 {
                     Classes.Address.AddUpdateDeleteAddress update = new Classes.Address.AddUpdateDeleteAddress();
-                    DialogResult DR = MessageBox.Show("Do you Want to Update this Address??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (DR == DialogResult.Yes)
+                    Dr = MessageBox.Show("Do you Want to Update this Address??", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
                     {
                         if (update.UpdateAddress(idA, idP, textAv.Text, textqua.Text, textTown.Text, textCity.Text, comboCountry.Text) == true)
                         {
