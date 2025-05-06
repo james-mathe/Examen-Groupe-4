@@ -103,22 +103,41 @@ namespace Gestion_Personne.Modals
                         mycon.Open();
                         if (mycon.State == ConnectionState.Open)
                         {
-                            String sql = "select * from users where username=@user and pwd=@pwd";
+                            String sql = "select * from users where username=@user";
                             MySqlDataReader reader;
                             mycmd = new MySqlCommand(sql, mycon);
                             mycmd.Parameters.AddWithValue("@user", textUser.Text);
-                            mycmd.Parameters.AddWithValue("@pwd", textPass.Text);
 
                             reader = mycmd.ExecuteReader();
                             if (reader.Read())
                             {
-                                MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                (menu as Menu).DesactiveConnection();
-                                (menu as Menu).ActiveSideBarButtons();
-                                (menu as Menu).panelSetting.Visible = false;
-                                (menu as Menu).controlPanel.Visible = true;
-                                (menu as Menu).btRestore.Enabled = false;
-                                this.Close();
+
+                                if (cryptage.VerifyPassword(textPass.Text, reader.GetValue(2).ToString()))
+                                {
+                                    MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    (menu as Menu).DesactiveConnection();
+                                    (menu as Menu).ActiveSideBarButtons();
+                                    (menu as Menu).panelSetting.Visible = false;
+                                    (menu as Menu).controlPanel.Visible = true;
+                                    (menu as Menu).btRestore.Enabled = false;
+                                    this.Close();
+
+                                }
+                                else if (textPass.Text == reader.GetString(2))
+                                {
+                                    MessageBox.Show("Welcom " + textUser.Text + "!!", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    (menu as Menu).DesactiveConnection();
+                                    (menu as Menu).ActiveSideBarButtons();
+                                    (menu as Menu).panelSetting.Visible = false;
+                                    (menu as Menu).controlPanel.Visible = true;
+                                    (menu as Menu).btRestore.Enabled = false;
+                                    this.Close();
+                                }
+                                else
+                                {
+
+                                    MessageBox.Show("Password is Incorect", "Authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                             else
                             {
