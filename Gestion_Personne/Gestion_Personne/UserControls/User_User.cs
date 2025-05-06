@@ -195,35 +195,17 @@ namespace Gestion_Personne.UserControls
                 else
                 {
                     Classes.User.AddUpdateDeleteUser delete = new Classes.User.AddUpdateDeleteUser();
-                    if(config.ServerType == "Sql Server")
+                    idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
+                    Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Dr == DialogResult.Yes)
                     {
-                        idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
-                        Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (Dr == DialogResult.Yes)
-                        {
-                            delete.DeleteUserSql(idU);
-                            DisplayUser("");
-                            MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        delete.DeleteUser(idU);
+                        DisplayUser("");
+                        MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        idU = Convert.ToInt32(tableUser.CurrentRow.Cells[1].Value);
-                        Dr = MessageBox.Show("Do you Want to Delete this User??", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (Dr == DialogResult.Yes)
-                        {
-                            delete.DeleteUserMySql(idU);
-                            DisplayUser("");
-                            MessageBox.Show("User Deleted Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show("Delete action Canceled", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

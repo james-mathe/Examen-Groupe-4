@@ -19,109 +19,215 @@ namespace Gestion_Personne.Classes.User
         private MySqlConnection mycon;
         private MySqlCommand mycmd;
 
-        public bool addUserSql(String username, String password)
+        public bool addUser(String username, String password)
         {
             sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
             cryptage = new Cryptage();
-            try
+            if (db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "AddUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        return true;
+                        String proc = "AddUser";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
+                        sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
                     }
                 }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
+                catch (SqlException ex)
                 {
-                    sqlcon.Close();
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
+                    }
+                }
+
+            }
+            else
+            {
+
+                try
+                {
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "AddUser";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@usernames", MySqlDbType.VarChar, 250)).Value = username;
+                        mycmd.Parameters.Add(new MySqlParameter("@pwds", MySqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
+                    }
                 }
             }
             return false;
         }
 
-        public bool UpdateUserSql(int id, String username, String password)
+        public bool UpdateUser(int id, String username, String password)
         {
-            bool saved = false;
             sqlcon = db.getSqlConnection();
+            mycon = db.getMySqlConnection();
             cryptage = new Cryptage();
-            try
+            if(db.ServerType == "Sql Server")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "UpdateUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
-                    sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
-                    sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "UpdateUser";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
+                        sqlcmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar, 250)).Value = username;
+                        sqlcmd.Parameters.Add(new SqlParameter("@pwd", SqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
+                    }
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "UpdateUser";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+                        mycmd.Parameters.Add(new MySqlParameter("@usernames", MySqlDbType.VarChar, 250)).Value = username;
+                        mycmd.Parameters.Add(new MySqlParameter("@pwds", MySqlDbType.VarChar, 250)).Value = cryptage.HashPassword(password);
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
+            return false;
         }
 
-        public bool DeleteUserSql(int id)
+        public bool DeleteUser(int id)
         {
-            bool saved = false;
             sqlcon = db.getSqlConnection();
-            try
+            mycon = db.getMySqlConnection();
+            if(db.ServerType == "Server Type")
             {
-                sqlcon.Open();
-                if (sqlcon.State == ConnectionState.Open)
+                try
                 {
-                    String proc = "DeleteUser";
-                    sqlcmd = new SqlCommand(proc, sqlcon);
-                    sqlcmd.CommandType = CommandType.StoredProcedure;
-                    sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
-
-                    if (sqlcmd.ExecuteNonQuery() > 0)
+                    sqlcon.Open();
+                    if (sqlcon.State == ConnectionState.Open)
                     {
-                        saved = true;
+                        String proc = "DeleteUser";
+                        sqlcmd = new SqlCommand(proc, sqlcon);
+                        sqlcmd.CommandType = CommandType.StoredProcedure;
+                        sqlcmd.Parameters.Add(new SqlParameter("@id", SqlDbType.BigInt)).Value = id;
+
+                        if (sqlcmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlcon.State == ConnectionState.Open)
+                    {
+                        sqlcon.Close();
+                    }
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    mycon.Open();
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        String proc = "DeleteUser";
+                        mycmd = new MySqlCommand(proc, mycon);
+                        mycmd.CommandType = CommandType.StoredProcedure;
+                        mycmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32)).Value = id;
+
+                        if (mycmd.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "MySql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (mycon.State == ConnectionState.Open)
+                    {
+                        mycon.Close();
                     }
                 }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Sql Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlcon.State == ConnectionState.Open)
-                {
-                    sqlcon.Close();
-                }
-            }
-            return saved;
+            return false;
         }
 
         public bool addUserMySql(String username, String password)
