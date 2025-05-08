@@ -1,5 +1,4 @@
 
-```markdown
 #  Gestion des Personnes - Groupe 4
 
 ##  Description
