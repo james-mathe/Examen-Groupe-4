@@ -63,6 +63,5 @@ Projet sous **MIT License** – Utilisation libre et modifications autorisées.
 Pour toute question ou suggestion, n’hésitez pas à nous contacter !
 
  **Groupe 4** – Améliorons ensemble la gestion des informations personnelles !
-```
 
 
