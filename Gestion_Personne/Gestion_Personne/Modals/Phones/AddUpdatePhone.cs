@@ -384,7 +384,7 @@ namespace Gestion_Personne.Modals.Phones
 
         private void comboCountry_Leave(object sender, EventArgs e)
         {
-            if(comboCountry.Text == "" || comboCountry.Text == "Select Country" || comboCountry.Text.Contains(" "))
+            if(comboCountry.Text == "" || comboCountry.Text == "Select Country")
             {
                 comboCountry.Text = "Select Country";
                 comboCountry.ForeColor = Color.FromArgb(198, 190, 255);

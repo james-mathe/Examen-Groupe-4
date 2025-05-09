@@ -82,3 +82,5 @@ select p.idP,CONCAT(p.nom,' ',p.postnom,' ',p.prenom) as fullname,t.initial,t.nu
 inner join telephone as t on p.idP = t.idP
 inner join adresse as a on p.idP = a.idP
 go
+
+select idP,STRING_AGG(numero,',') AS NUM from telephone group by idP

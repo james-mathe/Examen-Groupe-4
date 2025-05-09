@@ -246,7 +246,7 @@ namespace Gestion_Personne.UserControls
                         {
                             if (sqlcon.State == ConnectionState.Open)
                             {
-                                String sql = "select * from listPersonAddress";
+                                String sql = "select * from listAddressPersonne";
 
                                 sqlcmd = new SqlCommand(sql, sqlcon);
                                 SqlDataAdapter data = new SqlDataAdapter(sqlcmd);

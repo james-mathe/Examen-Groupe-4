@@ -280,6 +280,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -474,7 +475,7 @@
         <DataSetName>PersonWithAddress</DataSetName>
         <Top>0.30604in</Top>
         <Height>0.6875in</Height>
-        <Width>9.36333in</Width>
+        <Width>9.36334in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -485,7 +486,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>9.36333in</Width>
+  <Width>9.36334in</Width>
   <Page>
     <PageHeader>
       <Height>0.45313in</Height>
@@ -556,14 +557,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="idA">
-          <DataField>idA</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="idP">
-          <DataField>idP</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
         <Field Name="fullname">
           <DataField>fullname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -590,12 +583,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>g_personneDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\g_personneDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>listPersonAddress</rd:TableName>
+        <rd:DataSetName>g_personneDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\g_personneDataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>listAddressPersonne</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>listPersonAddressTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>listAddressPersonneTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -254,8 +254,8 @@
         </TablixRowHierarchy>
         <DataSetName>PersonWithNumber</DataSetName>
         <Top>0.35291in</Top>
-        <Height>0.79167in</Height>
-        <Width>8.9375in</Width>
+        <Height>0.79166in</Height>
+        <Width>8.93751in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -266,7 +266,7 @@
     <Height>3.9375in</Height>
     <Style />
   </Body>
-  <Width>8.9375in</Width>
+  <Width>8.93751in</Width>
   <Page>
     <PageHeader>
       <Height>0.51042in</Height>
@@ -337,14 +337,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="idT">
-          <DataField>idT</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="idP">
-          <DataField>idP</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
         <Field Name="fullname">
           <DataField>fullname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -359,12 +351,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>g_personneDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\g_personneDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>listPersonNumber</rd:TableName>
+        <rd:DataSetName>g_personneDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\james-mat\Documents\Project C#\Examen-Groupe-4\Gestion_Personne\Gestion_Personne\g_personneDataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>listTelPersonne</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>listPersonNumberTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>listTelPersonneTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
