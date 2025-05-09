@@ -166,7 +166,7 @@ namespace Gestion_Personne.Classes.User
         {
             sqlcon = db.getSqlConnection();
             mycon = db.getMySqlConnection();
-            if(db.ServerType == "Server Type")
+            if(db.ServerType == "Sql Server")
             {
                 try
                 {

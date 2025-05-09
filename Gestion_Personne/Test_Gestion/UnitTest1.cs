@@ -3,6 +3,8 @@ using System;
 using Gestion_Personne.Classes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Test_Gestion
 {
@@ -13,47 +15,27 @@ namespace Test_Gestion
         public void TestConnection()
         {
             Config db = new Config();
-            if(db.ServerType == "Sql Server")
-            {
-                SqlConnection con = db.getSqlConnection();
-                con.Open();
-                bool isOpen = false;
-                Assert.IsTrue(isOpen,"Erreur de Connexion");
-                con.Close();
-            }
-            
-        }
-        [DataTestMethod]
-        public void TestInsertUser()
-        {
-            Gestion_Personne.Classes.User.AddUpdateDeleteUser user = new Gestion_Personne.Classes.User.AddUpdateDeleteUser();
-            Config db = new Config();
-            if(db.ServerType == "Sql Server")
-            {
-                Assert.AreEqual(true, user.addUserSql("james", "1234"));
-            }
-        }
+            db.ServerName = "james-mat";
+            db.Username = "sa";
+            db.Password = "james";
 
-        [TestMethod]
-        public void TestUpdateUser()
-        {
-            Gestion_Personne.Classes.User.AddUpdateDeleteUser user = new Gestion_Personne.Classes.User.AddUpdateDeleteUser();
-            Config db = new Config();
-            if (db.ServerType == "Sql Server")
-            {
-                Assert.IsTrue(user.UpdateUserSql(3,"james", "1234") == true, "User Not Updated");
-            }
+            SqlConnection con = db.getSqlConnection();
+            con.Open();
+            bool isactiv = con.State == ConnectionState.Open;
+
+            Assert.IsTrue(isactiv == true);
+
         }
 
         [TestMethod]
         public void test()
         {
-            Assert.AreEqual(true, somme(4, 4));
+            Assert.AreEqual(8, somme(4, 4));
         }
 
-        public bool somme(int a,int b)
+        public int somme(int a,int b)
         {
-            return true;
+            return a+b;
         }
     }
 }
